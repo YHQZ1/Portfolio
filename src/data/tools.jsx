@@ -60,7 +60,7 @@ export const toolsAndWorkflow = [
   },
   {
     name: "Figma",
-    logo: "https://cdn.simpleicons.org/figma/F24E1E",
+    logo: "/skills/figma.png",
     category: ["UI Design", "Prototyping", "Design Collaboration"],
   },
   {
