@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "PayFlow",
+    category: "selected",
+    description:
+      "A multi-tenant payment platform inspired by Stripe that enables businesses to process transactions, handle refunds, and receive real-time updates. Designed to ensure reliability under retries, maintain accurate financial records, and scale seamlessly as usage grows.",
+    tags: ["Distributed Systems", "Microservices", "FinTech"],
+    github: "https://github.com/YHQZ1/PayFlow",
+    live: null,
+    image: "/projects/payflow.png",
+  },
+  {
     title: "BitLink",
     category: "selected",
     description:
