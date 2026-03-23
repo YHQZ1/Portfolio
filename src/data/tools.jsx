@@ -11,6 +11,24 @@ export const toolsAndWorkflow = [
     category: ["HTTP Requests", "Network Debugging", "Command-line Tooling"],
   },
   {
+    name: "OpenAPI",
+    logo: "/skills/openapi.png",
+    category: [
+      "API Specification",
+      "Contract-first Design",
+      "REST Schema Definition",
+    ],
+  },
+  {
+    name: "Swagger UI",
+    logo: "https://cdn.simpleicons.org/swagger/85EA2D",
+    category: [
+      "API Documentation",
+      "Interactive API Explorer",
+      "OpenAPI Visualization",
+    ],
+  },
+  {
     name: "pnpm",
     logo: "/skills/pnpm.png",
     category: [
