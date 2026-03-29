@@ -38,6 +38,16 @@ export const toolsAndWorkflow = [
     ],
   },
   {
+    name: "Turborepo",
+    logo: "/skills/turborepo.png",
+    category: [
+      "Monorepo Architecture",
+      "Task Orchestration",
+      "Incremental Builds",
+      "Build Caching",
+    ],
+  },
+  {
     name: "VS Code",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png",
     category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
