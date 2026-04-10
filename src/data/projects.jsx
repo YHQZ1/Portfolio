@@ -10,6 +10,16 @@ export const projects = [
     image: "/projects/payflow.png",
   },
   {
+    title: "Hatch",
+    category: "selected",
+    description:
+      "A self-hosted alternative to Render and Railway. Connect a GitHub repo, drop in a Dockerfile, and get a live public URL — no infrastructure setup, no cloud console, no manual configuration. Hatch handles everything in between and streams the entire process back to you in real time.",
+    tags: ["Distributed Systems", "Cloud Infrastructure", "DevOps"],
+    github: "https://github.com/YHQZ1/Hatch",
+    live: "https://app.hatchcloud.xyz",
+    image: "/projects/hatch.png",
+  },
+  {
     title: "BitLink",
     category: "selected",
     description:
@@ -21,7 +31,7 @@ export const projects = [
   },
   {
     title: "Provenance",
-    category: "selected",
+    category: "focused",
     description:
       "A deterministic ESG compliance engine for Indian SMEs that transforms operational data into regulator-ready EPR and BRSR reports. Uses structured ingestion, OCR-assisted extraction, and rule-based validation to ensure audit-traceable outputs.",
     tags: ["RegTech", "Rule Engine Design", "Data Processing"],
@@ -31,7 +41,7 @@ export const projects = [
   },
   {
     title: "Raveline",
-    category: "selected",
+    category: "focused",
     description:
       "A decoupled moderation decision layer that evaluates user-generated content before publication. Designed as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows, isolating safety logic from core product services.",
     tags: ["Event-Driven Systems", "Policy Engines", "System Design"],
@@ -41,7 +51,7 @@ export const projects = [
   },
   {
     title: "Anchor",
-    category: "selected",
+    category: "focused",
     description:
       "A role-based academic workflow system that consolidates assignments, attendance, and scheduling into a transactional backend. Emphasizes structured data modeling, automated reminders, and consistency across concurrent updates.",
     tags: ["RBAC", "Workflow Automation", "Transactional Systems"],
@@ -51,7 +61,7 @@ export const projects = [
   },
   {
     title: "OneGov",
-    category: "selected",
+    category: "focused",
     description:
       "A multi-tenant civic services architecture that unifies disparate government workflows under a shared identity and access model. Focuses on role isolation, service abstraction, and extensibility across independent service modules.",
     tags: ["Multi-Tenant Architecture", "Access Control", "Platform Design"],
@@ -61,7 +71,7 @@ export const projects = [
   },
   {
     title: "VerQ",
-    category: "selected",
+    category: "focused",
     description:
       "A structured placement workflow system that centralizes opportunity discovery, application tracking, and preparation resources. Designed to reduce information fragmentation while enabling automated reminders and status visibility.",
     tags: ["Applied AI", "Process Automation", "Product Systems"],
@@ -71,7 +81,7 @@ export const projects = [
   },
   {
     title: "GradCircle",
-    category: "selected",
+    category: "focused",
     description:
       "A secure alumni engagement and fundraising system supporting campaign management and contribution tracking. Implements role-scoped access control and transaction-safe donation handling.",
     tags: ["Secure Transactions", "Access Control", "Relational Modeling"],
