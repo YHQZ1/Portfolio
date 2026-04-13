@@ -1,23 +1,23 @@
 export const projects = [
   {
-    title: "PayFlow",
-    category: "selected",
-    description:
-      "A multi-tenant payment platform inspired by Stripe that enables businesses to process transactions, handle refunds, and receive real-time updates. Designed to ensure reliability under retries, maintain accurate financial records, and scale seamlessly as usage grows.",
-    tags: ["Distributed Systems", "Microservices", "FinTech"],
-    github: "https://github.com/YHQZ1/PayFlow",
-    live: null,
-    image: "/projects/payflow.png",
-  },
-  {
     title: "Hatch",
     category: "selected",
     description:
-      "A self-hosted alternative to Render and Railway. Connect a GitHub repo, drop in a Dockerfile, and get a live public URL — no infrastructure setup, no cloud console, no manual configuration. Hatch handles everything in between and streams the entire process back to you in real time.",
+      "A self-hosted alternative to Render and Railway. Connect a GitHub repo, drop in a Dockerfile, and get a live public URL — no infrastructure setup, no cloud console, no manual configuration. Hatch handles orchestration, container lifecycle, and streams the entire build process back to you in real time.",
     tags: ["Distributed Systems", "Cloud Infrastructure", "DevOps"],
     github: "https://github.com/YHQZ1/Hatch",
     live: "https://app.hatchcloud.xyz",
     image: "/projects/hatch.png",
+  },
+  {
+    title: "PayFlow",
+    category: "selected",
+    description:
+      "A multi-tenant payment platform inspired by Stripe that enables businesses to process transactions, handle refunds, and receive real-time updates. Built for reliability under retries, accurate financial record-keeping, and seamless scaling as usage grows.",
+    tags: ["Distributed Systems", "Microservices", "FinTech"],
+    github: "https://github.com/YHQZ1/PayFlow",
+    live: null,
+    image: "/projects/payflow.png",
   },
   {
     title: "BitLink",
@@ -30,24 +30,24 @@ export const projects = [
     image: "/projects/bitlink.png",
   },
   {
-    title: "Provenance",
-    category: "focused",
-    description:
-      "A deterministic ESG compliance engine for Indian SMEs that transforms operational data into regulator-ready EPR and BRSR reports. Uses structured ingestion, OCR-assisted extraction, and rule-based validation to ensure audit-traceable outputs.",
-    tags: ["RegTech", "Rule Engine Design", "Data Processing"],
-    github: "https://github.com/YHQZ1/Provenance",
-    live: null,
-    image: "/projects/provenance.png",
-  },
-  {
     title: "Raveline",
     category: "focused",
     description:
-      "A decoupled moderation decision layer that evaluates user-generated content before publication. Designed as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows, isolating safety logic from core product services.",
+      "A decoupled moderation decision layer that evaluates user-generated content before publication. Built as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows — isolating safety logic cleanly from core product services.",
     tags: ["Event-Driven Systems", "Policy Engines", "System Design"],
     github: "https://github.com/YHQZ1/Raveline",
     live: null,
     image: "/projects/raveline.png",
+  },
+  {
+    title: "Resume Screener",
+    category: "focused",
+    description:
+      "An intelligent recruitment engine that performs multi-vector semantic analysis on candidate resumes. Implements a hybrid scoring model — combining TF-IDF lexical matching with SBERT context embeddings — to evaluate alignment against job descriptions and surface deterministic skill gap analysis.",
+    tags: ["NLP", "FastAPI", "Vector Embeddings"],
+    github: "https://github.com/YHQZ1/resume-screener",
+    live: "https://resume-screenerv1.vercel.app",
+    image: "/projects/resume-screener.png",
   },
   {
     title: "Anchor",
@@ -60,24 +60,24 @@ export const projects = [
     image: "/projects/anchor.png",
   },
   {
+    title: "Provenance",
+    category: "focused",
+    description:
+      "A deterministic ESG compliance engine for Indian SMEs that transforms operational data into regulator-ready EPR and BRSR reports. Uses structured ingestion, OCR-assisted extraction, and rule-based validation to produce fully audit-traceable outputs.",
+    tags: ["RegTech", "Rule Engine Design", "Data Processing"],
+    github: "https://github.com/YHQZ1/Provenance",
+    live: "https://provenanceio.vercel.app",
+    image: "/projects/provenance.png",
+  },
+  {
     title: "OneGov",
     category: "focused",
     description:
       "A multi-tenant civic services architecture that unifies disparate government workflows under a shared identity and access model. Focuses on role isolation, service abstraction, and extensibility across independent service modules.",
     tags: ["Multi-Tenant Architecture", "Access Control", "Platform Design"],
     github: "https://github.com/YHQZ1/OneGov",
-    live: null,
+    live: "https://onegov.vercel.app",
     image: "/projects/onegov.png",
-  },
-  {
-    title: "VerQ",
-    category: "focused",
-    description:
-      "A structured placement workflow system that centralizes opportunity discovery, application tracking, and preparation resources. Designed to reduce information fragmentation while enabling automated reminders and status visibility.",
-    tags: ["Applied AI", "Process Automation", "Product Systems"],
-    github: "https://github.com/YHQZ1/Verq",
-    live: null,
-    image: "/projects/verq.png",
   },
   {
     title: "GradCircle",
@@ -88,6 +88,16 @@ export const projects = [
     github: "https://github.com/YHQZ1/ISCKON-Alumni-Connect",
     live: "https://gradcircle.vercel.app/",
     image: "/projects/gradcircle.png",
+  },
+  {
+    title: "VerQ",
+    category: "focused",
+    description:
+      "A structured placement workflow system that centralizes opportunity discovery, application tracking, and preparation resources. Reduces information fragmentation while enabling automated reminders and end-to-end status visibility.",
+    tags: ["Applied AI", "Process Automation", "Product Systems"],
+    github: "https://github.com/YHQZ1/Verq",
+    live: "https://verq-pi.vercel.app",
+    image: "/projects/verq.png",
   },
   {
     title: "Matchmaking Engine",

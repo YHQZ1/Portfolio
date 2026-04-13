@@ -15,19 +15,7 @@ export function calculateExperience(dateString) {
 }
 
 export const technicalSkills = [
-  {
-    name: "Java",
-    tier: "core",
-    logo: "/skills/java.png",
-    level: "Advanced",
-    experienceStart: "2025-01",
-    category: [
-      "Object-Oriented Programming",
-      "Data Structures",
-      "JVM Ecosystem",
-    ],
-    filterCategories: ["languages"],
-  },
+  // ─── Languages ───────────────────────────────────────────────────────────────
   {
     name: "JavaScript",
     tier: "core",
@@ -51,6 +39,15 @@ export const technicalSkills = [
     filterCategories: ["languages", "frontend", "backend"],
   },
   {
+    name: "Go",
+    tier: "core",
+    logo: "https://cdn.simpleicons.org/go/00ADD8",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: ["Concurrency", "Backend Services", "Systems Programming"],
+    filterCategories: ["languages", "backend"],
+  },
+  {
     name: "Python",
     tier: "core",
     logo: "https://cdn.simpleicons.org/python/3776AB",
@@ -58,6 +55,37 @@ export const technicalSkills = [
     experienceStart: "2023-07",
     category: ["Backend Development", "Automation", "Data Processing"],
     filterCategories: ["languages", "backend", "ai-ml", "data-science"],
+  },
+  {
+    name: "Java",
+    tier: "core",
+    logo: "/skills/java.png",
+    level: "Advanced",
+    experienceStart: "2025-01",
+    category: [
+      "Object-Oriented Programming",
+      "Data Structures",
+      "JVM Ecosystem",
+    ],
+    filterCategories: ["languages"],
+  },
+  {
+    name: "SQL",
+    tier: "core",
+    logo: "/skills/sql.png",
+    level: "Intermediate",
+    experienceStart: "2025-02",
+    category: ["Relational Queries", "Data Modeling", "Query Optimization"],
+    filterCategories: ["languages", "database"],
+  },
+  {
+    name: "Bash",
+    tier: "core",
+    logo: "https://cdn.simpleicons.org/gnubash/4EAA25",
+    level: "Intermediate",
+    experienceStart: "2024-08",
+    category: ["Shell Scripting", "System Automation", "CLI Tooling"],
+    filterCategories: ["languages", "devops"],
   },
   {
     name: "C++",
@@ -72,33 +100,8 @@ export const technicalSkills = [
     ],
     filterCategories: ["languages"],
   },
-  {
-    name: "Go",
-    tier: "exploration",
-    logo: "https://cdn.simpleicons.org/go/00ADD8",
-    level: "Beginner",
-    experienceStart: "2025-12",
-    category: ["Concurrency", "Backend Services", "Systems Programming"],
-    filterCategories: ["languages", "backend"],
-  },
-  {
-    name: "Bash",
-    tier: "core",
-    logo: "https://cdn.simpleicons.org/gnubash/4EAA25",
-    level: "Intermediate",
-    experienceStart: "2024-08",
-    category: ["Shell Scripting", "System Automation", "CLI Tooling"],
-    filterCategories: ["languages", "devops"],
-  },
-  {
-    name: "SQL",
-    tier: "core",
-    logo: "/skills/sql.png",
-    level: "Intermediate",
-    experienceStart: "2025-02",
-    category: ["Relational Queries", "Data Modeling", "Query Optimization"],
-    filterCategories: ["languages", "database"],
-  },
+
+  // ─── Backend — Runtimes & Frameworks ─────────────────────────────────────────
   {
     name: "Node.js",
     tier: "core",
@@ -116,6 +119,24 @@ export const technicalSkills = [
     level: "Advanced",
     experienceStart: "2024-10",
     category: ["REST APIs", "Middleware Architecture", "Web Servers"],
+    filterCategories: ["backend"],
+  },
+  {
+    name: "FastAPI",
+    tier: "core",
+    logo: "https://cdn.simpleicons.org/fastapi/009688",
+    level: "Intermediate",
+    experienceStart: "2025-06",
+    category: ["Async APIs", "Data Validation", "Backend Services"],
+    filterCategories: ["backend"],
+  },
+  {
+    name: "Gin",
+    tier: "applied",
+    logo: "/skills/gin.png",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: ["HTTP Routing", "Middleware Chains", "REST APIs"],
     filterCategories: ["backend"],
   },
   {
@@ -139,15 +160,6 @@ export const technicalSkills = [
     level: "Beginner",
     experienceStart: "2026-02",
     category: ["Modular Architecture", "REST & GraphQL APIs", "Microservices"],
-    filterCategories: ["backend"],
-  },
-  {
-    name: "FastAPI",
-    tier: "core",
-    logo: "https://cdn.simpleicons.org/fastapi/009688",
-    level: "Intermediate",
-    experienceStart: "2025-06",
-    category: ["Async APIs", "Data Validation", "Backend Services"],
     filterCategories: ["backend"],
   },
   {
@@ -183,6 +195,65 @@ export const technicalSkills = [
     filterCategories: ["backend", "frontend"],
   },
   {
+    name: "WebSockets",
+    tier: "applied",
+    logo: "/skills/websocket.png",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: [
+      "Real-time Communication",
+      "Bidirectional Streaming",
+      "Go / Node.js",
+    ],
+    filterCategories: ["backend"],
+  },
+  {
+    name: "Zod",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/zod/408AFF",
+    level: "Intermediate",
+    experienceStart: "2025-09",
+    category: ["Runtime Validation", "Schema Definition", "Type Safety"],
+    filterCategories: ["backend", "frontend"],
+  },
+
+  // ─── Backend — Messaging & Queues ─────────────────────────────────────────────
+  {
+    name: "Kafka",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/apachekafka/231F20",
+    darkLogo: "https://cdn.simpleicons.org/apachekafka/FFFFFF",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: [
+      "Event Streaming",
+      "Distributed Messaging",
+      "High-throughput Systems",
+    ],
+    filterCategories: ["backend", "devops"],
+  },
+  {
+    name: "RabbitMQ",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/rabbitmq/FF6600",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: ["Message Queues", "Async Processing", "Pub/Sub"],
+    filterCategories: ["backend", "devops"],
+  },
+  {
+    name: "BullMQ",
+    tier: "applied",
+    logo: "/skills/bullmq-light.png",
+    darkLogo: "/skills/bullmq-dark.png",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: ["Background Jobs", "Task Queues", "Retry Strategies"],
+    filterCategories: ["backend"],
+  },
+
+  // ─── Frontend ─────────────────────────────────────────────────────────────────
+  {
     name: "ReactJS",
     tier: "core",
     logo: "https://cdn.simpleicons.org/react/61DAFB",
@@ -210,15 +281,8 @@ export const technicalSkills = [
     category: ["Utility-first Styling", "Responsive Design", "UI Engineering"],
     filterCategories: ["frontend"],
   },
-  {
-    name: "Zod",
-    tier: "applied",
-    logo: "https://cdn.simpleicons.org/zod/408AFF",
-    level: "Intermediate",
-    experienceStart: "2025-09",
-    category: ["Runtime Validation", "Schema Definition", "Type Safety"],
-    filterCategories: ["backend", "frontend"],
-  },
+
+  // ─── Databases ────────────────────────────────────────────────────────────────
   {
     name: "PostgreSQL",
     tier: "core",
@@ -251,15 +315,6 @@ export const technicalSkills = [
     filterCategories: ["database", "backend"],
   },
   {
-    name: "Drizzle ORM",
-    tier: "applied",
-    logo: "https://cdn.simpleicons.org/drizzle/C5F74F",
-    level: "Intermediate",
-    experienceStart: "2026-03",
-    category: ["Type-safe SQL", "Schema Management", "Relational Querying"],
-    filterCategories: ["database", "backend"],
-  },
-  {
     name: "Prisma",
     tier: "applied",
     logo: "https://cdn.simpleicons.org/prisma/2D3748",
@@ -270,38 +325,25 @@ export const technicalSkills = [
     filterCategories: ["database", "backend"],
   },
   {
-    name: "Kafka",
+    name: "Drizzle ORM",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/apachekafka/231F20",
-    darkLogo: "https://cdn.simpleicons.org/apachekafka/FFFFFF",
+    logo: "https://cdn.simpleicons.org/drizzle/C5F74F",
     level: "Intermediate",
-    experienceStart: "2025-12",
-    category: [
-      "Event Streaming",
-      "Distributed Messaging",
-      "High-throughput Systems",
-    ],
-    filterCategories: ["backend", "devops"],
+    experienceStart: "2026-03",
+    category: ["Type-safe SQL", "Schema Management", "Relational Querying"],
+    filterCategories: ["database", "backend"],
   },
   {
-    name: "RabbitMQ",
+    name: "sqlc",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/rabbitmq/FF6600",
-    level: "Beginner",
-    experienceStart: "2025-12",
-    category: ["Message Queues", "Async Processing", "Pub/Sub"],
-    filterCategories: ["backend", "devops"],
-  },
-  {
-    name: "BullMQ",
-    tier: "applied",
-    logo: "/skills/bullmq-light.png",
-    darkLogo: "/skills/bullmq-dark.png",
+    logo: "/skills/sqlc.png",
     level: "Intermediate",
     experienceStart: "2025-12",
-    category: ["Background Jobs", "Task Queues", "Retry Strategies"],
-    filterCategories: ["backend"],
+    category: ["Type-safe SQL", "Code Generation", "Go / PostgreSQL"],
+    filterCategories: ["database", "backend"],
   },
+
+  // ─── DevOps & Infrastructure ──────────────────────────────────────────────────
   {
     name: "Linux",
     tier: "core",
@@ -331,15 +373,6 @@ export const technicalSkills = [
       "Image Optimization",
       "Local Dev Environments",
     ],
-    filterCategories: ["devops"],
-  },
-  {
-    name: "GitHub Actions",
-    tier: "core",
-    logo: "https://cdn.simpleicons.org/githubactions/2088FF",
-    level: "Intermediate",
-    experienceStart: "2025-11",
-    category: ["CI/CD Pipelines", "Workflow Automation", "Testing Automation"],
     filterCategories: ["devops"],
   },
   {
@@ -375,6 +408,28 @@ export const technicalSkills = [
     filterCategories: ["devops"],
   },
   {
+    name: "GitHub Actions",
+    tier: "core",
+    logo: "https://cdn.simpleicons.org/githubactions/2088FF",
+    level: "Intermediate",
+    experienceStart: "2025-11",
+    category: ["CI/CD Pipelines", "Workflow Automation", "Testing Automation"],
+    filterCategories: ["devops"],
+  },
+  {
+    name: "Terraform",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/terraform/844FBA",
+    level: "Beginner",
+    experienceStart: "2025-12",
+    category: [
+      "Infrastructure as Code",
+      "Cloud Provisioning",
+      "State Management",
+    ],
+    filterCategories: ["devops", "cloud"],
+  },
+  {
     name: "NGINX",
     tier: "core",
     logo: "https://cdn.simpleicons.org/nginx/009639",
@@ -392,28 +447,8 @@ export const technicalSkills = [
     category: ["API Gateway", "Traffic Routing", "Rate Limiting & Plugins"],
     filterCategories: ["backend", "devops"],
   },
-  {
-    name: "Terraform",
-    tier: "applied",
-    logo: "https://cdn.simpleicons.org/terraform/844FBA",
-    level: "Beginner",
-    experienceStart: "2025-12",
-    category: [
-      "Infrastructure as Code",
-      "Cloud Provisioning",
-      "State Management",
-    ],
-    filterCategories: ["devops", "cloud"],
-  },
-  {
-    name: "Datadog",
-    tier: "applied",
-    logo: "https://cdn.simpleicons.org/datadog/632CA6",
-    level: "Beginner",
-    experienceStart: "2026-01",
-    category: ["APM", "Metrics Monitoring", "Log Aggregation"],
-    filterCategories: ["devops", "cloud"],
-  },
+
+  // ─── Observability ────────────────────────────────────────────────────────────
   {
     name: "Prometheus",
     tier: "applied",
@@ -460,18 +495,16 @@ export const technicalSkills = [
     filterCategories: ["devops"],
   },
   {
-    name: "k6",
+    name: "Datadog",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/k6/FF6A00",
-    level: "Intermediate",
-    experienceStart: "2025-12",
-    category: [
-      "Load Testing",
-      "Performance Benchmarking",
-      "Reliability Testing",
-    ],
-    filterCategories: ["testing"],
+    logo: "https://cdn.simpleicons.org/datadog/632CA6",
+    level: "Beginner",
+    experienceStart: "2026-01",
+    category: ["APM", "Metrics Monitoring", "Log Aggregation"],
+    filterCategories: ["devops", "cloud"],
   },
+
+  // ─── Cloud ────────────────────────────────────────────────────────────────────
   {
     name: "AWS",
     tier: "core",
@@ -492,15 +525,6 @@ export const technicalSkills = [
     filterCategories: ["cloud"],
   },
   {
-    name: "Supabase",
-    tier: "core",
-    logo: "https://cdn.simpleicons.org/supabase/3FCF8E",
-    level: "Intermediate",
-    experienceStart: "2025-02",
-    category: ["Backend-as-a-Service", "Managed Database", "Authentication"],
-    filterCategories: ["cloud", "database", "backend"],
-  },
-  {
     name: "Vercel",
     tier: "core",
     logo: "https://cdn.simpleicons.org/vercel/000000",
@@ -511,14 +535,16 @@ export const technicalSkills = [
     filterCategories: ["cloud", "frontend"],
   },
   {
-    name: "Render",
+    name: "Supabase",
     tier: "core",
-    logo: "https://cdn.simpleicons.org/render/46E3B7",
-    level: "Advanced",
-    experienceStart: "2025-01",
-    category: ["Backend Hosting", "Service Scaling", "Managed Infrastructure"],
-    filterCategories: ["cloud", "backend"],
+    logo: "https://cdn.simpleicons.org/supabase/3FCF8E",
+    level: "Intermediate",
+    experienceStart: "2025-02",
+    category: ["Backend-as-a-Service", "Managed Database", "Authentication"],
+    filterCategories: ["cloud", "database", "backend"],
   },
+
+  // ─── Testing ──────────────────────────────────────────────────────────────────
   {
     name: "Jest",
     tier: "applied",
@@ -529,14 +555,20 @@ export const technicalSkills = [
     filterCategories: ["testing", "frontend", "backend"],
   },
   {
-    name: "Playwright",
-    tier: "exploration",
-    logo: "/skills/playwright.png",
-    level: "Beginner",
+    name: "k6",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/k6/FF6A00",
+    level: "Intermediate",
     experienceStart: "2025-12",
-    category: ["End-to-end Testing", "Browser Automation", "UI Testing"],
-    filterCategories: ["testing", "frontend"],
+    category: [
+      "Load Testing",
+      "Performance Benchmarking",
+      "Reliability Testing",
+    ],
+    filterCategories: ["testing"],
   },
+
+  // ─── Data Science ─────────────────────────────────────────────────────────────
   {
     name: "NumPy",
     tier: "applied",
@@ -578,6 +610,8 @@ export const technicalSkills = [
     ],
     filterCategories: ["data-science"],
   },
+
+  // ─── AI / ML ──────────────────────────────────────────────────────────────────
   {
     name: "Tesseract OCR",
     tier: "applied",
@@ -602,11 +636,29 @@ export const technicalSkills = [
   },
   {
     name: "scikit-learn",
-    tier: "exploration",
+    tier: "applied",
     logo: "https://cdn.simpleicons.org/scikitlearn/F7931E",
-    level: "Beginner",
+    level: "Intermediate",
     experienceStart: "2025-12",
     category: ["Machine Learning", "Model Training", "Model Evaluation"],
+    filterCategories: ["ai-ml"],
+  },
+  {
+    name: "spaCy",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/spacy/09A3D5",
+    level: "Intermediate",
+    experienceStart: "2025-06",
+    category: ["NLP Preprocessing", "Tokenization", "Linguistic Analysis"],
+    filterCategories: ["ai-ml"],
+  },
+  {
+    name: "PyTorch",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/pytorch/EE4C2C",
+    level: "Beginner",
+    experienceStart: "2025-06",
+    category: ["Deep Learning", "Tensor Computing", "Model Inference"],
     filterCategories: ["ai-ml"],
   },
 ];

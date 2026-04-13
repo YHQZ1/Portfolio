@@ -29,6 +29,7 @@ function useTypewriter(text, speed = 80) {
 
   return displayText;
 }
+
 const FILTERS = [
   { label: "Languages", key: "languages" },
   { label: "Frontend", key: "frontend" },
@@ -308,7 +309,6 @@ export default function Profile() {
 
         <section id="my-work" className="mb-10 sm:mb-16 md:mb-20">
           <div>
-            {/* MAIN SECTION TITLE */}
             <h2
               className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-3 relative inline-block group ${
                 darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
@@ -318,7 +318,6 @@ export default function Profile() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"></span>
             </h2>
 
-            {/* SECTION DESCRIPTION (LIKE SKILLS SECTION) */}
             <p
               className={`text-sm max-w-3xl mb-10 ${
                 darkMode ? "text-[#888]" : "text-[#666]"
@@ -477,7 +476,7 @@ export default function Profile() {
                       ))}
                     </div>
 
-                    <div className="mt-auto">
+                    <div className="flex gap-4 sm:gap-6 mt-auto">
                       <a
                         href={project.github}
                         target="_blank"
@@ -491,6 +490,22 @@ export default function Profile() {
                           Code
                         </span>
                       </a>
+
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-center gap-2 text-sm font-light ${
+                            darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                          }`}
+                        >
+                          <FaExternalLinkAlt className="text-sm" />
+                          <span className="relative after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">
+                            Live
+                          </span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -599,10 +614,8 @@ export default function Profile() {
     items-stretch
   "
           >
-            {/* GitHub Activity */}
             <GitHubActivity darkMode={darkMode} />
 
-            {/* Editorial text — desktop only */}
             <div className="hidden lg:flex items-center pl-6">
               <h3
                 className={`
@@ -708,6 +721,7 @@ export default function Profile() {
             </div>
           </div>
         </section>
+
         <div
           className={`w-full h-px ${
             darkMode ? "bg-[#2a2a2a]" : "bg-[#e8e8e8]"
@@ -723,6 +737,7 @@ export default function Profile() {
           </p>
         </div>
       </div>
+
       <div
         className={`
     fixed bottom-6 left-6 text-xs z-40
