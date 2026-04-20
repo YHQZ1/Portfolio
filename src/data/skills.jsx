@@ -165,7 +165,7 @@ export const technicalSkills = [
   {
     name: "GraphQL",
     tier: "applied",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1200px-GraphQL_Logo.svg.png",
+    logo: "https://cdn.simpleicons.org/graphql/E10098",
     level: "Beginner",
     experienceStart: "2025-10",
     category: ["Schema Design", "Query Resolution", "API Aggregation"],
@@ -612,6 +612,16 @@ export const technicalSkills = [
   },
 
   // ─── AI / ML ──────────────────────────────────────────────────────────────────
+  {
+    name: "Ollama",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/ollama/000000",
+    darkLogo: "https://cdn.simpleicons.org/ollama/FFFFFF",
+    level: "Intermediate",
+    experienceStart: "2025-06",
+    category: ["Local LLMs", "Model Orchestration", "AI Agents"],
+    filterCategories: ["ai-ml", "backend"],
+  },
   {
     name: "Tesseract OCR",
     tier: "applied",
