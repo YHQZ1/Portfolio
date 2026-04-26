@@ -20,6 +20,16 @@ export const projects = [
     image: "/projects/payflow.png",
   },
   {
+    title: "Dojo",
+    category: "selected",
+    description:
+      "A self-hosted competitive coding platform built for recruiting programmers. Spin up a contest room, share a code, and let candidates compete in real time — with a built-in judge, live leaderboard, and a proctored environment that streams verdicts the moment code executes.",
+    tags: ["Distributed Systems", "Real-time Systems", "Developer Tooling"],
+    github: "https://github.com/YHQZ1/Dojo",
+    live: "https://dojov1.vercel.app",
+    image: "/projects/dojo.png",
+  },
+  {
     title: "BitLink",
     category: "selected",
     description:

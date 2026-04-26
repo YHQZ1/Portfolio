@@ -208,6 +208,20 @@ export const technicalSkills = [
     filterCategories: ["backend"],
   },
   {
+    name: "Socket.io",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/socketdotio/010101",
+    darkLogo: "https://cdn.simpleicons.org/socketdotio/FFFFFF",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: [
+      "Real-time Communication",
+      "Event-driven Architecture",
+      "WebSocket Abstraction",
+    ],
+    filterCategories: ["backend", "frontend"],
+  },
+  {
     name: "Zod",
     tier: "applied",
     logo: "https://cdn.simpleicons.org/zod/408AFF",
@@ -279,6 +293,15 @@ export const technicalSkills = [
     level: "Advanced",
     experienceStart: "2025-07",
     category: ["Utility-first Styling", "Responsive Design", "UI Engineering"],
+    filterCategories: ["frontend"],
+  },
+  {
+    name: "Zustand",
+    tier: "applied",
+    logo: "/skills/zustand.png",
+    level: "Intermediate",
+    experienceStart: "2025-12",
+    category: ["State Management", "Global State", "React State"],
     filterCategories: ["frontend"],
   },
 
