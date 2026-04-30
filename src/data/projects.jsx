@@ -110,6 +110,16 @@ export const projects = [
     image: "/projects/verq.png",
   },
   {
+    title: "Bumper",
+    category: "focused",
+    description:
+      "A bump allocator (arena/region allocator) built from scratch in Rust. Pre-allocates a fixed memory block and hands out slices via pointer bumping — zero per-object overhead, no garbage collector, automatic cleanup on drop. Benchmarked at 7-8x faster than heap allocation for short-lived data.",
+    tags: ["Rust", "Memory Management", "Systems Programming"],
+    github: "https://github.com/YHQZ1/Bumper",
+    live: null,
+    image: "/projects/bumper.png",
+  },
+  {
     title: "Matchmaking Engine",
     category: "focused",
     description:
