@@ -49,7 +49,7 @@ export const toolsAndWorkflow = [
   },
   {
     name: "VS Code",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png",
+    logo: "/skills/vscode.png",
     category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
   },
   {
