@@ -374,6 +374,15 @@ export const technicalSkills = [
     filterCategories: ["database", "backend"],
   },
   {
+    name: "Cassandra",
+    tier: "exploration",
+    logo: "https://cdn.simpleicons.org/apachecassandra/1287B1",
+    level: "Beginner",
+    experienceStart: "2026-05",
+    category: ["Distributed Database", "High Write Throughput", "NoSQL"],
+    filterCategories: ["database"],
+  },
+  {
     name: "Prisma",
     tier: "applied",
     logo: "https://cdn.simpleicons.org/prisma/2D3748",
@@ -581,6 +590,15 @@ export const technicalSkills = [
     level: "Intermediate",
     experienceStart: "2025-09",
     category: ["Cloud Infrastructure", "Managed Services", "Compute & Storage"],
+    filterCategories: ["cloud"],
+  },
+  {
+    name: "Azure",
+    tier: "exploration",
+    logo: "/skills/azure.png",
+    level: "Beginner",
+    experienceStart: "2026-05",
+    category: ["Cloud Infrastructure", "Managed Services", "Enterprise Cloud"],
     filterCategories: ["cloud"],
   },
   {

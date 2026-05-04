@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "Escrow Stock Exchange | ESX",
+    category: "selected",
+    description:
+      "A securities exchange infrastructure built from scratch — the engine that powers trade matching, clearing, and settlement. Implements the same core systems that run major exchanges like NASDAQ, NSE, and BSE, rebuilt end to end. 8 microservices handle everything from order intake to final settlement, communicating over Kafka and gRPC.",
+    tags: ["Distributed Systems", "FinTech", "Event-Driven Architecture"],
+    github: "https://github.com/YHQZ1/esx",
+    live: null,
+    image: "/projects/esx.png",
+  },
+  {
     title: "Hatch",
     category: "selected",
     description:
@@ -41,7 +51,7 @@ export const projects = [
   },
   {
     title: "Raveline",
-    category: "focused",
+    category: "selected",
     description:
       "A decoupled moderation decision layer that evaluates user-generated content before publication. Built as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows — isolating safety logic cleanly from core product services.",
     tags: ["Event-Driven Systems", "Policy Engines", "System Design"],
@@ -169,14 +179,14 @@ export const projects = [
     live: null,
     image: "/projects/cfhub.png",
   },
-  {
-    title: "QuickStream",
-    category: "focused",
-    description:
-      "A lightweight browser extension enabling keyboard-driven control of video playback speed. Uses DOM manipulation and browser APIs to modify media elements without UI overhead.",
-    tags: ["Web APIs", "Browser Extensions", "UX Optimization"],
-    github: "https://github.com/YHQZ1/quickstream",
-    live: null,
-    image: "/projects/quickstream.png",
-  },
+  // {
+  //   title: "QuickStream",
+  //   category: "focused",
+  //   description:
+  //     "A lightweight browser extension enabling keyboard-driven control of video playback speed. Uses DOM manipulation and browser APIs to modify media elements without UI overhead.",
+  //   tags: ["Web APIs", "Browser Extensions", "UX Optimization"],
+  //   github: "https://github.com/YHQZ1/quickstream",
+  //   live: null,
+  //   image: "/projects/quickstream.png",
+  // },
 ];
