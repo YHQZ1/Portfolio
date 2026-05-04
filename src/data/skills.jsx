@@ -114,6 +114,19 @@ export const technicalSkills = [
     ],
     filterCategories: ["languages"],
   },
+  {
+    name: "Dart",
+    tier: "applied",
+    logo: "/skills/dart.png",
+    level: "Beginner",
+    experienceStart: "2026-05",
+    category: [
+      "Object-Oriented Programming",
+      "Client-side Development",
+      "Flutter Ecosystem",
+    ],
+    filterCategories: ["languages", "app-development"],
+  },
 
   // ─── Backend — Runtimes & Frameworks ─────────────────────────────────────────
   {
@@ -299,6 +312,15 @@ export const technicalSkills = [
     experienceStart: "2025-10",
     category: ["SSR / SSG", "Full-stack Framework", "Performance Optimization"],
     filterCategories: ["frontend", "backend"],
+  },
+  {
+    name: "Flutter",
+    tier: "applied",
+    logo: "/skills/flutter.png",
+    level: "Beginner",
+    experienceStart: "2026-05",
+    category: ["Cross-platform Apps", "Declarative UI", "Mobile Development"],
+    filterCategories: ["frontend", "app-development"],
   },
   {
     name: "Tailwind CSS",

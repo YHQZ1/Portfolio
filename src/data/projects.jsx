@@ -80,6 +80,16 @@ export const projects = [
     image: "/projects/provenance.png",
   },
   {
+    title: "SplitPe",
+    category: "focused",
+    description:
+      "Bill splitting that actually makes sense. Enter the total, add your friends, and SplitPe fires off individual UPI payment links to everyone in one tap. No math. No reminders. No chasing people for money. Just links that open GPay, PhonePe, or Paytm with the exact amount pre-filled.",
+    tags: ["Flutter", "UPI Integration", "Mobile", "Payments"],
+    github: "https://github.com/YHQZ1/SplitPe",
+    live: null,
+    image: "/projects/splitpe.png",
+  },
+  {
     title: "OneGov",
     category: "focused",
     description:
