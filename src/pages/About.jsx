@@ -138,7 +138,7 @@ export default function About() {
                   }`}
                 >
                   Outside of tech, I try to maintain a steady balance and focus
-                  on the things that keep me grounded. I don’t overthink it. I
+                  on the things that keep me grounded. I don't overthink it. I
                   just move toward whatever feels right at the time.
                 </p>
               </div>
@@ -169,9 +169,9 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I’m always trying out new ideas and figuring out what I can
+                  I'm always trying out new ideas and figuring out what I can
                   improve or build next. I keep things simple and move at my own
-                  pace. If you ever want to reach out or just say hi, I’m
+                  pace. If you ever want to reach out or just say hi, I'm
                   around.
                 </p>
               </div>
@@ -195,7 +195,6 @@ export default function About() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
-            {/* 1. Competitive Programming */}
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
                 darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
@@ -220,7 +219,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* 2. System Design */}
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
                 darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
@@ -245,7 +243,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* 3. Distributed Systems & Reliability */}
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
                 darkMode ? "border-[#9aa0a6]" : "border-[#5f6368]"
@@ -270,7 +267,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* 4. DevOps & Cloud */}
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
                 darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
@@ -295,7 +291,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* 5. Full-Stack Development */}
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
                 darkMode ? "border-[#81c995]" : "border-[#34a853]"
@@ -320,7 +315,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* 6. Applied Machine Learning */}
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
                 darkMode ? "border-[#c58af9]" : "border-[#a142f4]"
@@ -365,18 +359,105 @@ export default function About() {
           </h2>
 
           <div className="space-y-8 sm:space-y-10 md:space-y-12">
+            {/* GDSC President */}
+            <div
+              className={`border-l-4 ${
+                darkMode ? "border-[#c58af9]" : "border-[#a142f4]"
+              } pl-4 sm:pl-6 md:pl-8`}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <img
+                  src="/roles/gdsc.png"
+                  alt="GDSC logo"
+                  className="w-9 h-9 object-contain"
+                />
+                <h3
+                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
+                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                  } tracking-tight`}
+                >
+                  President
+                </h3>
+              </div>
+              <p
+                className={`text-sm italic mb-3 sm:mb-4 ${
+                  darkMode ? "text-[#666]" : "text-[#999]"
+                }`}
+              >
+                Google Developer Students Club, SIT Pune
+              </p>
+              <p
+                className={`text-lg sm:text-xl leading-[1.6] ${
+                  darkMode ? "text-[#888]" : "text-[#666]"
+                }`}
+              >
+                Leading GDSC SIT Pune as President, driving technical
+                initiatives, community growth, and developer culture on campus.
+                Overseeing all club operations, mentoring members across
+                domains, and building partnerships to expand the club's impact
+                within and beyond the institution.
+              </p>
+            </div>
+
+            {/* GSSoC 2026 */}
+            <div
+              className={`border-l-4 ${
+                darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
+              } pl-4 sm:pl-6 md:pl-8`}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <img
+                  src="/roles/gssoc.png"
+                  alt="GSSoC logo"
+                  className="w-9 h-9 object-contain rounded-sm"
+                />
+                <h3
+                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
+                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                  } tracking-tight`}
+                >
+                  Open Source Contributor
+                </h3>
+              </div>
+              <p
+                className={`text-sm italic mb-3 sm:mb-4 ${
+                  darkMode ? "text-[#666]" : "text-[#999]"
+                }`}
+              >
+                GirlScript Summer of Code / GSSoC, 2026
+              </p>
+              <p
+                className={`text-lg sm:text-xl leading-[1.6] ${
+                  darkMode ? "text-[#888]" : "text-[#666]"
+                }`}
+              >
+                Selected as a contributor for GSSoC 2026 under the Open Source
+                Track. Contributing to open source projects as part of a
+                globally recognized program, collaborating with maintainers and
+                the developer community to ship meaningful improvements.
+              </p>
+            </div>
+
+            {/* CP Co-Head */}
             <div
               className={`border-l-4 ${
                 darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light mb-2 leading-[1.3] ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Competitive Programming Co-Head
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <img
+                  src="/roles/gdsc.png"
+                  alt="GDSC logo"
+                  className="w-9 h-9 object-contain"
+                />
+                <h3
+                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
+                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                  } tracking-tight`}
+                >
+                  Competitive Programming Co-Head
+                </h3>
+              </div>
               <p
                 className={`text-sm italic mb-3 sm:mb-4 ${
                   darkMode ? "text-[#666]" : "text-[#999]"
@@ -397,18 +478,26 @@ export default function About() {
               </p>
             </div>
 
+            {/* Media Co-Head */}
             <div
               className={`border-l-4 ${
                 darkMode ? "border-[#81c995]" : "border-[#34a853]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light mb-2 leading-[1.3] ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Media Co-Head
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <img
+                  src="/roles/gdsc.png"
+                  alt="GDSC logo"
+                  className="w-9 h-9 object-contain"
+                />
+                <h3
+                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
+                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                  } tracking-tight`}
+                >
+                  Media Co-Head
+                </h3>
+              </div>
               <p
                 className={`text-sm italic mb-3 sm:mb-4 ${
                   darkMode ? "text-[#666]" : "text-[#999]"
@@ -429,18 +518,29 @@ export default function About() {
               </p>
             </div>
 
+            {/* Social Media Head */}
             <div
               className={`border-l-4 ${
                 darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light mb-2 leading-[1.3] ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Social Media Head
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <img
+                  src="/roles/symbitech.png"
+                  alt="SymbiTech logo"
+                  className="w-9 h-9 object-contain rounded-sm"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                  }}
+                />
+                <h3
+                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
+                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                  } tracking-tight`}
+                >
+                  Social Media Head
+                </h3>
+              </div>
               <p
                 className={`text-sm italic mb-3 sm:mb-4 ${
                   darkMode ? "text-[#666]" : "text-[#999]"
