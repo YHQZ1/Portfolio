@@ -1,5 +1,24 @@
 export const toolsAndWorkflow = [
   {
+    name: "VS Code",
+    logo: "/skills/vscode.png",
+    category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
+  },
+  {
+    name: "Jupyter Notebook",
+    logo: "https://cdn.simpleicons.org/jupyter/F37626",
+    category: [
+      "Interactive Computing",
+      "Data Exploration",
+      "ML Experimentation",
+    ],
+  },
+  {
+    name: "Google Colab",
+    logo: "https://cdn.simpleicons.org/googlecolab/F9AB00",
+    category: ["Cloud Notebooks", "Rapid Prototyping", "ML Development"],
+  },
+  {
     name: "Postman",
     logo: "https://cdn.simpleicons.org/postman/FF6C37",
     category: ["API Testing", "Request Debugging", "API Documentation"],
@@ -9,6 +28,11 @@ export const toolsAndWorkflow = [
     logo: "https://cdn.simpleicons.org/curl/073551",
     darkLogo: "https://cdn.simpleicons.org/curl/FFFFFF",
     category: ["HTTP Requests", "Network Debugging", "Command-line Tooling"],
+  },
+  {
+    name: "DBeaver",
+    logo: "https://cdn.simpleicons.org/dbeaver/312923",
+    category: ["Database GUI", "Query Execution", "Schema Visualization"],
   },
   {
     name: "OpenAPI",
@@ -48,11 +72,6 @@ export const toolsAndWorkflow = [
     ],
   },
   {
-    name: "VS Code",
-    logo: "/skills/vscode.png",
-    category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
-  },
-  {
     name: "Upstash",
     logo: "https://cdn.simpleicons.org/upstash/00E9A3",
     category: [
@@ -90,19 +109,5 @@ export const toolsAndWorkflow = [
     name: "Figma",
     logo: "/skills/figma.png",
     category: ["UI Design", "Prototyping", "Design Collaboration"],
-  },
-  {
-    name: "Jupyter Notebook",
-    logo: "https://cdn.simpleicons.org/jupyter/F37626",
-    category: [
-      "Interactive Computing",
-      "Data Exploration",
-      "ML Experimentation",
-    ],
-  },
-  {
-    name: "Google Colab",
-    logo: "https://cdn.simpleicons.org/googlecolab/F9AB00",
-    category: ["Cloud Notebooks", "Rapid Prototyping", "ML Development"],
   },
 ];

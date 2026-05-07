@@ -332,6 +332,15 @@ export const technicalSkills = [
     filterCategories: ["frontend"],
   },
   {
+    name: "Redux",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/redux/764ABC",
+    level: "Intermediate",
+    experienceStart: "2026-04",
+    category: ["State Management", "Global State", "React State"],
+    filterCategories: ["frontend"],
+  },
+  {
     name: "Zustand",
     tier: "applied",
     logo: "/skills/zustand.png",
