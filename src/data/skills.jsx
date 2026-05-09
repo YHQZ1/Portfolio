@@ -21,7 +21,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/javascript/F7DF1E",
     level: "Advanced",
     experienceStart: "2024-07",
-    category: ["Event-driven Programming", "Web Development", "Runtime Systems"],
+    category: [
+      "Event-driven Programming",
+      "Web Development",
+      "Runtime Systems",
+    ],
     filterCategories: ["languages", "frontend", "backend"],
   },
   {
@@ -49,7 +53,11 @@ export const technicalSkills = [
     darkLogo: "https://cdn.simpleicons.org/rust/FFFFFF",
     level: "Beginner",
     experienceStart: "2026-04",
-    category: ["Memory Management", "Systems Programming", "Zero-cost Abstractions"],
+    category: [
+      "Memory Management",
+      "Systems Programming",
+      "Zero-cost Abstractions",
+    ],
     filterCategories: ["languages", "backend", "low-level"],
   },
   {
@@ -67,7 +75,11 @@ export const technicalSkills = [
     logo: "/skills/java.png",
     level: "Advanced",
     experienceStart: "2025-01",
-    category: ["Object-Oriented Programming", "Data Structures", "JVM Ecosystem"],
+    category: [
+      "Object-Oriented Programming",
+      "Data Structures",
+      "JVM Ecosystem",
+    ],
     filterCategories: ["languages"],
   },
   {
@@ -94,7 +106,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/cplusplus/00599C",
     level: "Intermediate",
     experienceStart: "2024-01",
-    category: ["System Programming", "Memory Management", "Performance Optimization"],
+    category: [
+      "System Programming",
+      "Memory Management",
+      "Performance Optimization",
+    ],
     filterCategories: ["languages", "low-level"],
   },
   {
@@ -103,7 +119,11 @@ export const technicalSkills = [
     logo: "/skills/dart.png",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["Object-Oriented Programming", "Client-side Development", "Flutter Ecosystem"],
+    category: [
+      "Object-Oriented Programming",
+      "Client-side Development",
+      "Flutter Ecosystem",
+    ],
     filterCategories: ["languages", "app-development"],
   },
   {
@@ -150,7 +170,11 @@ export const technicalSkills = [
     darkLogo: "https://cdn.simpleicons.org/fastify/FFFFFF",
     level: "Intermediate",
     experienceStart: "2026-01",
-    category: ["High-performance APIs", "Schema Validation", "Plugin Architecture"],
+    category: [
+      "High-performance APIs",
+      "Schema Validation",
+      "Plugin Architecture",
+    ],
     filterCategories: ["backend"],
   },
   {
@@ -178,7 +202,11 @@ export const technicalSkills = [
     darkLogo: "/skills/grpc-dark.png",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["RPC Framework", "Protocol Buffers", "High-performance Services"],
+    category: [
+      "RPC Framework",
+      "Protocol Buffers",
+      "High-performance Services",
+    ],
     filterCategories: ["backend", "low-level"],
   },
   {
@@ -187,7 +215,11 @@ export const technicalSkills = [
     logo: "/skills/protobuf.png",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["IDL Schemas", "Binary Serialization", "Cross-service Contracts"],
+    category: [
+      "IDL Schemas",
+      "Binary Serialization",
+      "Cross-service Contracts",
+    ],
     filterCategories: ["backend", "low-level"],
   },
   {
@@ -205,7 +237,11 @@ export const technicalSkills = [
     logo: "/skills/websocket.png",
     level: "Intermediate",
     experienceStart: "2026-04",
-    category: ["Real-time Communication", "Bidirectional Streaming", "Go / Node.js"],
+    category: [
+      "Real-time Communication",
+      "Bidirectional Streaming",
+      "Go / Node.js",
+    ],
     filterCategories: ["backend", "real-time"],
   },
   {
@@ -215,7 +251,11 @@ export const technicalSkills = [
     darkLogo: "https://cdn.simpleicons.org/socketdotio/FFFFFF",
     level: "Intermediate",
     experienceStart: "2026-04",
-    category: ["Real-time Communication", "Event-driven Architecture", "WebSocket Abstraction"],
+    category: [
+      "Real-time Communication",
+      "Event-driven Architecture",
+      "WebSocket Abstraction",
+    ],
     filterCategories: ["backend", "frontend", "real-time"],
   },
   {
@@ -234,7 +274,11 @@ export const technicalSkills = [
     darkLogo: "https://cdn.simpleicons.org/apachekafka/FFFFFF",
     level: "Intermediate",
     experienceStart: "2025-12",
-    category: ["Event Streaming", "Distributed Messaging", "High-throughput Systems"],
+    category: [
+      "Event Streaming",
+      "Distributed Messaging",
+      "High-throughput Systems",
+    ],
     filterCategories: ["backend", "devops", "real-time"],
   },
   {
@@ -276,12 +320,29 @@ export const technicalSkills = [
     filterCategories: ["frontend", "backend"],
   },
   {
+    name: "Astro",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/astro/FF5D01",
+    level: "Intermediate",
+    experienceStart: "2026-05",
+    category: [
+      "Static Site Generation",
+      "Island Architecture",
+      "Content-driven Sites",
+    ],
+    filterCategories: ["frontend"],
+  },
+  {
     name: "D3.js",
     tier: "applied",
     logo: "https://cdn.simpleicons.org/d3/F9A03C",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["Data Visualization", "Interactive Graph Rendering", "SVG-based Visualizations"],
+    category: [
+      "Data Visualization",
+      "Interactive Graph Rendering",
+      "SVG-based Visualizations",
+    ],
     filterCategories: ["frontend", "data-science"],
   },
   {
@@ -326,7 +387,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/postgresql/4169E1",
     level: "Intermediate",
     experienceStart: "2025-03",
-    category: ["Relational Database", "Indexing Strategies", "Query Optimization"],
+    category: [
+      "Relational Database",
+      "Indexing Strategies",
+      "Query Optimization",
+    ],
     filterCategories: ["database"],
   },
   {
@@ -353,7 +418,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/clickhouse/FFCC01",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["Columnar Storage", "Time-series Analytics", "High-throughput Ingestion"],
+    category: [
+      "Columnar Storage",
+      "Time-series Analytics",
+      "High-throughput Ingestion",
+    ],
     filterCategories: ["database", "backend"],
   },
   {
@@ -426,7 +495,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/docker/2496ED",
     level: "Intermediate",
     experienceStart: "2025-06",
-    category: ["Containerization", "Image Optimization", "Local Dev Environments"],
+    category: [
+      "Containerization",
+      "Image Optimization",
+      "Local Dev Environments",
+    ],
     filterCategories: ["devops"],
   },
   {
@@ -435,7 +508,11 @@ export const technicalSkills = [
     logo: "/skills/ebpf.png",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["Kernel Instrumentation", "Linux Observability", "Tracepoints & Kprobes"],
+    category: [
+      "Kernel Instrumentation",
+      "Linux Observability",
+      "Tracepoints & Kprobes",
+    ],
     filterCategories: ["backend", "devops", "low-level", "observability"],
   },
   {
@@ -444,7 +521,11 @@ export const technicalSkills = [
     logo: "/skills/aya.png",
     level: "Beginner",
     experienceStart: "2026-04",
-    category: ["Rust eBPF Framework", "Kernel-space Programming", "Userspace Loaders"],
+    category: [
+      "Rust eBPF Framework",
+      "Kernel-space Programming",
+      "Userspace Loaders",
+    ],
     filterCategories: ["backend", "devops", "low-level"],
   },
   {
@@ -453,7 +534,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/kubernetes/326CE5",
     level: "Intermediate",
     experienceStart: "2025-09",
-    category: ["Container Orchestration", "Cluster Management", "Horizontal Scaling"],
+    category: [
+      "Container Orchestration",
+      "Cluster Management",
+      "Horizontal Scaling",
+    ],
     filterCategories: ["devops"],
   },
   {
@@ -490,7 +575,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/terraform/844FBA",
     level: "Beginner",
     experienceStart: "2025-12",
-    category: ["Infrastructure as Code", "Cloud Provisioning", "State Management"],
+    category: [
+      "Infrastructure as Code",
+      "Cloud Provisioning",
+      "State Management",
+    ],
     filterCategories: ["devops", "cloud"],
   },
   {
@@ -536,7 +625,11 @@ export const technicalSkills = [
     darkLogo: "https://cdn.simpleicons.org/opentelemetry/FFFFFF",
     level: "Beginner",
     experienceStart: "2026-03",
-    category: ["Distributed Tracing", "Telemetry Instrumentation", "Observability Standards"],
+    category: [
+      "Distributed Tracing",
+      "Telemetry Instrumentation",
+      "Observability Standards",
+    ],
     filterCategories: ["devops", "cloud", "observability"],
   },
   {
@@ -545,7 +638,11 @@ export const technicalSkills = [
     logo: "/skills/loki.png",
     level: "Beginner",
     experienceStart: "2026-05",
-    category: ["Log Aggregation", "Structured Logging", "Observability Pipelines"],
+    category: [
+      "Log Aggregation",
+      "Structured Logging",
+      "Observability Pipelines",
+    ],
     filterCategories: ["devops", "observability"],
   },
   {
@@ -554,7 +651,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/jaeger/66CFE3",
     level: "Beginner",
     experienceStart: "2026-03",
-    category: ["Trace Visualization", "Distributed Systems Debugging", "Latency Analysis"],
+    category: [
+      "Trace Visualization",
+      "Distributed Systems Debugging",
+      "Latency Analysis",
+    ],
     filterCategories: ["devops", "observability"],
   },
   {
@@ -637,7 +738,11 @@ export const technicalSkills = [
     logo: "https://cdn.simpleicons.org/k6/FF6A00",
     level: "Intermediate",
     experienceStart: "2025-12",
-    category: ["Load Testing", "Performance Benchmarking", "Reliability Testing"],
+    category: [
+      "Load Testing",
+      "Performance Benchmarking",
+      "Reliability Testing",
+    ],
     filterCategories: ["testing"],
   },
   {
@@ -674,7 +779,11 @@ export const technicalSkills = [
     logo: "/skills/seaborn.png",
     level: "Intermediate",
     experienceStart: "2025-12",
-    category: ["Statistical Visualization", "Exploratory Analysis", "Analytics"],
+    category: [
+      "Statistical Visualization",
+      "Exploratory Analysis",
+      "Analytics",
+    ],
     filterCategories: ["data-science"],
   },
   {
@@ -693,7 +802,11 @@ export const technicalSkills = [
     logo: "/skills/tesseract.png",
     level: "Intermediate",
     experienceStart: "2025-12",
-    category: ["Optical Character Recognition", "Document Parsing", "Text Extraction"],
+    category: [
+      "Optical Character Recognition",
+      "Document Parsing",
+      "Text Extraction",
+    ],
     filterCategories: ["ai-ml"],
   },
   {

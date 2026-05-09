@@ -1,4 +1,5 @@
 import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   SiLeetcode,
   SiCodeforces,
@@ -11,6 +12,11 @@ export const socialLinks = [
     name: "LinkedIn",
     icon: FaLinkedin,
     url: "https://www.linkedin.com/in/uttkarsh-ruparel/",
+  },
+  {
+    name: "X",
+    icon: FaXTwitter,
+    url: "https://x.com/yhqz01",
   },
   {
     name: "GitHub",
