@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "kprobe",
+    category: "selected",
+    description:
+      "Deep kernel observability for financial systems. An eBPF-powered flight recorder that captures every kernel-level event — CPU scheduling, memory pressure, network packet timing — without touching application code. Constructs full causal graphs of incidents and replays them deterministically, down to the exact kernel decision that caused a failure.",
+    tags: ["eBPF", "Distributed Systems", "FinTech"],
+    github: "https://github.com/YHQZ1/kprobe",
+    live: null,
+    image: "/projects/kprobe.png",
+  },
+  {
     title: "Escrow Stock Exchange | ESX",
     category: "selected",
     description:
@@ -51,7 +61,7 @@ export const projects = [
   },
   {
     title: "Raveline",
-    category: "selected",
+    category: "focused",
     description:
       "A decoupled moderation decision layer that evaluates user-generated content before publication. Built as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows — isolating safety logic cleanly from core product services.",
     tags: ["Event-Driven Systems", "Policy Engines", "System Design"],
