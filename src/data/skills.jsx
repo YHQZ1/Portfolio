@@ -127,6 +127,15 @@ export const technicalSkills = [
     filterCategories: ["languages", "app-development"],
   },
   {
+    name: "PHP",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/php/777BB4",
+    level: "Intermediate",
+    experienceStart: "2026-05",
+    category: ["Server-side Scripting", "Web Development", "CMS Platforms"],
+    filterCategories: ["languages", "backend"],
+  },
+  {
     name: "Node.js",
     tier: "core",
     logo: "https://cdn.simpleicons.org/nodedotjs/339933",
@@ -184,6 +193,15 @@ export const technicalSkills = [
     level: "Beginner",
     experienceStart: "2026-03",
     category: ["Modular Architecture", "REST & GraphQL APIs", "Microservices"],
+    filterCategories: ["backend"],
+  },
+  {
+    name: "Laravel",
+    tier: "applied",
+    logo: "https://cdn.simpleicons.org/laravel/FF2D20",
+    level: "Beginner",
+    experienceStart: "2026-05",
+    category: ["MVC Architecture", "Eloquent ORM", "RESTful APIs"],
     filterCategories: ["backend"],
   },
   {
