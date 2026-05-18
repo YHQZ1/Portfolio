@@ -666,7 +666,7 @@ export const technicalSkills = [
   {
     name: "Jaeger",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/jaeger/66CFE3",
+    logo: "skills/jaeger.png",
     level: "Beginner",
     experienceStart: "2026-03",
     category: [
