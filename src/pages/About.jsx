@@ -24,8 +24,7 @@ export default function About() {
   const { darkMode } = useTheme();
   const commands = [
     { label: "Core Competencies", id: "core-competencies" },
-    { label: "Roles & Contributions", id: "roles-and-contributions" },
-    { label: "Key Achievements", id: "key-achievements" },
+    { label: "Beyond the Code", id: "beyond-the-code" },
     { label: "Work Experience", id: "work-experience" },
   ];
 
@@ -121,9 +120,12 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  Hey, I'm Uttkarsh! I genuinely enjoy turning complex ideas
-                  into clean, working solutions. There's something special about
-                  watching a concept become something people actually use.
+                  I'm a backend and infrastructure engineer drawn to distributed
+                  systems — not because it's a buzzword, but because most people
+                  underestimate how much engineering discipline goes into
+                  keeping systems correct, fast, and honest under real load.
+                  That gap between "it works" and "it works at scale" is where
+                  things get genuinely interesting.
                 </p>
               </div>
 
@@ -137,9 +139,12 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  Outside of tech, I try to maintain a steady balance and focus
-                  on the things that keep me grounded. I don't overthink it. I
-                  just move toward whatever feels right at the time.
+                  I gravitate toward problems that are hard to get right —
+                  event-driven architectures, low-latency pipelines,
+                  kernel-level observability. Go is my primary language for
+                  backend and cloud work, and the way it handles concurrency and
+                  maps cleanly to infrastructure problems keeps pulling me
+                  deeper into that space.
                 </p>
               </div>
 
@@ -153,9 +158,11 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I keep learning as I go and pick up skills that actually help
-                  me build better things. Tech moves fast, so I just stay
-                  curious and keep improving wherever I can.
+                  I'm a third-year CS student at SIT Pune building things that
+                  would hold up in production. I care about correctness,
+                  performance, and systems that don't fall apart when something
+                  goes wrong. If that's the kind of engineering your team does,
+                  we should talk.
                 </p>
               </div>
 
@@ -169,10 +176,9 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I'm always trying out new ideas and figuring out what I can
-                  improve or build next. I keep things simple and move at my own
-                  pace. If you ever want to reach out or just say hi, I'm
-                  around.
+                  I move between a lot of things outside of code — some
+                  structured, some not. I find that the best ideas usually show
+                  up when you're not staring at a screen.
                 </p>
               </div>
             </div>
@@ -197,7 +203,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
+                darkMode ? "border-[#81c995]" : "border-[#34a853]"
               }`}
             >
               <h3
@@ -205,17 +211,19 @@ export default function About() {
                   darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
                 } tracking-tight leading-[1.3]`}
               >
-                Competitive Programming
+                Distributed Systems & Reliability
               </h3>
               <p
                 className={`text-lg sm:text-xl leading-[1.6] ${
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Solving algorithmic problems to build strong fundamentals in
-                data structures, complexity analysis, and problem decomposition.
-                This discipline sharpens my ability to reason precisely and
-                write efficient, correct code under constraints.
+                Distributed systems are hard in ways that don't show up in
+                tutorials — clock skew, partial failures, split-brain scenarios,
+                cascading latency. I've spent serious time understanding how
+                systems behave when the happy path disappears, and I design with
+                that reality in mind from the start rather than bolting on
+                reliability as an afterthought.
               </p>
             </div>
 
@@ -236,34 +244,11 @@ export default function About() {
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Designing scalable architectures by balancing performance,
-                reliability, and cost. I focus on clear component boundaries,
-                well-understood trade-offs, and designs that evolve gracefully
-                as requirements change.
-              </p>
-            </div>
-
-            <div
-              className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#9aa0a6]" : "border-[#5f6368]"
-              }`}
-            >
-              <h3
-                className={`text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight leading-[1.3]`}
-              >
-                Distributed Systems & Reliability
-              </h3>
-              <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
-              >
-                Building systems that behave predictably under scale, latency,
-                and failure. I think deeply about consistency models, fault
-                tolerance, load distribution, and observability to ensure
-                correctness beyond the happy path.
+                I think in systems — component boundaries, failure modes,
+                consistency trade-offs, and the long-term cost of decisions made
+                under pressure. Good system design isn't about picking the right
+                buzzwords, it's about understanding what breaks first and
+                building so that when it does, nothing else falls with it.
               </p>
             </div>
 
@@ -284,16 +269,18 @@ export default function About() {
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Translating system designs into production-ready infrastructure.
-                From containerization and CI/CD to observability and secure
-                deployments, I engineer environments that are repeatable,
-                resilient, and scalable.
+                Infrastructure is just code with higher stakes. I treat
+                deployment pipelines, container orchestration, and cloud
+                architecture with the same engineering rigor as application code
+                — reproducible, observable, and built to survive the unexpected.
+                The gap between a system that works locally and one that holds
+                up in production is where I focus.
               </p>
             </div>
 
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#81c995]" : "border-[#34a853]"
+                darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
               }`}
             >
               <h3
@@ -301,41 +288,18 @@ export default function About() {
                   darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
                 } tracking-tight leading-[1.3]`}
               >
-                Full-Stack Development
+                Competitive Programming
               </h3>
               <p
                 className={`text-lg sm:text-xl leading-[1.6] ${
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Building end-to-end applications with a strong emphasis on
-                backend correctness and clean interfaces. I enjoy turning system
-                designs into intuitive user-facing products that feel fast,
-                reliable, and cohesive.
-              </p>
-            </div>
-
-            <div
-              className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#c58af9]" : "border-[#a142f4]"
-              }`}
-            >
-              <h3
-                className={`text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight leading-[1.3]`}
-              >
-                Applied Machine Learning
-              </h3>
-              <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
-              >
-                Applying machine learning where it meaningfully augments
-                systems. From data preprocessing and model training to
-                evaluation and deployment, I focus on ML workflows that are
-                reproducible, interpretable, and production-aware.
+                Algorithmic thinking isn't just a contest skill — it's how I
+                approach real engineering problems. Years of competitive
+                programming have sharpened my ability to reason about
+                complexity, identify bottlenecks before they appear, and write
+                code that's correct by construction rather than correct by luck.
               </p>
             </div>
           </div>
@@ -346,272 +310,129 @@ export default function About() {
             darkMode ? "bg-[#2a2a2a]" : "bg-[#e8e8e8]"
           } my-8 sm:my-10`}
         ></div>
-        <section id="roles-and-contributions" className="mb-16 sm:mb-20">
+
+        <section id="beyond-the-code" className="mb-16 sm:mb-20">
           <h2
             className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-12 sm:mb-16 relative inline-block group ${
               darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
             } tracking-tight leading-[1.2]`}
           >
-            Roles & Contributions
+            Beyond the Code
             <span
               className={`absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full`}
             ></span>
           </h2>
 
           <div className="space-y-8 sm:space-y-10 md:space-y-12">
-            {/* GDSC President */}
             <div
               className={`border-l-4 ${
                 darkMode ? "border-[#c58af9]" : "border-[#a142f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <img
-                  src="/roles/gdsc.png"
-                  alt="GDSC logo"
-                  className="w-9 h-9 object-contain"
-                />
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  } tracking-tight`}
-                >
-                  President
-                </h3>
-              </div>
+              <h3
+                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
+                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                } tracking-tight`}
+              >
+                President
+              </h3>
               <p
-                className={`text-sm italic mb-3 sm:mb-4 ${
-                  darkMode ? "text-[#666]" : "text-[#999]"
-                }`}
+                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
               >
                 Google Developer Students Club, SIT Pune
               </p>
               <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
+                className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Leading GDSC SIT Pune as President, driving technical
-                initiatives, community growth, and developer culture on campus.
-                Overseeing all club operations, mentoring members across
-                domains, and building partnerships to expand the club's impact
-                within and beyond the institution.
+                Running GDSC SIT Pune means more than organizing events — it
+                means setting the technical direction for a 100+ member
+                community. I focus on building a culture where engineers
+                actually learn by doing, not just attending. That means hands-on
+                sessions, real projects, and pushing members to build things
+                that go beyond coursework.
               </p>
             </div>
 
-            {/* GSSoC 2026 */}
-            <div
-              className={`border-l-4 ${
-                darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
-              } pl-4 sm:pl-6 md:pl-8`}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <img
-                  src="/roles/gssoc.png"
-                  alt="GSSoC logo"
-                  className="w-9 h-9 object-contain rounded-sm"
-                />
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  } tracking-tight`}
-                >
-                  Open Source Contributor
-                </h3>
-              </div>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${
-                  darkMode ? "text-[#666]" : "text-[#999]"
-                }`}
-              >
-                GirlScript Summer of Code / GSSoC, 2026
-              </p>
-              <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
-              >
-                Selected as a contributor for GSSoC 2026 under the Open Source
-                Track. Contributing to open source projects as part of a
-                globally recognized program, collaborating with maintainers and
-                the developer community to ship meaningful improvements.
-              </p>
-            </div>
-
-            {/* CP Co-Head */}
             <div
               className={`border-l-4 ${
                 darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <img
-                  src="/roles/gdsc.png"
-                  alt="GDSC logo"
-                  className="w-9 h-9 object-contain"
-                />
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  } tracking-tight`}
-                >
-                  Competitive Programming Co-Head
-                </h3>
-              </div>
+              <h3
+                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
+                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                } tracking-tight`}
+              >
+                Competitive Programming Co-Head
+              </h3>
               <p
-                className={`text-sm italic mb-3 sm:mb-4 ${
-                  darkMode ? "text-[#666]" : "text-[#999]"
-                }`}
+                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
               >
                 Google Developer Students Club, SIT Pune
               </p>
               <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
+                className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Passionately led coding challenges and creative problem-solving
-                sessions, inspiring students to explore new algorithms and push
-                the boundaries of their coding skills. Fostered a campus
-                environment where learning and collaboration thrived, organizing
-                weekly contests and mentorship sessions.
+                Built and ran the competitive programming vertical at GDSC —
+                designing problem sets, running contests, and mentoring students
+                through the grind of algorithmic thinking. The goal was never
+                leaderboard rankings, it was getting people to think precisely
+                under pressure. That's a skill that transfers everywhere.
               </p>
             </div>
 
-            {/* Media Co-Head */}
+            <div
+              className={`border-l-4 ${
+                darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
+              } pl-4 sm:pl-6 md:pl-8`}
+            >
+              <h3
+                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
+                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                } tracking-tight`}
+              >
+                Open Source Contributor
+              </h3>
+              <p
+                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
+              >
+                GirlScript Summer of Code / GSSoC, 2026
+              </p>
+              <p
+                className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
+              >
+                Selected as a contributor for GSSoC 2026, one of the largest
+                open source programs in India. Working directly with project
+                maintainers to ship real improvements — not documentation fixes,
+                but actual code that goes into production repositories used by
+                other developers.
+              </p>
+            </div>
+
             <div
               className={`border-l-4 ${
                 darkMode ? "border-[#81c995]" : "border-[#34a853]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <img
-                  src="/roles/gdsc.png"
-                  alt="GDSC logo"
-                  className="w-9 h-9 object-contain"
-                />
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  } tracking-tight`}
-                >
-                  Media Co-Head
-                </h3>
-              </div>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${
-                  darkMode ? "text-[#666]" : "text-[#999]"
-                }`}
+              <h3
+                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
+                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                } tracking-tight`}
               >
-                Google Developer Students Club, SIT Pune
+                Hackathon Finalist — ACE 2.0
+              </h3>
+              <p
+                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
+              >
+                September, 2025
               </p>
               <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
+                className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Led the club's digital presence with focused, high-impact media
-                campaigns. Produced crisp visuals, announcements, and event
-                coverage that boosted engagement and kept the community active
-                and informed. Helped the club reach and interact with thousands
-                of students across platforms.
-              </p>
-            </div>
-
-            {/* Social Media Head */}
-            <div
-              className={`border-l-4 ${
-                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
-              } pl-4 sm:pl-6 md:pl-8`}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <img
-                  src="/roles/symbitech.png"
-                  alt="SymbiTech logo"
-                  className="w-9 h-9 object-contain rounded-sm"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  } tracking-tight`}
-                >
-                  Social Media Head
-                </h3>
-              </div>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${
-                  darkMode ? "text-[#666]" : "text-[#999]"
-                }`}
-              >
-                SymbiTech, SIT Pune
-              </p>
-              <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
-              >
-                Brought events to life online through innovative digital
-                campaigns. Curated stories, visuals, and interactions that
-                sparked excitement and strengthened the tech community's
-                presence across platforms, reaching over 1,000+ students.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <div
-          className={`w-full h-px ${
-            darkMode ? "bg-[#2a2a2a]" : "bg-[#e8e8e8]"
-          } my-8 sm:my-10`}
-        ></div>
-        <section id="key-achievements" className="mb-16 sm:mb-20">
-          <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-12 sm:mb-16 relative inline-block group ${
-              darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-            } tracking-tight leading-[1.2]`}
-          >
-            Key Achievements
-            <span
-              className={`absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full`}
-            ></span>
-          </h2>
-
-          <div
-            className={`grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16`}
-          >
-            <div
-              className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#81c995]" : "border-[#34a853]"
-              }`}
-            >
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4 mb-3 sm:mb-4">
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  } tracking-tight`}
-                >
-                  Hackathon Finalist – ACE 2.0
-                </h3>
-                <span
-                  className={`text-sm mt-1 italic sm:mt-0 ${
-                    darkMode ? "text-[#666]" : "text-[#999]"
-                  }`}
-                >
-                  September, 2025
-                </span>
-              </div>
-              <p
-                className={`text-lg sm:text-xl leading-[1.6] ${
-                  darkMode ? "text-[#888]" : "text-[#666]"
-                }`}
-              >
-                Developed an innovative smart governance solution that stood out
-                among 400+ competing teams, demonstrating both technical skill
-                and real-world impact. Built a complete working prototype with
-                modern tech stack.
+                Reached the finals at ACE 2.0 among 400+ competing teams. Built
+                a complete working prototype under time pressure — the kind of
+                constraint that reveals whether your engineering foundations
+                actually hold up when there's no time to over-engineer anything.
               </p>
             </div>
           </div>
@@ -622,74 +443,28 @@ export default function About() {
             darkMode ? "bg-[#2a2a2a]" : "bg-[#e8e8e8]"
           } my-8 sm:my-10`}
         />
-        <section id="work-experience" className="mb-16 sm:mb-20">
+        
+        <section id="work-experience" className="mb-8 sm:mb-10">
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-12 sm:mb-16 relative inline-block group ${
+            className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-6 relative inline-block group ${
               darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
             } tracking-tight leading-[1.2]`}
           >
             Work Experience
-            <span
-              className={`absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full`}
-            ></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
           </h2>
 
-          <div
-            className={`border-l-4 ${
-              darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
-            } pl-4 sm:pl-6 md:pl-8`}
-          >
-            <div className="flex items-start sm:items-center gap-3 mb-3">
-              <img
-                src="https://iskconnyc.com/wp-content/uploads/2022/01/LOGO-Final_GLD-MED.png"
-                alt="ISKCON logo"
-                className="w-6 h-6 object-contain"
-              />
-
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4">
-                <h3
-                  className={`text-xl sm:text-2xl md:text-3xl font-light tracking-tight ${
-                    darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                  }`}
-                >
-                  Full Stack Developer
-                </h3>
-
-                <span
-                  className={`text-sm italic ${
-                    darkMode ? "text-[#666]" : "text-[#999]"
-                  }`}
-                >
-                  July, 2025 - November, 2025
-                </span>
-              </div>
-            </div>
-
+          <div className="flex flex-col items-center justify-center text-center">
             <p
-              className={`text-sm italic mb-3 ${
-                darkMode ? "text-[#666]" : "text-[#999]"
+              className={`text-lg sm:text-xl font-light italic ${
+                darkMode ? "text-[#444]" : "text-[#bbb]"
               }`}
             >
-              ISKCON · Grad Circle
-            </p>
-
-            <p
-              className={`text-lg sm:text-xl leading-[1.6] ${
-                darkMode ? "text-[#888]" : "text-[#666]"
-              }`}
-            >
-              Built GradCircle, a full-stack fundraising platform designed to
-              support government schools through alumni-driven and public
-              donation campaigns. Implemented the complete frontend experience,
-              role-based access control, and a voice-enabled bot for guided
-              interactions. Integrated secure payments using the Cashfree
-              payment gateway, supporting both monetary and in-kind donations.
-              Dockerized the application and deployed the frontend and backend
-              to production environments, focusing on reliability, security, and
-              ease of use for real-world fundraising campaigns.
+              Still in college. The GitHub disagrees.
             </p>
           </div>
         </section>
+
       </div>
       <div
         className={`

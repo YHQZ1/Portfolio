@@ -42,7 +42,6 @@ const FILTERS = [
   { label: "Observability", key: "observability" },
   { label: "Data Science", key: "data-science" },
   { label: "AI / ML", key: "ai-ml" },
-  { label: "App Development", key: "app-development" },
   { label: "Testing", key: "testing" },
 ];
 

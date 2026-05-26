@@ -51,93 +51,13 @@ export const projects = [
   },
   {
     title: "BitLink",
-    category: "selected",
+    category: "focused",
     description:
       "A low-latency URL redirection system designed for high read throughput and write-heavy analytics ingestion. Implements collision-safe short code generation, indexed storage for fast resolution, and an event-driven pipeline for click tracking and aggregation.",
     tags: ["Distributed Systems", "Caching Strategies", "Analytics Pipeline"],
     github: "https://github.com/YHQZ1/BitLink",
     live: "https://www.bitlk.in/",
     image: "/projects/bitlink.png",
-  },
-  {
-    title: "Raveline",
-    category: "focused",
-    description:
-      "A decoupled moderation decision layer that evaluates user-generated content before publication. Built as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows — isolating safety logic cleanly from core product services.",
-    tags: ["Event-Driven Systems", "Policy Engines", "System Design"],
-    github: "https://github.com/YHQZ1/Raveline",
-    live: null,
-    image: "/projects/raveline.png",
-  },
-  {
-    title: "Resume Screener",
-    category: "focused",
-    description:
-      "An intelligent recruitment engine that performs multi-vector semantic analysis on candidate resumes. Implements a hybrid scoring model — combining TF-IDF lexical matching with SBERT context embeddings — to evaluate alignment against job descriptions and surface deterministic skill gap analysis.",
-    tags: ["NLP", "FastAPI", "Vector Embeddings"],
-    github: "https://github.com/YHQZ1/resume-screener",
-    live: "https://resume-screenerv1.vercel.app",
-    image: "/projects/resume-screener.png",
-  },
-  {
-    title: "Anchor",
-    category: "focused",
-    description:
-      "A role-based academic workflow system that consolidates assignments, attendance, and scheduling into a transactional backend. Emphasizes structured data modeling, automated reminders, and consistency across concurrent updates.",
-    tags: ["RBAC", "Workflow Automation", "Transactional Systems"],
-    github: "https://github.com/YHQZ1/Anchor",
-    live: "https://anchor-dev.vercel.app/",
-    image: "/projects/anchor.png",
-  },
-  {
-    title: "Provenance",
-    category: "focused",
-    description:
-      "A deterministic ESG compliance engine for Indian SMEs that transforms operational data into regulator-ready EPR and BRSR reports. Uses structured ingestion, OCR-assisted extraction, and rule-based validation to produce fully audit-traceable outputs.",
-    tags: ["RegTech", "Rule Engine Design", "Data Processing"],
-    github: "https://github.com/YHQZ1/Provenance",
-    live: "https://provenanceio.vercel.app",
-    image: "/projects/provenance.png",
-  },
-  {
-    title: "SplitPe",
-    category: "focused",
-    description:
-      "Bill splitting that actually makes sense. Enter the total, add your friends, and SplitPe fires off individual UPI payment links to everyone in one tap. No math. No reminders. No chasing people for money. Just links that open GPay, PhonePe, or Paytm with the exact amount pre-filled.",
-    tags: ["Flutter", "UPI Integration", "Mobile", "Payments"],
-    github: "https://github.com/YHQZ1/SplitPe",
-    live: null,
-    image: "/projects/splitpe.png",
-  },
-  {
-    title: "OneGov",
-    category: "focused",
-    description:
-      "A multi-tenant civic services architecture that unifies disparate government workflows under a shared identity and access model. Focuses on role isolation, service abstraction, and extensibility across independent service modules.",
-    tags: ["Multi-Tenant Architecture", "Access Control", "Platform Design"],
-    github: "https://github.com/YHQZ1/OneGov",
-    live: "https://onegov.vercel.app",
-    image: "/projects/onegov.png",
-  },
-  {
-    title: "GradCircle",
-    category: "focused",
-    description:
-      "A secure alumni engagement and fundraising system supporting campaign management and contribution tracking. Implements role-scoped access control and transaction-safe donation handling.",
-    tags: ["Secure Transactions", "Access Control", "Relational Modeling"],
-    github: "https://github.com/YHQZ1/ISCKON-Alumni-Connect",
-    live: "https://gradcircle.vercel.app/",
-    image: "/projects/gradcircle.png",
-  },
-  {
-    title: "VerQ",
-    category: "focused",
-    description:
-      "A structured placement workflow system that centralizes opportunity discovery, application tracking, and preparation resources. Reduces information fragmentation while enabling automated reminders and end-to-end status visibility.",
-    tags: ["Applied AI", "Process Automation", "Product Systems"],
-    github: "https://github.com/YHQZ1/Verq",
-    live: "https://verq-pi.vercel.app",
-    image: "/projects/verq.png",
   },
   {
     title: "Bumper",
@@ -150,36 +70,6 @@ export const projects = [
     image: "/projects/bumper.png",
   },
   {
-    title: "Matchmaking Engine",
-    category: "focused",
-    description:
-      "A simulation-based matchmaking system that pairs players dynamically using skill-based ranking and queue-aware fairness constraints. Explores trade-offs between match quality and wait time under variable load conditions.",
-    tags: ["Algorithms", "Queue Simulation", "Java"],
-    github: "https://github.com/YHQZ1/Matchmaking-Engine",
-    live: null,
-    image: "/projects/matchmaking-engine.png",
-  },
-  {
-    title: "Order Management System",
-    category: "focused",
-    description:
-      "A desktop-based operational management system for customers, vendors, and inventory. Emphasizes structured data handling, state transitions, and integrity across order lifecycles.",
-    tags: ["State Management", "Desktop Systems", "Data Modeling"],
-    github: "https://github.com/YHQZ1/Order-Management-System",
-    live: null,
-    image: "/projects/oms.png",
-  },
-  {
-    title: "F1 Performance Analysis (1950–2024)",
-    category: "focused",
-    description:
-      "An exploratory data analysis of Formula 1 history examining longitudinal performance trends across drivers and constructors. Focuses on era-normalized comparisons and statistical pattern identification.",
-    tags: ["Data Analysis", "Statistical Modeling", "Python"],
-    github: "https://github.com/YHQZ1/F1-EDA",
-    live: null,
-    image: "/projects/f1.png",
-  },
-  {
     title: "CFHub",
     category: "focused",
     description:
@@ -189,6 +79,116 @@ export const projects = [
     live: null,
     image: "/projects/cfhub.png",
   },
+  // {
+  //   title: "Raveline",
+  //   category: "focused",
+  //   description:
+  //     "A decoupled moderation decision layer that evaluates user-generated content before publication. Built as an extensible policy engine supporting rule-based evaluation and asynchronous review workflows — isolating safety logic cleanly from core product services.",
+  //   tags: ["Event-Driven Systems", "Policy Engines", "System Design"],
+  //   github: "https://github.com/YHQZ1/Raveline",
+  //   live: null,
+  //   image: "/projects/raveline.png",
+  // },
+  // {
+  //   title: "Resume Screener",
+  //   category: "focused",
+  //   description:
+  //     "An intelligent recruitment engine that performs multi-vector semantic analysis on candidate resumes. Implements a hybrid scoring model — combining TF-IDF lexical matching with SBERT context embeddings — to evaluate alignment against job descriptions and surface deterministic skill gap analysis.",
+  //   tags: ["NLP", "FastAPI", "Vector Embeddings"],
+  //   github: "https://github.com/YHQZ1/resume-screener",
+  //   live: "https://resume-screenerv1.vercel.app",
+  //   image: "/projects/resume-screener.png",
+  // },
+  // {
+  //   title: "Anchor",
+  //   category: "focused",
+  //   description:
+  //     "A role-based academic workflow system that consolidates assignments, attendance, and scheduling into a transactional backend. Emphasizes structured data modeling, automated reminders, and consistency across concurrent updates.",
+  //   tags: ["RBAC", "Workflow Automation", "Transactional Systems"],
+  //   github: "https://github.com/YHQZ1/Anchor",
+  //   live: "https://anchor-dev.vercel.app/",
+  //   image: "/projects/anchor.png",
+  // },
+  // {
+  //   title: "Provenance",
+  //   category: "focused",
+  //   description:
+  //     "A deterministic ESG compliance engine for Indian SMEs that transforms operational data into regulator-ready EPR and BRSR reports. Uses structured ingestion, OCR-assisted extraction, and rule-based validation to produce fully audit-traceable outputs.",
+  //   tags: ["RegTech", "Rule Engine Design", "Data Processing"],
+  //   github: "https://github.com/YHQZ1/Provenance",
+  //   live: "https://provenanceio.vercel.app",
+  //   image: "/projects/provenance.png",
+  // },
+  // {
+  //   title: "SplitPe",
+  //   category: "focused",
+  //   description:
+  //     "Bill splitting that actually makes sense. Enter the total, add your friends, and SplitPe fires off individual UPI payment links to everyone in one tap. No math. No reminders. No chasing people for money. Just links that open GPay, PhonePe, or Paytm with the exact amount pre-filled.",
+  //   tags: ["Flutter", "UPI Integration", "Mobile", "Payments"],
+  //   github: "https://github.com/YHQZ1/SplitPe",
+  //   live: null,
+  //   image: "/projects/splitpe.png",
+  // },
+  // {
+  //   title: "OneGov",
+  //   category: "focused",
+  //   description:
+  //     "A multi-tenant civic services architecture that unifies disparate government workflows under a shared identity and access model. Focuses on role isolation, service abstraction, and extensibility across independent service modules.",
+  //   tags: ["Multi-Tenant Architecture", "Access Control", "Platform Design"],
+  //   github: "https://github.com/YHQZ1/OneGov",
+  //   live: "https://onegov.vercel.app",
+  //   image: "/projects/onegov.png",
+  // },
+  // {
+  //   title: "GradCircle",
+  //   category: "focused",
+  //   description:
+  //     "A secure alumni engagement and fundraising system supporting campaign management and contribution tracking. Implements role-scoped access control and transaction-safe donation handling.",
+  //   tags: ["Secure Transactions", "Access Control", "Relational Modeling"],
+  //   github: "https://github.com/YHQZ1/ISCKON-Alumni-Connect",
+  //   live: "https://gradcircle.vercel.app/",
+  //   image: "/projects/gradcircle.png",
+  // },
+  // {
+  //   title: "VerQ",
+  //   category: "focused",
+  //   description:
+  //     "A structured placement workflow system that centralizes opportunity discovery, application tracking, and preparation resources. Reduces information fragmentation while enabling automated reminders and end-to-end status visibility.",
+  //   tags: ["Applied AI", "Process Automation", "Product Systems"],
+  //   github: "https://github.com/YHQZ1/Verq",
+  //   live: "https://verq-pi.vercel.app",
+  //   image: "/projects/verq.png",
+  // },
+  // {
+  //   title: "Matchmaking Engine",
+  //   category: "focused",
+  //   description:
+  //     "A simulation-based matchmaking system that pairs players dynamically using skill-based ranking and queue-aware fairness constraints. Explores trade-offs between match quality and wait time under variable load conditions.",
+  //   tags: ["Algorithms", "Queue Simulation", "Java"],
+  //   github: "https://github.com/YHQZ1/Matchmaking-Engine",
+  //   live: null,
+  //   image: "/projects/matchmaking-engine.png",
+  // },
+  // {
+  //   title: "Order Management System",
+  //   category: "focused",
+  //   description:
+  //     "A desktop-based operational management system for customers, vendors, and inventory. Emphasizes structured data handling, state transitions, and integrity across order lifecycles.",
+  //   tags: ["State Management", "Desktop Systems", "Data Modeling"],
+  //   github: "https://github.com/YHQZ1/Order-Management-System",
+  //   live: null,
+  //   image: "/projects/oms.png",
+  // },
+  // {
+  //   title: "F1 Performance Analysis (1950–2024)",
+  //   category: "focused",
+  //   description:
+  //     "An exploratory data analysis of Formula 1 history examining longitudinal performance trends across drivers and constructors. Focuses on era-normalized comparisons and statistical pattern identification.",
+  //   tags: ["Data Analysis", "Statistical Modeling", "Python"],
+  //   github: "https://github.com/YHQZ1/F1-EDA",
+  //   live: null,
+  //   image: "/projects/f1.png",
+  // },
   // {
   //   title: "QuickStream",
   //   category: "focused",

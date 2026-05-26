@@ -5,6 +5,16 @@ export const toolsAndWorkflow = [
     category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
   },
   {
+    name: "GoLand",
+    logo: "/skills/goland.png",
+    category: ["Go Development", "Debugger Integration", "Code Editing"],
+  },
+  {
+    name: "IntelliJ IDEA",
+    logo: "/skills/intellij.png",
+    category: ["JVM Development", "Code Editing", "Debugger Integration"],
+  },
+  {
     name: "Jupyter Notebook",
     logo: "https://cdn.simpleicons.org/jupyter/F37626",
     category: [
@@ -31,7 +41,7 @@ export const toolsAndWorkflow = [
   },
   {
     name: "DBeaver",
-    logo: "https://cdn.simpleicons.org/dbeaver/312923",
+    logo: "/skills/dbeaver.png",
     category: ["Database GUI", "Query Execution", "Schema Visualization"],
   },
   {
@@ -60,6 +70,11 @@ export const toolsAndWorkflow = [
       "Dependency Resolution",
       "Monorepo Tooling",
     ],
+  },
+  {
+    name: "Bun",
+    logo: "/skills/bun.png",
+    category: ["JavaScript Runtime", "Package Management", "Bundling"],
   },
   {
     name: "Turborepo",
