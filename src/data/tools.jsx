@@ -24,11 +24,6 @@ export const toolsAndWorkflow = [
     ],
   },
   {
-    name: "Google Colab",
-    logo: "https://cdn.simpleicons.org/googlecolab/F9AB00",
-    category: ["Cloud Notebooks", "Rapid Prototyping", "ML Development"],
-  },
-  {
     name: "Postman",
     logo: "https://cdn.simpleicons.org/postman/FF6C37",
     category: ["API Testing", "Request Debugging", "API Documentation"],
@@ -106,11 +101,6 @@ export const toolsAndWorkflow = [
     ],
   },
   {
-    name: "CodeRabbit",
-    logo: "https://cdn.simpleicons.org/coderabbit/FF570A",
-    category: ["AI Code Review", "Pull Request Automation", "Static Analysis"],
-  },
-  {
     name: "Jira",
     logo: "https://cdn.simpleicons.org/jira/0052CC",
     category: ["Issue Tracking", "Sprint Planning", "Agile Workflows"],
@@ -119,10 +109,5 @@ export const toolsAndWorkflow = [
     name: "Notion",
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
     category: ["Knowledge Management", "Documentation", "Project Planning"],
-  },
-  {
-    name: "Figma",
-    logo: "/skills/figma.png",
-    category: ["UI Design", "Prototyping", "Design Collaboration"],
   },
 ];
