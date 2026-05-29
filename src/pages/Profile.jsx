@@ -305,8 +305,7 @@ export default function Profile() {
               darkMode ? "text-[#888]" : "text-[#666]"
             }`}
           >
-            A computer science major passionate about building projects and
-            turning ideas into clean, scalable code.
+            Good code is invisible. Great systems are unforgettable.
           </p>
         </div>
 

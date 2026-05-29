@@ -158,7 +158,7 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I'm a third-year CS student at SIT Pune building things that
+                  I'm a final year CS student at SIT Pune building things that
                   would hold up in production. I care about correctness,
                   performance, and systems that don't fall apart when something
                   goes wrong. If that's the kind of engineering your team does,
