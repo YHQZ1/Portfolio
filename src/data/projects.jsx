@@ -51,7 +51,7 @@ export const projects = [
   },
   {
     title: "BitLink",
-    category: "focused",
+    category: "selected",
     description:
       "A low-latency URL redirection system designed for high read throughput and write-heavy analytics ingestion. Implements collision-safe short code generation, indexed storage for fast resolution, and an event-driven pipeline for click tracking and aggregation.",
     tags: ["Distributed Systems", "Caching Strategies", "Analytics Pipeline"],
@@ -89,16 +89,16 @@ export const projects = [
   //   live: null,
   //   image: "/projects/raveline.png",
   // },
-  // {
-  //   title: "Resume Screener",
-  //   category: "focused",
-  //   description:
-  //     "An intelligent recruitment engine that performs multi-vector semantic analysis on candidate resumes. Implements a hybrid scoring model — combining TF-IDF lexical matching with SBERT context embeddings — to evaluate alignment against job descriptions and surface deterministic skill gap analysis.",
-  //   tags: ["NLP", "FastAPI", "Vector Embeddings"],
-  //   github: "https://github.com/YHQZ1/resume-screener",
-  //   live: "https://resume-screenerv1.vercel.app",
-  //   image: "/projects/resume-screener.png",
-  // },
+  {
+    title: "Resume Screener",
+    category: "focused",
+    description:
+      "An intelligent recruitment engine that performs multi-vector semantic analysis on candidate resumes. Implements a hybrid scoring model — combining TF-IDF lexical matching with SBERT context embeddings — to evaluate alignment against job descriptions and surface deterministic skill gap analysis.",
+    tags: ["NLP", "FastAPI", "Vector Embeddings"],
+    github: "https://github.com/YHQZ1/resume-screener",
+    live: "https://resume-screenerv1.vercel.app",
+    image: "/projects/resume-screener.png",
+  },
   // {
   //   title: "Anchor",
   //   category: "focused",

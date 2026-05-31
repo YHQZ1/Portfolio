@@ -5,6 +5,16 @@ export const toolsAndWorkflow = [
     category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
   },
   {
+    name: "Claude Code",
+    logo: "/skills/claude-code.png",
+    category: ["Agentic Coding", "CLI Workflow", "Code Generation"],
+  },
+  {
+    name: "Codex",
+    logo: "/skills/codex.png",
+    category: ["Agentic Coding", "Cloud Sandbox", "Code Generation"],
+  },
+  {
     name: "GoLand",
     logo: "/skills/goland.png",
     category: ["Go Development", "Debugger Integration", "Code Editing"],
