@@ -116,6 +116,16 @@ export const toolsAndWorkflow = [
     category: ["Issue Tracking", "Sprint Planning", "Agile Workflows"],
   },
   {
+    name: "Slack",
+    logo: "/skills/slack.png",
+    category: ["Team Communication", "Collaboration", "Developer Workflows"],
+  },
+  {
+    name: "Obsidian",
+    logo: "https://cdn.simpleicons.org/obsidian/7C3AED",
+    category: ["Knowledge Management", "Note-taking", "Personal Wiki"],
+  },
+  {
     name: "Notion",
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
     category: ["Knowledge Management", "Documentation", "Project Planning"],
