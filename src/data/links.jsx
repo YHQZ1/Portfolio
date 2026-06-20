@@ -5,6 +5,7 @@ import {
   SiCodeforces,
   SiHackerrank,
   SiGmail,
+  SiMedium,
 } from "react-icons/si";
 
 export const socialLinks = [
@@ -26,7 +27,12 @@ export const socialLinks = [
   {
     name: "Reddit",
     icon: FaReddit,
-    url: "https://www.reddit.com/user/yhqz0/",
+    url: "https://www.reddit.com/user/yhqz_/",
+  },
+  {
+    name: "Medium",
+    icon: SiMedium,
+    url: "https://medium.com/@yhqz",
   },
   {
     name: "LeetCode",
