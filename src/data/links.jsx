@@ -6,6 +6,7 @@ import {
   SiHackerrank,
   SiGmail,
   SiMedium,
+  SiHashnode,
 } from "react-icons/si";
 
 export const socialLinks = [
@@ -33,6 +34,11 @@ export const socialLinks = [
     name: "Medium",
     icon: SiMedium,
     url: "https://medium.com/@yhqz",
+  },
+  {
+    name: "Hashnode",
+    icon: SiHashnode,
+    url: "https://hashnode.com/@yhqz",
   },
   {
     name: "LeetCode",
