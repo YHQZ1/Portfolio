@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     title: "PayFlow",
-    category: "selected",
+    category: "focused",
     description:
       "A multi-tenant payment platform inspired by Stripe that enables businesses to process transactions, handle refunds, and receive real-time updates. Built for reliability under retries, accurate financial record-keeping, and seamless scaling as usage grows.",
     tags: ["Distributed Systems", "Microservices", "FinTech"],
@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     title: "Sandboxed",
-    category: "selected",
+    category: "focused",
     description:
       "A self-hosted competitive coding platform built for recruiting programmers. Spin up a contest room, share a code, and let candidates compete in real time — with a built-in judge, live leaderboard, and a proctored environment that streams verdicts the moment code executes.",
     tags: ["Distributed Systems", "Real-time Systems", "Developer Tooling"],
@@ -51,7 +51,7 @@ export const projects = [
   },
   {
     title: "BitLink",
-    category: "selected",
+    category: "focused",
     description:
       "A low-latency URL redirection system designed for high read throughput and write-heavy analytics ingestion. Implements collision-safe short code generation, indexed storage for fast resolution, and an event-driven pipeline for click tracking and aggregation.",
     tags: ["Distributed Systems", "Caching Strategies", "Analytics Pipeline"],
@@ -69,15 +69,25 @@ export const projects = [
     live: null,
     image: "/projects/bumper.png",
   },
+  // {
+  //   title: "CFHub",
+  //   category: "focused",
+  //   description:
+  //     "A browser extension that automates archival of accepted competitive programming submissions to GitHub. Integrates with platform events and GitHub APIs to maintain versioned, structured solution repositories.",
+  //   tags: ["Developer Tooling", "Browser Extensions", "API Integration"],
+  //   github: "https://github.com/YHQZ1/CFHub",
+  //   live: null,
+  //   image: "/projects/cfhub.png",
+  // },
   {
-    title: "CFHub",
+    title: "Cortex",
     category: "focused",
     description:
-      "A browser extension that automates archival of accepted competitive programming submissions to GitHub. Integrates with platform events and GitHub APIs to maintain versioned, structured solution repositories.",
-    tags: ["Developer Tooling", "Browser Extensions", "API Integration"],
-    github: "https://github.com/YHQZ1/CFHub",
+      "A local RAG console for GitHub repositories. Ingests source files, chunks code, stores metadata in Postgres, indexes embeddings in Qdrant, and answers repository questions with streamed local LLM responses and source-grounded previews.",
+    tags: ["RAG", "Vector Search", "Developer Tooling"],
+    github: "https://github.com/YHQZ1/Cortex",
     live: null,
-    image: "/projects/cfhub.png",
+    image: null,
   },
   // {
   //   title: "Raveline",
