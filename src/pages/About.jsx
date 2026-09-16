@@ -332,7 +332,7 @@ export default function About() {
                   darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
                 } tracking-tight`}
               >
-                Software Engineer
+                Software Engineer Intern
               </h3>
               <p
                 className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
