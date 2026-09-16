@@ -92,7 +92,7 @@ export default function About() {
               } rounded-sm overflow-hidden h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px]`}
             >
               <img
-                src="/profile.jpeg"
+                src="/profile.png"
                 alt="Uttkarsh"
                 className="w-full h-full object-cover"
               />

@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 /public/old_pfp.jpg
+/public/old_pfp2.jpeg
