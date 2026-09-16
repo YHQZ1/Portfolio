@@ -24,8 +24,8 @@ export default function About() {
   const { darkMode } = useTheme();
   const commands = [
     { label: "Core Competencies", id: "core-competencies" },
-    { label: "Beyond the Code", id: "beyond-the-code" },
     { label: "Work Experience", id: "work-experience" },
+    { label: "Beyond the Code", id: "beyond-the-code" },
   ];
 
   const typedText = useTypewriter("About", 80);
