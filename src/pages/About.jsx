@@ -311,6 +311,53 @@ export default function About() {
           } my-8 sm:my-10`}
         ></div>
 
+        <section id="work-experience" className="mb-8 sm:mb-10">
+          <h2
+            className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-6 relative inline-block group ${
+              darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+            } tracking-tight leading-[1.2]`}
+          >
+            Work Experience
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
+          </h2>
+
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
+            <div
+              className={`border-l-4 ${
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
+              } pl-4 sm:pl-6 md:pl-8`}
+            >
+              <h3
+                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
+                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+                } tracking-tight`}
+              >
+                Software Engineer
+              </h3>
+              <p
+                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
+              >
+                TraceLink · Pune
+              </p>
+              <p
+                className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
+              >
+                Working on agentic AI and GenAI systems — building multi-agent
+                workflows that have to hold up outside a demo. It's a different
+                flavor of distributed systems problem: the failure modes are
+                less "network partition" and more "agent confidently does the
+                wrong thing," and designing around that is its own discipline.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div
+          className={`w-full h-px ${
+            darkMode ? "bg-[#2a2a2a]" : "bg-[#e8e8e8]"
+          } my-8 sm:my-10`}
+        />
+
         <section id="beyond-the-code" className="mb-16 sm:mb-20">
           <h2
             className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-12 sm:mb-16 relative inline-block group ${
@@ -437,35 +484,8 @@ export default function About() {
             </div>
           </div>
         </section>
-
-        <div
-          className={`w-full h-px ${
-            darkMode ? "bg-[#2a2a2a]" : "bg-[#e8e8e8]"
-          } my-8 sm:my-10`}
-        />
-        
-        <section id="work-experience" className="mb-8 sm:mb-10">
-          <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-6 relative inline-block group ${
-              darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-            } tracking-tight leading-[1.2]`}
-          >
-            Work Experience
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
-          </h2>
-
-          <div className="flex flex-col items-center justify-center text-center">
-            <p
-              className={`text-lg sm:text-xl font-light italic ${
-                darkMode ? "text-[#444]" : "text-[#bbb]"
-              }`}
-            >
-              Still in college. The GitHub disagrees.
-            </p>
-          </div>
-        </section>
-
       </div>
+
       <div
         className={`
     fixed bottom-6 left-6 text-xs z-40
