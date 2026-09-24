@@ -145,8 +145,7 @@ export const toolsAndWorkflow = [
   },
   {
     name: "Confluence",
-    logo: "https://cdn.simpleicons.org/confluence/172B4D",
-    darkLogo: "https://cdn.simpleicons.org/confluence/FFFFFF",
+    logo: "/skills/confluence.png",
     category: ["Team Documentation", "Knowledge Base", "Technical Specs"],
   },
   {
