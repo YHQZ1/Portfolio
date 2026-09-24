@@ -16,8 +16,7 @@ export const toolsAndWorkflow = [
   },
   {
     name: "WebStorm",
-    logo: "https://cdn.simpleicons.org/webstorm/000000",
-    darkLogo: "https://cdn.simpleicons.org/webstorm/FFFFFF",
+    logo: "/skills/webstorm.png",
     category: ["JS/TS Development", "Debugger Integration", "Code Editing"],
   },
   {
