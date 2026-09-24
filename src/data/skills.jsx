@@ -507,6 +507,19 @@ export const technicalSkills = [
     filterCategories: ["database", "big-data"],
   },
   {
+    name: "RocksDB",
+    tier: "applied",
+    logo: "/skills/rocksdb.png",
+    level: "Beginner",
+    experienceStart: "2026-05",
+    category: [
+      "LSM-tree Storage",
+      "Embedded Key-Value Store",
+      "Write-optimized Engines",
+    ],
+    filterCategories: ["database", "backend", "low-level"],
+  },
+  {
     name: "Prisma",
     tier: "applied",
     logo: "https://cdn.simpleicons.org/prisma/2D3748",
@@ -889,6 +902,15 @@ export const technicalSkills = [
       "Leader Election",
     ],
     filterCategories: ["big-data", "backend", "devops"],
+  },
+  {
+    name: "OpenSearch",
+    tier: "applied",
+    logo: "/skills/opensearch.png",
+    level: "Beginner",
+    experienceStart: "2026-07",
+    category: ["Search & Analytics", "Distributed Indexing", "Log Analytics"],
+    filterCategories: ["big-data", "database", "backend", "observability"],
   },
   {
     name: "Elasticsearch",

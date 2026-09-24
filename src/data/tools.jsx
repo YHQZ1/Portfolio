@@ -15,6 +15,12 @@ export const toolsAndWorkflow = [
     category: ["Agentic Coding", "Cloud Sandbox", "Code Generation"],
   },
   {
+    name: "WebStorm",
+    logo: "https://cdn.simpleicons.org/webstorm/000000",
+    darkLogo: "https://cdn.simpleicons.org/webstorm/FFFFFF",
+    category: ["JS/TS Development", "Debugger Integration", "Code Editing"],
+  },
+  {
     name: "GoLand",
     logo: "/skills/goland.png",
     category: ["Go Development", "Debugger Integration", "Code Editing"],
@@ -37,6 +43,11 @@ export const toolsAndWorkflow = [
     name: "Postman",
     logo: "https://cdn.simpleicons.org/postman/FF6C37",
     category: ["API Testing", "Request Debugging", "API Documentation"],
+  },
+  {
+    name: "Insomnia",
+    logo: "https://cdn.simpleicons.org/insomnia/4000BF",
+    category: ["API Testing", "gRPC & GraphQL Client", "Request Debugging"],
   },
   {
     name: "cURL",
@@ -132,6 +143,12 @@ export const toolsAndWorkflow = [
     name: "Jira",
     logo: "https://cdn.simpleicons.org/jira/0052CC",
     category: ["Issue Tracking", "Sprint Planning", "Agile Workflows"],
+  },
+  {
+    name: "Confluence",
+    logo: "https://cdn.simpleicons.org/confluence/172B4D",
+    darkLogo: "https://cdn.simpleicons.org/confluence/FFFFFF",
+    category: ["Team Documentation", "Knowledge Base", "Technical Specs"],
   },
   {
     name: "Slack",
