@@ -6,7 +6,7 @@ export const projects = [
       "Deep kernel observability for financial systems. An eBPF-powered flight recorder that captures every kernel-level event — CPU scheduling, memory pressure, network packet timing — without touching application code. Constructs full causal graphs of incidents and replays them deterministically, down to the exact kernel decision that caused a failure.",
     tags: ["eBPF", "Distributed Systems", "FinTech"],
     github: "https://github.com/YHQZ1/kprobe",
-    live: null,
+    live: "https://kprobe.vercel.app",
     image: "/projects/kprobe.png",
   },
   {
@@ -28,6 +28,16 @@ export const projects = [
     github: "https://github.com/YHQZ1/Hatch",
     live: "https://app.hatchcloud.xyz",
     image: "/projects/hatch.png",
+  },
+  {
+    title: "Provenance",
+    category: "selected",
+    description:
+      "An AI-assisted plastic EPR compliance platform for Indian businesses. Processes invoices and recycling certificates using OCR, suggests polymer classifications through RAG, and turns human-reviewed records into traceable annual filings with regulatory research and audit trails.",
+    tags: ["RegTech", "Document Intelligence", "RAG", "Distributed Systems"],
+    github: "https://github.com/YHQZ1/Provenance",
+    live: null,
+    image: "/projects/provenance.png",
   },
   {
     title: "PayFlow",
@@ -118,16 +128,6 @@ export const projects = [
   //   github: "https://github.com/YHQZ1/Anchor",
   //   live: "https://anchor-dev.vercel.app/",
   //   image: "/projects/anchor.png",
-  // },
-  // {
-  //   title: "Provenance",
-  //   category: "focused",
-  //   description:
-  //     "A deterministic ESG compliance engine for Indian SMEs that transforms operational data into regulator-ready EPR and BRSR reports. Uses structured ingestion, OCR-assisted extraction, and rule-based validation to produce fully audit-traceable outputs.",
-  //   tags: ["RegTech", "Rule Engine Design", "Data Processing"],
-  //   github: "https://github.com/YHQZ1/Provenance",
-  //   live: "https://provenanceio.vercel.app",
-  //   image: "/projects/provenance.png",
   // },
   // {
   //   title: "SplitPe",
