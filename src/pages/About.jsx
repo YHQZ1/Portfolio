@@ -166,7 +166,7 @@ export default function About() {
 
               <div
                 className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                  darkMode ? "border-[#81c995]" : "border-[#34a853]"
+                  darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
                 }`}
               >
                 <p
@@ -184,7 +184,7 @@ export default function About() {
 
               <div
                 className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                  darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
+                  darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
                 }`}
               >
                 <p
@@ -203,7 +203,7 @@ export default function About() {
 
               <div
                 className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                  darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
+                  darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
                 }`}
               >
                 <p
@@ -238,7 +238,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#81c995]" : "border-[#34a853]"
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               }`}
             >
               <h3
@@ -287,7 +287,7 @@ export default function About() {
 
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               }`}
             >
               <h3
@@ -312,7 +312,7 @@ export default function About() {
 
             <div
               className={`border-l-4 pl-4 sm:pl-6 md:pl-8 ${
-                darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               }`}
             >
               <h3
@@ -401,7 +401,7 @@ export default function About() {
           <div className="space-y-8 sm:space-y-10 md:space-y-12">
             <div
               className={`border-l-4 ${
-                darkMode ? "border-[#c58af9]" : "border-[#a142f4]"
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
               <RoleHeader
@@ -425,7 +425,7 @@ export default function About() {
 
             <div
               className={`border-l-4 ${
-                darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
               <RoleHeader
@@ -449,7 +449,7 @@ export default function About() {
 
             <div
               className={`border-l-4 ${
-                darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
+                darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
               <RoleHeader

@@ -68,6 +68,7 @@ export default function Navbar() {
       <button
         className="bg-transparent border-none cursor-pointer p-1.5 sm:p-2 md:p-1.5 lg:p-2 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
         onClick={toggleTheme}
+        aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
       >
         {darkMode ? (
           <FaSun className="w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-400" />
