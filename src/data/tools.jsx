@@ -2,32 +2,40 @@ export const toolsAndWorkflow = [
   {
     name: "VS Code",
     logo: "/skills/vscode.png",
-    category: ["Code Editing", "Extension Ecosystem", "Debugger Integration"],
+    category: ["Code Editing", "Extension Ecosystem", "Remote Development"],
   },
   {
     name: "Claude Code",
     logo: "/skills/claude-code.png",
-    category: ["Agentic Coding", "CLI Workflow", "Code Generation"],
+    category: ["Agentic Coding", "CLI Workflow", "MCP & Subagents"],
   },
   {
     name: "Codex",
     logo: "/skills/codex.png",
-    category: ["Agentic Coding", "Cloud Sandbox", "Code Generation"],
+    category: ["Agentic Coding", "Cloud Sandbox", "Parallel Tasks"],
   },
   {
     name: "WebStorm",
     logo: "/skills/webstorm.png",
-    category: ["JS/TS Development", "Debugger Integration", "Code Editing"],
+    category: [
+      "JS/TS Development",
+      "Framework-aware Editing",
+      "Integrated Debugging",
+    ],
   },
   {
     name: "GoLand",
     logo: "/skills/goland.png",
-    category: ["Go Development", "Debugger Integration", "Code Editing"],
+    category: ["Go Development", "Refactoring Tools", "Profiling & Debugging"],
   },
   {
     name: "IntelliJ IDEA",
     logo: "/skills/intellij.png",
-    category: ["JVM Development", "Code Editing", "Debugger Integration"],
+    category: [
+      "JVM Development",
+      "Smart Code Completion",
+      "Build Tool Integration",
+    ],
   },
   {
     name: "Jupyter Notebook",
@@ -41,12 +49,20 @@ export const toolsAndWorkflow = [
   {
     name: "Postman",
     logo: "https://cdn.simpleicons.org/postman/FF6C37",
-    category: ["API Testing", "Request Debugging", "API Documentation"],
+    category: [
+      "API Testing",
+      "Collections & Environments",
+      "API Documentation",
+    ],
   },
   {
     name: "Insomnia",
     logo: "https://cdn.simpleicons.org/insomnia/4000BF",
-    category: ["API Testing", "gRPC & GraphQL Client", "Request Debugging"],
+    category: [
+      "gRPC & GraphQL Client",
+      "Request Debugging",
+      "Lightweight API Client",
+    ],
   },
   {
     name: "cURL",
@@ -60,15 +76,6 @@ export const toolsAndWorkflow = [
     category: ["Database GUI", "Query Execution", "Schema Visualization"],
   },
   {
-    name: "OpenAPI",
-    logo: "/skills/openapi.png",
-    category: [
-      "API Specification",
-      "Contract-first Design",
-      "REST Schema Definition",
-    ],
-  },
-  {
     name: "Swagger UI",
     logo: "https://cdn.simpleicons.org/swagger/85EA2D",
     category: [
@@ -80,25 +87,16 @@ export const toolsAndWorkflow = [
   {
     name: "Yarn",
     logo: "https://cdn.simpleicons.org/yarn/2C8EBB",
-    category: [
-      "Package Management",
-      "Dependency Resolution",
-      "Script Execution",
-    ],
+    category: ["Package Management", "Lockfile Determinism", "Workspaces"],
   },
   {
     name: "pnpm",
     logo: "/skills/pnpm.png",
     category: [
-      "Package Management",
-      "Dependency Resolution",
-      "Monorepo Tooling",
+      "Disk-efficient Installs",
+      "Strict Dependency Isolation",
+      "Monorepo Support",
     ],
-  },
-  {
-    name: "Bun",
-    logo: "/skills/bun.png",
-    category: ["JavaScript Runtime", "Package Management", "Bundling"],
   },
   {
     name: "Turborepo",
@@ -106,17 +104,7 @@ export const toolsAndWorkflow = [
     category: [
       "Monorepo Architecture",
       "Task Orchestration",
-      "Incremental Builds",
-      "Build Caching",
-    ],
-  },
-  {
-    name: "Upstash",
-    logo: "https://cdn.simpleicons.org/upstash/00E9A3",
-    category: [
-      "Serverless Datastores",
-      "Managed Redis",
-      "Event-driven Systems",
+      "Remote Build Caching",
     ],
   },
   {
@@ -124,9 +112,9 @@ export const toolsAndWorkflow = [
     logo: "https://cdn.simpleicons.org/github/181717",
     darkLogo: "https://cdn.simpleicons.org/github/FFFFFF",
     category: [
-      "Version Control Hosting",
       "Pull Request Workflow",
-      "Collaboration",
+      "Code Review",
+      "Open Source Collaboration",
     ],
   },
   {
@@ -134,8 +122,8 @@ export const toolsAndWorkflow = [
     logo: "/skills/bitbucket.png",
     category: [
       "Version Control Hosting",
-      "Pull Request Workflow",
-      "CI/CD Integration",
+      "Bitbucket Pipelines",
+      "Jira Integration",
     ],
   },
   {
@@ -161,6 +149,6 @@ export const toolsAndWorkflow = [
   {
     name: "Notion",
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
-    category: ["Knowledge Management", "Documentation", "Project Planning"],
+    category: ["Documentation", "Project Planning", "Team Wikis"],
   },
 ];
