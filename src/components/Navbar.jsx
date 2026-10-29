@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/useTheme";
 import resumePDF from "/Resume.pdf";
 
 export default function Navbar() {

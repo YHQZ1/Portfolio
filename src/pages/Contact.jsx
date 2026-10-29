@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { useState, useRef } from "react";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/useTheme";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -49,7 +48,7 @@ export default function Contact() {
         publicKey: "LRGdJCs-rXJbFfUie",
       })
       .then(
-        (response) => {
+        () => {
           setSubmitStatus("success");
           setFormData({
             user_name: "",
@@ -264,8 +263,8 @@ export default function Contact() {
                     ? "bg-[#8ab4f8] hover:bg-[#7aa3f0] cursor-pointer"
                     : "bg-[#3a3a3a] cursor-not-allowed opacity-50"
                   : isFormValid
-                  ? "bg-[#4285f4] hover:bg-[#3367d6] cursor-pointer"
-                  : "bg-[#ccc] cursor-not-allowed opacity-50"
+                    ? "bg-[#4285f4] hover:bg-[#3367d6] cursor-pointer"
+                    : "bg-[#ccc] cursor-not-allowed opacity-50"
               }`}
               disabled={!isFormValid}
             >

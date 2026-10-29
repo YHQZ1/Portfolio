@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
@@ -9,7 +8,6 @@ export default {
       },
 
       colors: {
-        // Light theme
         light: {
           primary: "#f8fafc",
           secondary: "#ffffff",
@@ -17,7 +15,6 @@ export default {
           muted: "#64748b",
           border: "#e2e8f0",
         },
-        // Dark theme
         dark: {
           primary: "#1a1a1a",
           secondary: "#242424",

@@ -10,7 +10,8 @@ import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import { useTheme } from "./context/useTheme";
 
 function ScrollToTopButtonWrapper() {
   const { darkMode } = useTheme();

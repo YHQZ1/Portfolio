@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/useTheme";
 import { Link } from "react-router-dom";
 import { socialLinks, specialLinks } from "../data/links";
 
@@ -39,25 +38,28 @@ export default function Footer() {
         </h3>
 
         <div className="max-w-md mx-auto flex justify-center gap-3 sm:gap-6 md:gap-8 mb-4 px-2">
-          {socialLinks.map(({ name, url, icon: Icon }) => (
-            <a
-              key={name}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`relative text-2xl sm:text-3xl transition-colors duration-300 group ${baseColor}`}
-            >
-              <Icon />
-              <span
-                className={`absolute -top-14 left-1/2 -translate-x-1/2 text-sm px-3 py-2 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50 pointer-events-none ${tooltipBg}`}
+          {socialLinks.map(({ name, url, icon }) => {
+            const Icon = icon;
+            return (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative text-2xl sm:text-3xl transition-colors duration-300 group ${baseColor}`}
               >
-                {name}
+                <Icon />
                 <span
-                  className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 pointer-events-none ${tooltipArrow}`}
-                />
-              </span>
-            </a>
-          ))}
+                  className={`absolute -top-14 left-1/2 -translate-x-1/2 text-sm px-3 py-2 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50 pointer-events-none ${tooltipBg}`}
+                >
+                  {name}
+                  <span
+                    className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 pointer-events-none ${tooltipArrow}`}
+                  />
+                </span>
+              </a>
+            );
+          })}
 
           {specialLinks.map((item) => {
             const Icon = item.icon;

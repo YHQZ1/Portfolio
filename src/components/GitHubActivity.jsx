@@ -23,7 +23,6 @@ export default function GitHubActivity({ darkMode }) {
         darkMode ? "border-[#2a2a2a] bg-[#0f0f0f]" : "border-[#e0e0e0] bg-white"
       } rounded-md p-2 sm:p-3 md:p-4 lg:p-5 max-w-6xl w-full`}
     >
-      {/* CALENDAR */}
       <div ref={scrollRef} className="mb-4 overflow-x-auto">
         <div
           className="w-max mx-auto"
@@ -39,7 +38,6 @@ export default function GitHubActivity({ darkMode }) {
         </div>
       </div>
 
-      {/* FOOTER */}
       <div
         className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3 pt-4 border-t ${
           darkMode ? "border-[#2a2a2a]" : "border-[#e0e0e0]"

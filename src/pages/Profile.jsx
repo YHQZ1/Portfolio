@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/useTheme";
 import { projects } from "../data/projects";
 import { skills } from "../data/skills";
 import { toolsAndWorkflow } from "../data/tools";
@@ -49,7 +49,7 @@ const FILTERS = [
 function SkillFilters({ darkMode, activeFilters, setActiveFilters }) {
   const toggleFilter = (key) => {
     setActiveFilters((prev) =>
-      prev.includes(key) ? prev.filter((f) => f !== key) : [...prev, key],
+      prev.includes(key) ? prev.filter((f) => f !== key) : [...prev, key]
     );
   };
 
@@ -93,7 +93,7 @@ function SkillFilters({ darkMode, activeFilters, setActiveFilters }) {
               : "border-[#ddd] text-[#444] bg-white hover:border-[#aaa]"
           }`}
         >
-          Clear Filters ✕
+          Clear Filters
         </button>
       )}
     </div>
@@ -111,7 +111,7 @@ function SkillsGridSection({
     activeFilters.length === 0
       ? skills
       : skills.filter((skill) =>
-          activeFilters.every((tag) => skill.filterCategories.includes(tag)),
+          activeFilters.every((tag) => skill.filterCategories.includes(tag))
         );
 
   if (filteredSkills.length === 0) return null;
@@ -268,7 +268,7 @@ export default function Profile() {
   const hasAnyFilteredSkills =
     activeFilters.length === 0 ||
     skills.some((skill) =>
-      activeFilters.every((tag) => skill.filterCategories.includes(tag)),
+      activeFilters.every((tag) => skill.filterCategories.includes(tag))
     );
 
   return (
@@ -331,7 +331,6 @@ export default function Profile() {
               tools.
             </p>
 
-            {/* SELECTED WORK */}
             <h3
               className={`text-2xl sm:text-3xl font-extralight mb-6 ${
                 darkMode ? "text-[#ddd]" : "text-[#333]"
@@ -427,7 +426,6 @@ export default function Profile() {
                 ))}
             </div>
 
-            {/* FOCUSED PROJECTS */}
             <h3
               className={`text-2xl sm:text-3xl font-extralight mb-6 ${
                 darkMode ? "text-[#ddd]" : "text-[#333]"

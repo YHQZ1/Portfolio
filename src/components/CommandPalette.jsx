@@ -108,8 +108,8 @@ export default function CommandPalette({ darkMode, commands }) {
                       ? "bg-[#1e1e1e]"
                       : "bg-[#eaeaea]"
                     : darkMode
-                    ? "hover:bg-[#1a1a1a]"
-                    : "hover:bg-[#f0f0f0]"
+                      ? "hover:bg-[#1a1a1a]"
+                      : "hover:bg-[#f0f0f0]"
                 }
               `}
             >
