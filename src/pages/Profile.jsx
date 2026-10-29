@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/useTheme";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { projects } from "../data/projects";
 import { skills } from "../data/skills";
 import { toolsAndWorkflow } from "../data/tools";
@@ -221,7 +222,15 @@ function SkillsGridSection({
   );
 }
 
+const PAGE_META = {
+  title: "Uttkarsh Ruparel | Backend & Infrastructure Engineer",
+  description:
+    "Portfolio of Uttkarsh Ruparel, a final-year CS student and software engineering intern focused on backend, distributed systems, cloud infrastructure and DevOps.",
+  path: "/",
+};
+
 export default function Profile() {
+  usePageMeta(PAGE_META);
   const { darkMode } = useTheme();
 
   const commands = [
@@ -306,7 +315,7 @@ export default function Profile() {
               darkMode ? "text-[#888]" : "text-[#666]"
             }`}
           >
-            Good code is invisible. Great systems are unforgettable.
+            If it can fail, I've already thought about how.
           </p>
         </div>
 

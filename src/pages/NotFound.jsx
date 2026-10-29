@@ -1,8 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../context/useTheme";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { useEffect } from "react";
 
+const PAGE_META = {
+  title: "Page not found | Uttkarsh Ruparel",
+  description: "The page you were looking for does not exist.",
+  path: "/",
+  noindex: true,
+};
+
 export default function NotFound() {
+  usePageMeta(PAGE_META);
   const { darkMode } = useTheme();
   const navigate = useNavigate();
 

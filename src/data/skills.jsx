@@ -572,7 +572,7 @@ export const technicalSkills = [
     name: "RocksDB",
     tier: "applied",
     logo: "/skills/rocksdb.png",
-    level: "Beginner",
+    level: "Intermediate",
     experienceStart: "2026-05",
     category: [
       "LSM-tree Storage",
@@ -841,7 +841,7 @@ export const technicalSkills = [
     name: "Jaeger",
     tier: "applied",
     logo: "/skills/jaeger.png",
-    level: "Beginner",
+    level: "Intermediate",
     experienceStart: "2026-03",
     category: [
       "Trace Visualization",

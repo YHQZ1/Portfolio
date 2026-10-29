@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/useTheme";
+import { usePageMeta } from "../hooks/usePageMeta";
 import CommandPalette from "../components/CommandPalette";
 
 function useTypewriter(text, speed = 80) {
@@ -20,7 +21,43 @@ function useTypewriter(text, speed = 80) {
   return displayText;
 }
 
+function RoleHeader({ darkMode, logo, logoAlt, title, subtitle }) {
+  return (
+    <div className="flex items-center gap-4 mb-3 sm:mb-4">
+      <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
+        <img
+          src={logo}
+          alt={logoAlt}
+          className="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <div>
+        <h3
+          className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-1 ${
+            darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
+          } tracking-tight`}
+        >
+          {title}
+        </h3>
+        <p
+          className={`text-sm italic ${darkMode ? "text-[#666]" : "text-[#999]"}`}
+        >
+          {subtitle}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+const PAGE_META = {
+  title: "About | Uttkarsh Ruparel",
+  description:
+    "About Uttkarsh Ruparel: a backend engineer and final-year CS student at SIT Pune, interning as a software engineer and organizing GDG on Campus.",
+  path: "/about",
+};
+
 export default function About() {
+  usePageMeta(PAGE_META);
   const { darkMode } = useTheme();
   const commands = [
     { label: "Core Competencies", id: "core-competencies" },
@@ -120,12 +157,10 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I'm a backend and infrastructure engineer drawn to distributed
-                  systems — not because it's a buzzword, but because most people
-                  underestimate how much engineering discipline goes into
-                  keeping systems correct, fast, and honest under real load.
-                  That gap between "it works" and "it works at scale" is where
-                  things get genuinely interesting.
+                  I'm Uttkarsh, a backend engineer who's drawn to the parts of a
+                  system most people never look at: how it behaves under load,
+                  how it fails, and how quickly you find out. I'm finishing my
+                  CS degree at SIT Pune and interning as a software engineer.
                 </p>
               </div>
 
@@ -139,12 +174,11 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I gravitate toward problems that are hard to get right —
-                  event-driven architectures, low-latency pipelines,
-                  kernel-level observability. Go is my primary language for
-                  backend and cloud work, and the way it handles concurrency and
-                  maps cleanly to infrastructure problems keeps pulling me
-                  deeper into that space.
+                  My side projects usually start with a question like "how does
+                  this actually work?" and end with me building my own version
+                  to find out: a stock exchange, a memory allocator, a deploy
+                  platform. I'd rather ship something people can trust than
+                  something that only looks good in a demo.
                 </p>
               </div>
 
@@ -158,11 +192,12 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I'm a final year CS student at SIT Pune building things that
-                  would hold up in production. I care about correctness,
-                  performance, and systems that don't fall apart when something
-                  goes wrong. If that's the kind of engineering your team does,
-                  we should talk.
+                  Away from the terminal, I like working with people. I started
+                  in GDG's media team with a camera, moved on to setting contest
+                  problems, and now I organize the chapter. Running a community
+                  and running a production system have more in common than you'd
+                  think: both go better when you plan for things not going to
+                  plan.
                 </p>
               </div>
 
@@ -176,9 +211,9 @@ export default function About() {
                     darkMode ? "text-[#888]" : "text-[#666]"
                   }`}
                 >
-                  I move between a lot of things outside of code — some
-                  structured, some not. I find that the best ideas usually show
-                  up when you're not staring at a screen.
+                  I'm looking for a team that treats reliability as part of the
+                  product and likes building things properly. If that sounds
+                  like yours, let's talk.
                 </p>
               </div>
             </div>
@@ -218,12 +253,10 @@ export default function About() {
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Distributed systems are hard in ways that don't show up in
-                tutorials — clock skew, partial failures, split-brain scenarios,
-                cascading latency. I've spent serious time understanding how
-                systems behave when the happy path disappears, and I design with
-                that reality in mind from the start rather than bolting on
-                reliability as an afterthought.
+                Things fail: networks drop, disks fill up, and a service that
+                behaved all week picks the worst possible moment to stop. I like
+                designing for that day instead of hoping it never comes, and I
+                like the detective work of finding out what actually went wrong.
               </p>
             </div>
 
@@ -244,11 +277,11 @@ export default function About() {
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                I think in systems — component boundaries, failure modes,
-                consistency trade-offs, and the long-term cost of decisions made
-                under pressure. Good system design isn't about picking the right
-                buzzwords, it's about understanding what breaks first and
-                building so that when it does, nothing else falls with it.
+                Before I build anything, I try to work out what will break first
+                and what it will take down with it. Good design is mostly
+                deciding where the walls go, so a failure in one place stays in
+                that place. I'd rather spend an afternoon on a whiteboard than a
+                month untangling a rushed decision.
               </p>
             </div>
 
@@ -269,12 +302,11 @@ export default function About() {
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Infrastructure is just code with higher stakes. I treat
-                deployment pipelines, container orchestration, and cloud
-                architecture with the same engineering rigor as application code
-                — reproducible, observable, and built to survive the unexpected.
-                The gap between a system that works locally and one that holds
-                up in production is where I focus.
+                Shipping is part of the job, not something that happens
+                afterwards. I like pipelines that are boring, deployments I can
+                repeat, and dashboards that tell me something is wrong before a
+                user does. And I keep an eye on cost too, because a good system
+                shouldn't surprise you on the invoice.
               </p>
             </div>
 
@@ -295,11 +327,11 @@ export default function About() {
                   darkMode ? "text-[#888]" : "text-[#666]"
                 }`}
               >
-                Algorithmic thinking isn't just a contest skill — it's how I
-                approach real engineering problems. Years of competitive
-                programming have sharpened my ability to reason about
-                complexity, identify bottlenecks before they appear, and write
-                code that's correct by construction rather than correct by luck.
+                Contests taught me to think clearly with a clock running, and to
+                be suspicious of any solution I can't explain. I spent a year
+                co-heading the competitive programming vertical at GDG on
+                Campus, designing problems, running contests and helping people
+                get unstuck.
               </p>
             </div>
           </div>
@@ -327,26 +359,22 @@ export default function About() {
                 darkMode ? "border-[#8ab4f8]" : "border-[#4285f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Software Engineer Intern
-              </h3>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
-              >
-                TraceLink · Pune
-              </p>
+              <RoleHeader
+                darkMode={darkMode}
+                logo="/experience/tracelink.png"
+                logoAlt="TraceLink logo"
+                title="Software Engineer Intern"
+                subtitle="TraceLink · Pune · September 2026 – Present"
+              />
               <p
                 className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Working on agentic AI and GenAI systems — building multi-agent
-                workflows that have to hold up outside a demo. It's a different
-                flavor of distributed systems problem: the failure modes are
-                less "network partition" and more "agent confidently does the
-                wrong thing," and designing around that is its own discipline.
+                Working across the solution design and solution builder teams as
+                a backend engineer, designing and building solutions in Node.js,
+                Express and Java. The stack includes Redis, S3, OpenSearch,
+                RocksDB and Kafka, shipped through Jenkins pipelines with
+                Docker, Kubernetes and AWS, and watched through Grafana and
+                Jaeger.
               </p>
             </div>
           </div>
@@ -376,25 +404,20 @@ export default function About() {
                 darkMode ? "border-[#c58af9]" : "border-[#a142f4]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                President
-              </h3>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
-              >
-                Google Developer Students Club, SIT Pune
-              </p>
+              <RoleHeader
+                darkMode={darkMode}
+                logo="/experience/gdg.png"
+                logoAlt="GDG on Campus logo"
+                title="Organizer"
+                subtitle="GDG on Campus, SIT Pune · July 2026 – Present"
+              />
               <p
                 className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Running GDSC SIT Pune means more than organizing events — it
-                means setting the technical direction for a 100+ member
-                community. I focus on building a culture where engineers
-                actually learn by doing, not just attending. That means hands-on
+                Leading the GDG on Campus chapter at SIT Pune, taking over right
+                after my time as Competitive Programming Co-Head. That means
+                setting the technical direction for a 30+ member team and
+                building a culture where people learn by doing: hands-on
                 sessions, real projects, and pushing members to build things
                 that go beyond coursework.
               </p>
@@ -405,26 +428,22 @@ export default function About() {
                 darkMode ? "border-[#f28b82]" : "border-[#ea4335]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Competitive Programming Co-Head
-              </h3>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
-              >
-                Google Developer Students Club, SIT Pune
-              </p>
+              <RoleHeader
+                darkMode={darkMode}
+                logo="/experience/gdg.png"
+                logoAlt="GDG on Campus logo"
+                title="Competitive Programming Co-Head"
+                subtitle="GDG on Campus, SIT Pune · July 2025 – June 2026"
+              />
               <p
                 className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Built and ran the competitive programming vertical at GDSC —
-                designing problem sets, running contests, and mentoring students
-                through the grind of algorithmic thinking. The goal was never
-                leaderboard rankings, it was getting people to think precisely
-                under pressure. That's a skill that transfers everywhere.
+                Built and ran the competitive programming vertical at GDG on
+                Campus — designing problem sets, running contests, and mentoring
+                students through the grind of algorithmic thinking. The goal was
+                never leaderboard rankings, it was getting people to think
+                precisely under pressure. That's a skill that transfers
+                everywhere.
               </p>
             </div>
 
@@ -433,53 +452,20 @@ export default function About() {
                 darkMode ? "border-[#fdd663]" : "border-[#fbbc04]"
               } pl-4 sm:pl-6 md:pl-8`}
             >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Open Source Contributor
-              </h3>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
-              >
-                GirlScript Summer of Code / GSSoC, 2026
-              </p>
+              <RoleHeader
+                darkMode={darkMode}
+                logo="/experience/gdg.png"
+                logoAlt="GDG on Campus logo"
+                title="Media Co-Head"
+                subtitle="GDG on Campus, SIT Pune · July 2024 – June 2025"
+              />
               <p
                 className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
               >
-                Selected as a contributor for GSSoC 2026, one of the largest
-                open source programs in India. Working directly with project
-                maintainers to ship real improvements — not documentation fixes,
-                but actual code that goes into production repositories used by
-                other developers.
-              </p>
-            </div>
-
-            <div
-              className={`border-l-4 ${
-                darkMode ? "border-[#81c995]" : "border-[#34a853]"
-              } pl-4 sm:pl-6 md:pl-8`}
-            >
-              <h3
-                className={`text-xl sm:text-2xl md:text-3xl font-light leading-[1.3] mb-2 ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                } tracking-tight`}
-              >
-                Hackathon Finalist — ACE 2.0
-              </h3>
-              <p
-                className={`text-sm italic mb-3 sm:mb-4 ${darkMode ? "text-[#666]" : "text-[#999]"}`}
-              >
-                September, 2025
-              </p>
-              <p
-                className={`text-lg sm:text-xl leading-[1.6] ${darkMode ? "text-[#888]" : "text-[#666]"}`}
-              >
-                Reached the finals at ACE 2.0 among 400+ competing teams. Built
-                a complete working prototype under time pressure — the kind of
-                constraint that reveals whether your engineering foundations
-                actually hold up when there's no time to over-engineer anything.
+                Ran the chapter's media: photographing events, making reels and
+                edits, and covering flagship events like the tech fest,
+                induction and the hackathon. Later moved over to co-lead the
+                competitive programming vertical.
               </p>
             </div>
           </div>

@@ -1,8 +1,20 @@
 import { useState, useRef } from "react";
 import { useTheme } from "../context/useTheme";
+import { usePageMeta } from "../hooks/usePageMeta";
 import emailjs from "@emailjs/browser";
 
+const CONTACT_EMAIL = "rupareluttkarsh2309@gmail.com";
+const CONTACT_MAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`;
+
+const PAGE_META = {
+  title: "Contact | Uttkarsh Ruparel",
+  description:
+    "Get in touch with Uttkarsh Ruparel about backend engineering roles, collaborations or questions.",
+  path: "/contact",
+};
+
 export default function Contact() {
+  usePageMeta(PAGE_META);
   const { darkMode } = useTheme();
   const form = useRef();
   const [formData, setFormData] = useState({
@@ -13,7 +25,6 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [errorDetails, setErrorDetails] = useState("");
 
   const isFormValid =
     formData.user_name.trim() &&
@@ -32,7 +43,6 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    setErrorDetails("");
 
     const templateParams = {
       user_name: formData.user_name,
@@ -57,23 +67,8 @@ export default function Contact() {
             message: "",
           });
         },
-        (error) => {
+        () => {
           setSubmitStatus("error");
-          if (error.text) {
-            if (error.text.includes("Invalid")) {
-              setErrorDetails(
-                "Invalid EmailJS configuration. Please check your Service ID, Template ID, and Public Key."
-              );
-            } else if (error.text.includes("template")) {
-              setErrorDetails(
-                "Template not found. Please check your Template ID in EmailJS."
-              );
-            } else {
-              setErrorDetails(`Error: ${error.text}`);
-            }
-          } else {
-            setErrorDetails("Network error. Please check your connection.");
-          }
         }
       )
       .finally(() => {
@@ -111,7 +106,7 @@ export default function Contact() {
               Have a question or want to work together? Send me a message. Or
               email me directly at{" "}
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=rupareluttkarsh2309@gmail.com"
+                href={CONTACT_MAIL_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`underline underline-offset-4 transition-none ${
@@ -120,7 +115,7 @@ export default function Contact() {
                     : "text-[#4285f4] hover:text-[#3367d6]"
                 }`}
               >
-                rupareluttkarsh2309@gmail.com
+                {CONTACT_EMAIL}
               </a>
               .
             </p>
@@ -242,16 +237,17 @@ export default function Contact() {
                     : "border-[#e0e0e0] bg-[#f5f5f5] text-[#ea4335]"
                 }`}
               >
-                Sorry, there was an error sending your message.
-                {errorDetails && (
-                  <div className="mt-2 text-base opacity-80">
-                    {errorDetails}
-                  </div>
-                )}
-                <div className="mt-2 text-base">
-                  Please ensure you've set up the correct email template in
-                  EmailJS.
-                </div>
+                Sorry, your message didn't go through. Please try again in a
+                moment, or email me directly at{" "}
+                <a
+                  href={CONTACT_MAIL_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+                .
               </div>
             )}
 
