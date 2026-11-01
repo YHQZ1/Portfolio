@@ -223,9 +223,9 @@ function SkillsGridSection({
 }
 
 const PAGE_META = {
-  title: "Uttkarsh Ruparel | Backend & Infrastructure Engineer",
+  title: "Uttkarsh Ruparel | Software Engineer",
   description:
-    "Portfolio of Uttkarsh Ruparel, a final-year CS student and software engineering intern focused on backend, distributed systems, cloud infrastructure and DevOps.",
+    "Portfolio of Uttkarsh Ruparel, a final-year CS student and software engineering intern building distributed systems and backend services.",
   path: "/",
 };
 
