@@ -109,6 +109,19 @@ export const technicalSkills = [
     filterCategories: ["languages", "low-level"],
   },
   {
+    name: "Swift",
+    tier: "applied",
+    logo: "/skills/swift.png",
+    level: "Beginner",
+    experienceStart: "2026-11",
+    category: [
+      "SwiftUI & AppKit",
+      "Structured Concurrency",
+      "Native macOS Apps",
+    ],
+    filterCategories: ["languages", "frontend"],
+  },
+  {
     name: "C#",
     tier: "exploration",
     logo: "/skills/cs.png",

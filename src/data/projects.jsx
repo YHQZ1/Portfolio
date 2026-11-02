@@ -40,6 +40,16 @@ export const projects = [
     image: null,
   },
   {
+    title: "Trixie",
+    category: "focused",
+    description:
+      "A voice pet for your Mac, built in native Swift with no web stack. Say 'hey Trixie' and a pixel creature listens, reads your files and answers out loud, running on your own Claude subscription through the official CLI. The wake word and speech recognition run on-device, replies stream sentence by sentence, and the voice falls back from ElevenLabs to a local Kokoro model if the network drops or a monthly character cap is reached. A slimmed Claude setup cut each question from about 23,000 tokens to about 5,000.",
+    tags: ["Voice Interfaces", "Native macOS", "Real-time Systems"],
+    github: "https://github.com/YHQZ1/trixie",
+    live: null,
+    image: null,
+  },
+  {
     title: "BitLink",
     category: "focused",
     description:
