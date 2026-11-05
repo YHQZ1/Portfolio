@@ -6,14 +6,10 @@ export interface Command {
 }
 
 interface CommandPaletteProps {
-  darkMode: boolean;
   commands: Command[];
 }
 
-export default function CommandPalette({
-  darkMode,
-  commands,
-}: CommandPaletteProps) {
+export default function CommandPalette({ commands }: CommandPaletteProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
@@ -85,25 +81,21 @@ export default function CommandPalette({
 
   return (
     <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-start justify-center pt-40 z-50"
+      className="fixed inset-0 z-50 flex items-start justify-center bg-bg/70 pt-40 backdrop-blur-sm"
       onClick={() => setOpen(false)}
     >
       <div
-        className={`w-11/12 sm:w-[500px] rounded-md shadow-lg border ${
-          darkMode
-            ? "bg-[#111] border-[#222] text-[#f5f5f5]"
-            : "bg-white border-[#ddd] text-[#111]"
-        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Jump to a section"
+        className="w-11/12 border border-line-strong bg-bg text-fg shadow-lg sm:w-[500px]"
         onClick={(e) => e.stopPropagation()}
       >
         <input
           autoFocus
+          aria-label="Search sections"
           placeholder="Search sections..."
-          className={`w-full px-4 py-3 border-b outline-none ${
-            darkMode
-              ? "bg-[#111] border-[#222] text-[#f5f5f5]"
-              : "bg-white border-[#eee] text-[#111]"
-          }`}
+          className="w-full border-b border-line bg-transparent px-4 py-3 text-fg outline-none placeholder:text-faint"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -113,22 +105,17 @@ export default function CommandPalette({
             <button
               key={cmd.id}
               onClick={() => goToSection(cmd.id)}
-              className={`
-                w-full text-left px-4 py-3 transition-all duration-150
-                ${
-                  index === activeIndex
-                    ? darkMode
-                      ? "bg-[#1e1e1e]"
-                      : "bg-[#eaeaea]"
-                    : darkMode
-                      ? "hover:bg-[#1a1a1a]"
-                      : "hover:bg-[#f0f0f0]"
-                }
-              `}
+              className={`w-full cursor-pointer px-4 py-3 text-left transition-colors duration-150 hover:bg-surface hover:text-fg ${
+                index === activeIndex ? "bg-surface text-fg" : "text-muted"
+              }`}
             >
               {cmd.label}
             </button>
           ))}
+
+          {filtered.length === 0 && (
+            <p className="px-4 py-3 text-sm text-faint">No matching section.</p>
+          )}
         </div>
       </div>
     </div>

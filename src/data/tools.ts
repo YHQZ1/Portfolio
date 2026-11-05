@@ -1,5 +1,6 @@
 export interface Tool {
   name: string;
+  group: string;
   logo: string;
   darkLogo?: string;
   category: string[];
@@ -8,22 +9,26 @@ export interface Tool {
 export const toolsAndWorkflow: Tool[] = [
   {
     name: "VS Code",
-    logo: "/skills/vscode.png",
+    group: "Editors & IDEs",
+    logo: "/skills/vscode.webp",
     category: ["Code Editing", "Extension Ecosystem", "Remote Development"],
   },
   {
     name: "Claude Code",
-    logo: "/skills/claude-code.png",
+    group: "AI Coding",
+    logo: "/skills/claude-code.webp",
     category: ["Agentic Coding", "CLI Workflow", "MCP & Subagents"],
   },
   {
     name: "Codex",
-    logo: "/skills/codex.png",
+    group: "AI Coding",
+    logo: "/skills/codex.webp",
     category: ["Agentic Coding", "Cloud Sandbox", "Parallel Tasks"],
   },
   {
     name: "WebStorm",
-    logo: "/skills/webstorm.png",
+    group: "Editors & IDEs",
+    logo: "/skills/webstorm.webp",
     category: [
       "JS/TS Development",
       "Framework-aware Editing",
@@ -32,12 +37,14 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "GoLand",
-    logo: "/skills/goland.png",
+    group: "Editors & IDEs",
+    logo: "/skills/goland.webp",
     category: ["Go Development", "Refactoring Tools", "Profiling & Debugging"],
   },
   {
     name: "IntelliJ IDEA",
-    logo: "/skills/intellij.png",
+    group: "Editors & IDEs",
+    logo: "/skills/intellij.webp",
     category: [
       "JVM Development",
       "Smart Code Completion",
@@ -46,6 +53,7 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Jupyter Notebook",
+    group: "Editors & IDEs",
     logo: "https://cdn.simpleicons.org/jupyter/F37626",
     category: [
       "Interactive Computing",
@@ -55,6 +63,7 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Postman",
+    group: "API & Databases",
     logo: "https://cdn.simpleicons.org/postman/FF6C37",
     category: [
       "API Testing",
@@ -64,6 +73,7 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Insomnia",
+    group: "API & Databases",
     logo: "https://cdn.simpleicons.org/insomnia/4000BF",
     category: [
       "gRPC & GraphQL Client",
@@ -73,18 +83,22 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "cURL",
+    group: "API & Databases",
     logo: "https://cdn.simpleicons.org/curl/073551",
     darkLogo: "https://cdn.simpleicons.org/curl/FFFFFF",
     category: ["HTTP Requests", "Network Debugging", "Command-line Tooling"],
   },
   {
     name: "DBeaver",
-    logo: "/skills/dbeaver.png",
+    group: "API & Databases",
+    logo: "/skills/dbeaver.webp",
     category: ["Database GUI", "Query Execution", "Schema Visualization"],
   },
   {
     name: "Swagger UI",
-    logo: "https://cdn.simpleicons.org/swagger/85EA2D",
+    group: "API & Databases",
+    logo: "https://cdn.simpleicons.org/swagger/60B812",
+    darkLogo: "https://cdn.simpleicons.org/swagger/85EA2D",
     category: [
       "API Documentation",
       "Interactive API Explorer",
@@ -93,12 +107,14 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Yarn",
+    group: "Packaging & Build",
     logo: "https://cdn.simpleicons.org/yarn/2C8EBB",
     category: ["Package Management", "Lockfile Determinism", "Workspaces"],
   },
   {
     name: "pnpm",
-    logo: "/skills/pnpm.png",
+    group: "Packaging & Build",
+    logo: "/skills/pnpm.webp",
     category: [
       "Disk-efficient Installs",
       "Strict Dependency Isolation",
@@ -107,7 +123,8 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Turborepo",
-    logo: "/skills/turborepo.png",
+    group: "Packaging & Build",
+    logo: "/skills/turborepo.webp",
     category: [
       "Monorepo Architecture",
       "Task Orchestration",
@@ -116,6 +133,7 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "GitHub",
+    group: "Collaboration",
     logo: "https://cdn.simpleicons.org/github/181717",
     darkLogo: "https://cdn.simpleicons.org/github/FFFFFF",
     category: [
@@ -126,7 +144,8 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Bitbucket",
-    logo: "/skills/bitbucket.png",
+    group: "Collaboration",
+    logo: "/skills/bitbucket.webp",
     category: [
       "Version Control Hosting",
       "Bitbucket Pipelines",
@@ -135,26 +154,31 @@ export const toolsAndWorkflow: Tool[] = [
   },
   {
     name: "Jira",
+    group: "Collaboration",
     logo: "https://cdn.simpleicons.org/jira/0052CC",
     category: ["Issue Tracking", "Sprint Planning", "Agile Workflows"],
   },
   {
     name: "Confluence",
-    logo: "/skills/confluence.png",
+    group: "Collaboration",
+    logo: "/skills/confluence.webp",
     category: ["Team Documentation", "Knowledge Base", "Technical Specs"],
   },
   {
     name: "Slack",
-    logo: "/skills/slack.png",
+    group: "Collaboration",
+    logo: "/skills/slack.webp",
     category: ["Team Communication", "Collaboration", "Developer Workflows"],
   },
   {
     name: "Obsidian",
+    group: "Collaboration",
     logo: "https://cdn.simpleicons.org/obsidian/7C3AED",
     category: ["Knowledge Management", "Note-taking", "Personal Wiki"],
   },
   {
     name: "Notion",
+    group: "Collaboration",
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
     category: ["Documentation", "Project Planning", "Team Wikis"],
   },

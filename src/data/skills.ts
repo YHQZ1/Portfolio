@@ -52,7 +52,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "JavaScript",
     tier: "core",
-    logo: "https://cdn.simpleicons.org/javascript/F7DF1E",
+    logo: "https://cdn.simpleicons.org/javascript/B8A407",
+    darkLogo: "https://cdn.simpleicons.org/javascript/F7DF1E",
     level: "Advanced",
     experienceStart: "2024-07",
     category: [
@@ -97,7 +98,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Python",
     tier: "core",
-    logo: "/skills/python.png",
+    logo: "/skills/python.webp",
     level: "Advanced",
     experienceStart: "2023-07",
     category: ["Backend APIs", "Automation & Scripting", "Data Processing"],
@@ -106,7 +107,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Java",
     tier: "core",
-    logo: "/skills/java.png",
+    logo: "/skills/java.webp",
     level: "Advanced",
     experienceStart: "2025-01",
     category: [
@@ -119,7 +120,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "C",
     tier: "applied",
-    logo: "/skills/c.png",
+    logo: "/skills/c.webp",
     level: "Intermediate",
     experienceStart: "2024-01",
     category: [
@@ -132,7 +133,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "C++",
     tier: "applied",
-    logo: "/skills/cpp.png",
+    logo: "/skills/cpp.webp",
     level: "Intermediate",
     experienceStart: "2024-07",
     category: [
@@ -145,7 +146,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Swift",
     tier: "applied",
-    logo: "/skills/swift.png",
+    logo: "/skills/swift.webp",
     level: "Beginner",
     experienceStart: "2026-11",
     category: [
@@ -158,7 +159,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "C#",
     tier: "exploration",
-    logo: "/skills/cs.png",
+    logo: "/skills/cs.webp",
     level: "Beginner",
     experienceStart: "2026-08",
     category: ["LINQ & Generics", "CLR Ecosystem", "Async/Await Tasks"],
@@ -167,7 +168,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Scala",
     tier: "exploration",
-    logo: "/skills/scala.png",
+    logo: "/skills/scala.webp",
     level: "Beginner",
     experienceStart: "2026-07",
     category: ["JVM Language", "Functional Programming", "Spark Development"],
@@ -176,7 +177,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "SQL",
     tier: "core",
-    logo: "/skills/sql.png",
+    logo: "/skills/sql.webp",
     level: "Intermediate",
     experienceStart: "2025-02",
     category: ["Relational Queries", "Joins & Aggregations", "Data Modeling"],
@@ -203,7 +204,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Bun",
     tier: "applied",
-    logo: "/skills/bun.png",
+    logo: "/skills/bun.webp",
     level: "Beginner",
     experienceStart: "2026-01",
     category: ["JavaScript Runtime", "Built-in Bundler", "Package Management"],
@@ -231,7 +232,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Gin",
     tier: "core",
-    logo: "/skills/gin.png",
+    logo: "/skills/gin.webp",
     level: "Intermediate",
     experienceStart: "2026-03",
     category: ["Radix-tree Routing", "Middleware Chains", "JSON Binding"],
@@ -240,7 +241,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Fiber",
     tier: "exploration",
-    logo: "/skills/fiber.png",
+    logo: "/skills/fiber.webp",
     level: "Beginner",
     experienceStart: "2026-03",
     category: ["Fasthttp Engine", "Express-style Routing", "Low-latency APIs"],
@@ -272,8 +273,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "ASP.NET Core",
     tier: "exploration",
-    logo: "/skills/asp-light.png",
-    darkLogo: "/skills/asp-dark.png",
+    logo: "/skills/asp-light.webp",
+    darkLogo: "/skills/asp-dark.webp",
     level: "Beginner",
     experienceStart: "2026-08",
     category: ["Web APIs", "Middleware Pipeline", "MVC Architecture"],
@@ -291,8 +292,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "gRPC",
     tier: "applied",
-    logo: "/skills/grpc-light.png",
-    darkLogo: "/skills/grpc-dark.png",
+    logo: "/skills/grpc-light.webp",
+    darkLogo: "/skills/grpc-dark.webp",
     level: "Intermediate",
     experienceStart: "2026-05",
     category: [
@@ -305,7 +306,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Protocol Buffers",
     tier: "applied",
-    logo: "/skills/protobuf.png",
+    logo: "/skills/protobuf.webp",
     level: "Intermediate",
     experienceStart: "2026-05",
     category: [
@@ -318,7 +319,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "OpenAPI",
     tier: "applied",
-    logo: "/skills/openapi.png",
+    logo: "/skills/openapi.webp",
     level: "Intermediate",
     experienceStart: "2026-01",
     category: ["API Specification", "Contract-first Design", "Code Generation"],
@@ -336,7 +337,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "WebSockets",
     tier: "applied",
-    logo: "/skills/websocket.png",
+    logo: "/skills/websocket.webp",
     level: "Intermediate",
     experienceStart: "2026-04",
     category: [
@@ -395,8 +396,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "BullMQ",
     tier: "applied",
-    logo: "/skills/bullmq-light.png",
-    darkLogo: "/skills/bullmq-dark.png",
+    logo: "/skills/bullmq-light.webp",
+    darkLogo: "/skills/bullmq-dark.webp",
     level: "Intermediate",
     experienceStart: "2025-12",
     category: ["Background Jobs", "Task Queues", "Retry Strategies"],
@@ -405,7 +406,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Celery",
     tier: "applied",
-    logo: "/skills/celery.png",
+    logo: "/skills/celery-light.webp",
+    darkLogo: "/skills/celery.webp",
     level: "Intermediate",
     experienceStart: "2026-06",
     category: ["Distributed Tasks", "Worker Queues", "Scheduled Jobs"],
@@ -414,7 +416,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "River",
     tier: "applied",
-    logo: "/skills/river.png",
+    logo: "/skills/river.webp",
     level: "Intermediate",
     experienceStart: "2026-04",
     category: [
@@ -427,7 +429,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "ReactJS",
     tier: "core",
-    logo: "https://cdn.simpleicons.org/react/61DAFB",
+    logo: "https://cdn.simpleicons.org/react/06AEDC",
+    darkLogo: "https://cdn.simpleicons.org/react/61DAFB",
     level: "Advanced",
     experienceStart: "2024-09",
     category: [
@@ -498,7 +501,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Zustand",
     tier: "applied",
-    logo: "/skills/zustand.png",
+    logo: "/skills/zustand.webp",
     level: "Intermediate",
     experienceStart: "2026-04",
     category: ["State Management", "Minimal Boilerplate", "Hook-based Store"],
@@ -565,7 +568,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Upstash",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/upstash/00E9A3",
+    logo: "https://cdn.simpleicons.org/upstash/00B67F",
+    darkLogo: "https://cdn.simpleicons.org/upstash/00E9A3",
     level: "Beginner",
     experienceStart: "2025-11",
     category: [
@@ -578,7 +582,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Qdrant",
     tier: "applied",
-    logo: "/skills/qdrant.png",
+    logo: "/skills/qdrant.webp",
     level: "Intermediate",
     experienceStart: "2026-06",
     category: ["Vector Database", "Semantic Search", "Embedding Indexes"],
@@ -587,7 +591,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "ClickHouse",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/clickhouse/FFCC01",
+    logo: "https://cdn.simpleicons.org/clickhouse/C39C00",
+    darkLogo: "https://cdn.simpleicons.org/clickhouse/FFCC01",
     level: "Intermediate",
     experienceStart: "2026-05",
     category: [
@@ -600,7 +605,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Neo4j",
     tier: "applied",
-    logo: "/skills/neo4j.png",
+    logo: "/skills/neo4j.webp",
     level: "Intermediate",
     experienceStart: "2026-05",
     category: ["Graph Databases", "Cypher Queries", "Relationship Modeling"],
@@ -618,7 +623,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "RocksDB",
     tier: "applied",
-    logo: "/skills/rocksdb.png",
+    logo: "/skills/rocksdb.webp",
     level: "Intermediate",
     experienceStart: "2026-05",
     category: [
@@ -641,7 +646,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Drizzle ORM",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/drizzle/C5F74F",
+    logo: "https://cdn.simpleicons.org/drizzle/7DAF08",
+    darkLogo: "https://cdn.simpleicons.org/drizzle/C5F74F",
     level: "Intermediate",
     experienceStart: "2026-03",
     category: [
@@ -663,7 +669,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "sqlc",
     tier: "applied",
-    logo: "/skills/sqlc.png",
+    logo: "/skills/sqlc.webp",
     level: "Intermediate",
     experienceStart: "2026-03",
     category: ["Type-safe SQL", "Code Generation", "Go / PostgreSQL"],
@@ -672,7 +678,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Linux",
     tier: "core",
-    logo: "/skills/linux.png",
+    logo: "/skills/linux.webp",
     level: "Intermediate",
     experienceStart: "2025-01",
     category: ["Process Management", "Server Operations", "Shell Environment"],
@@ -703,7 +709,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "eBPF",
     tier: "applied",
-    logo: "/skills/ebpf.png",
+    logo: "/skills/ebpf.webp",
     level: "Intermediate",
     experienceStart: "2026-05",
     category: [
@@ -716,7 +722,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Aya",
     tier: "applied",
-    logo: "/skills/aya.png",
+    logo: "/skills/aya.webp",
     level: "Intermediate",
     experienceStart: "2026-04",
     category: [
@@ -742,7 +748,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Red Hat OpenShift",
     tier: "exploration",
-    logo: "/skills/openshift.png",
+    logo: "/skills/openshift.webp",
     level: "Beginner",
     experienceStart: "2026-08",
     category: [
@@ -783,7 +789,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Jenkins",
     tier: "applied",
-    logo: "/skills/jenkins.png",
+    logo: "/skills/jenkins.webp",
     level: "Intermediate",
     experienceStart: "2026-07",
     category: ["CI/CD Pipelines", "Build Automation", "Pipeline Orchestration"],
@@ -874,7 +880,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Loki",
     tier: "applied",
-    logo: "/skills/loki.png",
+    logo: "/skills/loki.webp",
     level: "Beginner",
     experienceStart: "2026-05",
     category: [
@@ -887,7 +893,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Jaeger",
     tier: "applied",
-    logo: "/skills/jaeger.png",
+    logo: "/skills/jaeger.webp",
     level: "Intermediate",
     experienceStart: "2026-03",
     category: [
@@ -909,7 +915,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Vector",
     tier: "applied",
-    logo: "/skills/vector.png",
+    logo: "/skills/vector.webp",
     level: "Beginner",
     experienceStart: "2026-05",
     category: ["Telemetry Pipelines", "VRL Transforms", "Event Routing"],
@@ -928,8 +934,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "AWS",
     tier: "core",
-    logo: "/skills/aws-light.png",
-    darkLogo: "/skills/aws-dark.png",
+    logo: "/skills/aws-light.webp",
+    darkLogo: "/skills/aws-dark.webp",
     level: "Intermediate",
     experienceStart: "2025-07",
     category: ["Compute Services", "Networking", "Cloud Architecture"],
@@ -988,7 +994,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Playwright",
     tier: "applied",
-    logo: "/skills/playwright.png",
+    logo: "/skills/playwright.webp",
     level: "Intermediate",
     experienceStart: "2025-07",
     category: [
@@ -1037,7 +1043,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Apache Hadoop",
     tier: "exploration",
-    logo: "/skills/hadoop.png",
+    logo: "/skills/hadoop.webp",
     level: "Beginner",
     experienceStart: "2026-07",
     category: ["Distributed Storage", "Batch Processing", "MapReduce"],
@@ -1059,7 +1065,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Apache Hive",
     tier: "exploration",
-    logo: "/skills/hive.png",
+    logo: "/skills/hive.webp",
     level: "Beginner",
     experienceStart: "2026-07",
     category: ["SQL on Hadoop", "Data Warehousing", "ETL"],
@@ -1082,7 +1088,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Apache ZooKeeper",
     tier: "applied",
-    logo: "/skills/zookeeper.png",
+    logo: "/skills/zookeeper.webp",
     level: "Beginner",
     experienceStart: "2026-07",
     category: [
@@ -1095,7 +1101,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "OpenSearch",
     tier: "applied",
-    logo: "/skills/opensearch.png",
+    logo: "/skills/opensearch.webp",
     level: "Intermediate",
     experienceStart: "2026-07",
     category: [
@@ -1108,7 +1114,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Elasticsearch",
     tier: "exploration",
-    logo: "/skills/elasticsearch.png",
+    logo: "/skills/elasticsearch.webp",
     level: "Beginner",
     experienceStart: "2026-07",
     category: ["Search Engine", "Full-text Search", "Inverted Indexing"],
@@ -1117,7 +1123,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Logstash",
     tier: "exploration",
-    logo: "/skills/logstash.png",
+    logo: "/skills/logstash.webp",
     level: "Beginner",
     experienceStart: "2026-07",
     category: ["Data Ingestion", "Log Processing", "ETL Pipelines"],
@@ -1126,7 +1132,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Kibana",
     tier: "applied",
-    logo: "/skills/kibana.png",
+    logo: "/skills/kibana.webp",
     level: "Intermediate",
     experienceStart: "2026-07",
     category: ["Log Exploration", "Search Dashboards", "Data Visualization"],
@@ -1135,7 +1141,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "NumPy",
     tier: "applied",
-    logo: "/skills/numpy.png",
+    logo: "/skills/numpy.webp",
     level: "Intermediate",
     experienceStart: "2025-12",
     category: ["Numerical Computing", "Array Processing", "Linear Algebra"],
@@ -1144,8 +1150,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Pandas",
     tier: "applied",
-    logo: "/skills/pandas-light.png",
-    darkLogo: "/skills/pandas-dark.png",
+    logo: "/skills/pandas-light.webp",
+    darkLogo: "/skills/pandas-dark.webp",
     level: "Intermediate",
     experienceStart: "2025-12",
     category: ["Data Manipulation", "DataFrame Analysis", "Data Cleaning"],
@@ -1154,7 +1160,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Matplotlib",
     tier: "applied",
-    logo: "/skills/matplotlib.png",
+    logo: "/skills/matplotlib-light.webp",
+    darkLogo: "/skills/matplotlib.webp",
     level: "Intermediate",
     experienceStart: "2025-12",
     category: ["Static Plotting", "Figure Customization", "Exploratory Charts"],
@@ -1163,7 +1170,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Seaborn",
     tier: "applied",
-    logo: "/skills/seaborn.png",
+    logo: "/skills/seaborn.webp",
     level: "Beginner",
     experienceStart: "2025-12",
     category: [
@@ -1186,7 +1193,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "LangChain",
     tier: "applied",
-    logo: "/skills/langchain.png",
+    logo: "/skills/langchain.webp",
     level: "Beginner",
     experienceStart: "2026-06",
     category: ["Text Splitters", "RAG Pipelines", "LLM Tooling"],
@@ -1195,7 +1202,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "LangGraph",
     tier: "applied",
-    logo: "/skills/langgraph.png",
+    logo: "/skills/langgraph.webp",
     level: "Beginner",
     experienceStart: "2026-06",
     category: ["Agent Workflows", "State Graphs", "LLM Orchestration"],
@@ -1204,7 +1211,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Tesseract OCR",
     tier: "applied",
-    logo: "/skills/tesseract.png",
+    logo: "/skills/tesseract.webp",
     level: "Intermediate",
     experienceStart: "2025-12",
     category: [
@@ -1217,7 +1224,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "PaddleOCR",
     tier: "applied",
-    logo: "/skills/paddleocr.png",
+    logo: "/skills/paddleocr.webp",
     level: "Intermediate",
     experienceStart: "2026-03",
     category: ["Document OCR", "Text Detection", "Layout Analysis"],
@@ -1226,7 +1233,8 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "Hugging Face",
     tier: "applied",
-    logo: "https://cdn.simpleicons.org/huggingface/FFD21E",
+    logo: "https://cdn.simpleicons.org/huggingface/C69F00",
+    darkLogo: "https://cdn.simpleicons.org/huggingface/FFD21E",
     level: "Beginner",
     experienceStart: "2026-03",
     category: ["Pretrained Transformers", "Sentence Embeddings", "Model Hub"],
@@ -1235,7 +1243,7 @@ export const technicalSkills: TechnicalSkill[] = [
   {
     name: "OpenCV",
     tier: "applied",
-    logo: "/skills/opencv.png",
+    logo: "/skills/opencv.webp",
     level: "Beginner",
     experienceStart: "2025-12",
     category: ["Image Processing", "Computer Vision", "Object Detection"],

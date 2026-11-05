@@ -1,70 +1,94 @@
-import type { ReactNode } from "react";
+import { lazy, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Profile from "./pages/Profile";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Cursor from "./components/Cursor";
-import ScrollToTop from "./components/ScrollToTop";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import PageLayout from "./components/layout/PageLayout";
+import ScrollToTop from "./components/layout/ScrollToTop";
+import { SoundProvider } from "./context/SoundContext";
 import { ThemeProvider } from "./context/ThemeContext";
-import { useTheme } from "./context/useTheme";
 
-function ScrollToTopButtonWrapper() {
-  const { darkMode } = useTheme();
-  return <ScrollToTopButton darkMode={darkMode} />;
-}
+const loadProjectDetail = () => import("./pages/ProjectDetail");
+const loadAbout = () => import("./pages/About");
+const loadContact = () => import("./pages/Contact");
 
-function PageWithLayout({ children }: { children: ReactNode }) {
-  return (
-    <>
-      <Navbar />
-      {children}
-      <ScrollToTopButtonWrapper />
-      <Footer />
-    </>
-  );
+const ProjectDetail = lazy(loadProjectDetail);
+const About = lazy(loadAbout);
+const Contact = lazy(loadContact);
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Warm the other routes once the landing page is idle so navigation feels instant.
+function usePrefetchRoutes() {
+  useEffect(() => {
+    const prefetch = () => {
+      void loadAbout();
+      void loadContact();
+      void loadProjectDetail();
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(prefetch, { timeout: 4000 });
+      return () => window.cancelIdleCallback(id);
+    }
+
+    const id = window.setTimeout(prefetch, 2000);
+    return () => window.clearTimeout(id);
+  }, []);
 }
 
 export default function App() {
-  return (
-    <ThemeProvider>
-      <Router>
-        <Cursor />
-        <ScrollToTop />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PageWithLayout>
-                <Profile />
-              </PageWithLayout>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <PageWithLayout>
-                <About />
-              </PageWithLayout>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <PageWithLayout>
-                <Contact />
-              </PageWithLayout>
-            }
-          />
+  usePrefetchRoutes();
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+  return (
+    <SoundProvider>
+      <ThemeProvider>
+        <Router>
+          <ScrollToTop />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <PageLayout>
+                  <Home />
+                </PageLayout>
+              }
+            />
+            <Route
+              path="/projects/:slug"
+              element={
+                <PageLayout>
+                  <ProjectDetail />
+                </PageLayout>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <PageLayout>
+                  <About />
+                </PageLayout>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <PageLayout>
+                  <Contact />
+                </PageLayout>
+              }
+            />
+
+            <Route
+              path="*"
+              element={
+                <PageLayout>
+                  <NotFound />
+                </PageLayout>
+              }
+            />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </SoundProvider>
   );
 }

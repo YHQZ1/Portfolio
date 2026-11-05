@@ -1,10 +1,12 @@
 import { useState, useRef, type ChangeEvent, type FormEvent } from "react";
-import { useTheme } from "../context/useTheme";
+import { useSound } from "../context/useSound";
 import { usePageMeta, type PageMeta } from "../hooks/usePageMeta";
-import emailjs from "@emailjs/browser";
-
-const CONTACT_EMAIL = "rupareluttkarsh2309@gmail.com";
-const CONTACT_MAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`;
+import { socialLinks, specialLinks } from "../data/links";
+import { CONTACT_EMAIL, CONTACT_MAIL_HREF } from "../data/site";
+import Container from "../components/ui/Container";
+import LinkRow from "../components/ui/LinkRow";
+import ScrollProgress from "../components/layout/ScrollProgress";
+import { FiArrowRight, FiCheck, FiCopy } from "react-icons/fi";
 
 const PAGE_META: PageMeta = {
   title: "Contact | Uttkarsh Ruparel",
@@ -13,16 +15,24 @@ const PAGE_META: PageMeta = {
   path: "/contact",
 };
 
+const fieldClass =
+  "w-full border-0 border-b border-line-strong bg-transparent py-3 text-lg text-fg transition-colors duration-200 placeholder:text-faint hover:border-faint focus:border-fg focus:outline-none";
+
+const labelClass = "eyebrow mb-1 block";
+
 export default function Contact() {
   usePageMeta(PAGE_META);
-  const { darkMode } = useTheme();
   const form = useRef<HTMLFormElement>(null);
+  const { play } = useSound();
+  const [copied, setCopied] = useState(false);
+  const discord = specialLinks.find((link) => link.type === "copy");
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
     subject: "",
     message: "",
   });
+  const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
     null
@@ -43,236 +53,214 @@ export default function Contact() {
     });
   };
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const templateParams = {
-      user_name: formData.user_name,
-      user_email: formData.user_email,
-      subject: formData.subject || `Message from ${formData.user_name}`,
-      message: formData.message,
-      time: new Date().toLocaleString(),
-      reply_to: formData.user_email,
-    };
-
-    emailjs
-      .send("service_chx8xct", "template_4tbpz39", templateParams, {
-        publicKey: "LRGdJCs-rXJbFfUie",
-      })
-      .then(
-        () => {
-          setSubmitStatus("success");
-          setFormData({
-            user_name: "",
-            user_email: "",
-            subject: "",
-            message: "",
-          });
-        },
-        () => {
-          setSubmitStatus("error");
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.user_name,
+          email: formData.user_email,
+          subject: formData.subject,
+          message: formData.message,
+          website,
+        }),
       });
+
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+
+      setSubmitStatus("success");
+      play("success");
+      setFormData({ user_name: "", user_email: "", subject: "", message: "" });
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div
-      className={`min-h-screen ${
-        darkMode ? "bg-[#0a0a0a]" : "bg-[#fafafa]"
-      } px-4 sm:px-6`}
-    >
-      <div className="max-w-[900px] mx-auto pt-20 md:pt-32 lg:pt-40 pb-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
-        <div
-          className={`rounded-sm p-6 sm:p-8 border ${
-            darkMode
-              ? "border-[#1a1a1a] bg-[#0f0f0f]"
-              : "border-[#e8e8e8] bg-white"
-          }`}
-        >
-          <div className="text-center mb-8 sm:mb-10">
-            <h2
-              className={`text-3xl sm:text-4xl md:text-5xl font-extralight mb-4 sm:mb-6 ${
-                darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-              } tracking-tight leading-[1.2]`}
-            >
-              Get In Touch
-            </h2>
-            <p
-              className={`text-lg sm:text-xl md:text-2xl ${
-                darkMode ? "text-[#888]" : "text-[#666]"
-              }`}
-            >
-              Have a question or want to work together? Send me a message. Or
-              email me directly at{" "}
-              <a
-                href={CONTACT_MAIL_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`underline underline-offset-4 transition-none ${
-                  darkMode
-                    ? "text-[#8ab4f8] hover:text-[#a5c7ff]"
-                    : "text-[#4285f4] hover:text-[#3367d6]"
-                }`}
-              >
-                {CONTACT_EMAIL}
-              </a>
-              .
+    <main className="min-h-screen bg-bg">
+      <ScrollProgress />
+
+      <Container>
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-5">
+            <p className="mb-8 eyebrow">Contact</p>
+            <h1 className="text-4xl leading-[1.12] font-extralight tracking-tighter text-balance text-fg sm:text-5xl">
+              Have a role, a project or a question?{" "}
+              <span className="text-faint">Send it over.</span>
+            </h1>
+
+            <p className="mt-8 max-w-md text-base leading-[1.8] text-muted">
+              Send a message here, or reach me directly on any of these.
             </p>
+
+            <ul className="mt-10 border-t border-line">
+              <li>
+                <LinkRow
+                  label="Email"
+                  href={CONTACT_MAIL_HREF}
+                  hint={CONTACT_EMAIL}
+                  hideHintOnMobile
+                />
+              </li>
+              {socialLinks.map(({ name, url }) => (
+                <li key={name}>
+                  <LinkRow label={name} href={url} />
+                </li>
+              ))}
+              {discord && discord.type === "copy" && (
+                <li>
+                  <LinkRow
+                    label="Discord"
+                    hint={copied ? "Copied" : "Copy handle"}
+                    icon={
+                      copied ? (
+                        <FiCheck className="shrink-0 text-lg" />
+                      ) : (
+                        <FiCopy className="shrink-0 text-lg" />
+                      )
+                    }
+                    onClick={() => {
+                      navigator.clipboard.writeText(discord.value);
+                      play("copy");
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 1400);
+                    }}
+                  />
+                </li>
+              )}
+            </ul>
           </div>
 
-          <form
-            className="space-y-6 sm:space-y-8"
-            ref={form}
-            onSubmit={sendEmail}
-          >
-            <div>
-              <label
-                className={`block mb-3 font-medium text-lg ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                }`}
-              >
-                Your Name
-              </label>
-              <input
-                type="text"
-                name="user_name"
-                value={formData.user_name}
-                onChange={handleChange}
-                className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-sm border transition-none duration-200 focus:outline-none focus:ring-2 text-lg ${
-                  darkMode
-                    ? "border-[#2a2a2a] bg-[#0f0f0f] text-[#f5f5f5] placeholder-[#888] hover:border-[#3a3a3a] focus:border-[#8ab4f8] focus:ring-[#8ab4f8] focus:ring-opacity-20"
-                    : "border-[#e0e0e0] bg-white text-[#1a1a1a] placeholder-[#666] hover:border-[#d0d0d0] focus:border-[#4285f4] focus:ring-[#4285f4] focus:ring-opacity-20"
-                }`}
-                required
-                placeholder="Enter your name"
-              />
-            </div>
+          <div className="lg:col-span-7">
+            <p className="mb-8 eyebrow">Send a message</p>
 
-            <div>
-              <label
-                className={`block mb-3 font-medium text-lg ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                }`}
-              >
-                Email Address
-              </label>
-              <input
-                type="email"
-                name="user_email"
-                value={formData.user_email}
-                onChange={handleChange}
-                className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-sm border transition-none duration-200 focus:outline-none focus:ring-2 text-lg ${
-                  darkMode
-                    ? "border-[#2a2a2a] bg-[#0f0f0f] text-[#f5f5f5] placeholder-[#888] hover:border-[#3a3a3a] focus:border-[#8ab4f8] focus:ring-[#8ab4f8] focus:ring-opacity-20"
-                    : "border-[#e0e0e0] bg-white text-[#1a1a1a] placeholder-[#666] hover:border-[#d0d0d0] focus:border-[#4285f4] focus:ring-[#4285f4] focus:ring-opacity-20"
-                }`}
-                required
-                placeholder="Enter your email"
-              />
-            </div>
-
-            <div>
-              <label
-                className={`block mb-3 font-medium text-lg ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                }`}
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-sm border transition-none duration-200 focus:outline-none focus:ring-2 text-lg ${
-                  darkMode
-                    ? "border-[#2a2a2a] bg-[#0f0f0f] text-[#f5f5f5] placeholder-[#888] hover:border-[#3a3a3a] focus:border-[#8ab4f8] focus:ring-[#8ab4f8] focus:ring-opacity-20"
-                    : "border-[#e0e0e0] bg-white text-[#1a1a1a] placeholder-[#666] hover:border-[#d0d0d0] focus:border-[#4285f4] focus:ring-[#4285f4] focus:ring-opacity-20"
-                }`}
-                placeholder="What is this regarding?"
-              />
-            </div>
-
-            <div>
-              <label
-                className={`block mb-3 font-medium text-lg ${
-                  darkMode ? "text-[#f5f5f5]" : "text-[#1a1a1a]"
-                }`}
-              >
-                Your Message
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-sm border resize-none transition-none duration-200 focus:outline-none focus:ring-2 text-lg ${
-                  darkMode
-                    ? "border-[#2a2a2a] bg-[#0f0f0f] text-[#f5f5f5] placeholder-[#888] hover:border-[#3a3a3a] focus:border-[#8ab4f8] focus:ring-[#8ab4f8] focus:ring-opacity-20"
-                    : "border-[#e0e0e0] bg-white text-[#1a1a1a] placeholder-[#666] hover:border-[#d0d0d0] focus:border-[#4285f4] focus:ring-[#4285f4] focus:ring-opacity-20"
-                }`}
-                rows={5}
-                required
-                placeholder="Type your message here..."
-              />
-            </div>
-
-            {submitStatus === "success" && (
+            <form className="space-y-10" ref={form} onSubmit={sendEmail}>
               <div
-                className={`p-4 sm:p-6 rounded-sm border transition-none duration-200 text-lg ${
-                  darkMode
-                    ? "border-[#1a1a1a] bg-[#0f0f0f] text-[#81c995]"
-                    : "border-[#e0e0e0] bg-[#f5f5f5] text-[#34a853]"
-                }`}
+                aria-hidden="true"
+                className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
               >
-                Thank you for your message! I'll get back to you soon.
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(event) => setWebsite(event.target.value)}
+                />
               </div>
-            )}
 
-            {submitStatus === "error" && (
-              <div
-                className={`p-4 sm:p-6 rounded-sm border transition-none duration-200 text-lg ${
-                  darkMode
-                    ? "border-[#1a1a1a] bg-[#0f0f0f] text-[#f28b82]"
-                    : "border-[#e0e0e0] bg-[#f5f5f5] text-[#ea4335]"
-                }`}
-              >
-                Sorry, your message didn't go through. Please try again in a
-                moment, or email me directly at{" "}
-                <a
-                  href={CONTACT_MAIL_HREF}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4"
+              <div>
+                <label htmlFor="user_name" className={labelClass}>
+                  Your Name
+                </label>
+                <input
+                  id="user_name"
+                  type="text"
+                  name="user_name"
+                  value={formData.user_name}
+                  onChange={handleChange}
+                  className={fieldClass}
+                  required
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="user_email" className={labelClass}>
+                  Email Address
+                </label>
+                <input
+                  id="user_email"
+                  type="email"
+                  name="user_email"
+                  value={formData.user_email}
+                  onChange={handleChange}
+                  className={fieldClass}
+                  required
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className={labelClass}>
+                  Subject
+                </label>
+                <input
+                  id="subject"
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className={fieldClass}
+                  placeholder="What is this regarding?"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className={labelClass}>
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`${fieldClass} resize-none`}
+                  rows={5}
+                  required
+                  placeholder="Type your message here..."
+                />
+              </div>
+
+              {submitStatus === "success" && (
+                <p
+                  role="status"
+                  className="border-l-2 border-fg pl-4 text-base leading-[1.7] text-fg"
                 >
-                  {CONTACT_EMAIL}
-                </a>
-                .
-              </div>
-            )}
+                  Thank you for your message! I'll get back to you soon.
+                </p>
+              )}
 
-            <button
-              type="submit"
-              className={`w-full py-4 sm:py-5 px-8 rounded-sm font-semibold text-white transition-none duration-200 text-lg ${
-                darkMode
-                  ? isFormValid
-                    ? "bg-[#8ab4f8] hover:bg-[#7aa3f0] cursor-pointer"
-                    : "bg-[#3a3a3a] cursor-not-allowed opacity-50"
-                  : isFormValid
-                    ? "bg-[#4285f4] hover:bg-[#3367d6] cursor-pointer"
-                    : "bg-[#ccc] cursor-not-allowed opacity-50"
-              }`}
-              disabled={!isFormValid}
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
-          </form>
+              {submitStatus === "error" && (
+                <p
+                  role="alert"
+                  className="border-l-2 border-fg pl-4 text-base leading-[1.7] text-muted"
+                >
+                  Sorry, your message didn't go through. Please try again in a
+                  moment, or email me directly at{" "}
+                  <a
+                    href={CONTACT_MAIL_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-fg underline underline-offset-4"
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                  .
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={!isFormValid}
+                className="inline-flex cursor-pointer items-center border border-fg px-8 py-3.5 text-sm text-fg transition-colors duration-200 hover:bg-fg hover:text-bg disabled:cursor-not-allowed disabled:border-line-strong disabled:text-faint disabled:hover:bg-transparent disabled:hover:text-faint"
+              >
+                {isSubmitting ? "Sending..." : "Send message"}
+                <FiArrowRight className="ml-3" />
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </main>
   );
 }

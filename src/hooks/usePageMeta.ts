@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-
-const SITE_URL = "https://uttkarsh.dev";
+import { SITE_URL } from "../data/site";
 
 export interface PageMeta {
   title: string;
