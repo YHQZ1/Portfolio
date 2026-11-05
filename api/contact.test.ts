@@ -1,12 +1,7 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { CONTACT_EMAIL } from "../src/data/site";
 import { POST } from "./contact";
-import {
-  buildEmail,
-  createRateLimiter,
-  escapeHtml,
-  parseContact,
-} from "./_lib/contact";
 
 let visitor = 0;
 
@@ -62,7 +57,7 @@ describe("POST /api/contact", () => {
     expect(init.headers.authorization).toBe("Bearer re_test_key");
 
     const sent = JSON.parse(init.body);
-    expect(sent.to).toEqual(["rupareluttkarsh2309@gmail.com"]);
+    expect(sent.to).toEqual([CONTACT_EMAIL]);
     expect(sent.reply_to).toBe("ada@example.com");
     expect(sent.subject).toBe("[Portfolio] Hello");
     expect(sent.from).toContain("onboarding@resend.dev");
@@ -151,34 +146,38 @@ describe("POST /api/contact", () => {
   });
 });
 
-describe("contact helpers", () => {
-  it("parses and trims the fields", () => {
-    const result = parseContact({ ...valid, name: "  Ada  " });
+describe("message content", () => {
+  it("trims fields and sends a readable plain-text body", async () => {
+    await post({ ...valid, name: "  Ada Lovelace  ", subject: "" });
 
-    expect(result.ok && result.value.name).toBe("Ada");
-    expect(parseContact(null).ok).toBe(false);
-  });
-
-  it("escapes HTML special characters", () => {
-    expect(escapeHtml(`<a href="x">&'`)).toBe(
-      "&lt;a href=&quot;x&quot;&gt;&amp;&#39;"
-    );
-  });
-
-  it("builds a readable plain-text body", () => {
-    const email = buildEmail({ ...valid, subject: "" });
-
-    expect(email.text).toBe(
+    const sent = JSON.parse(resend.mock.calls[0][1].body);
+    expect(sent.text).toBe(
       "I would like to talk about a role.\n\nAda Lovelace <ada@example.com>"
     );
   });
 
-  it("forgets old requests once the window has passed", () => {
-    const allow = createRateLimiter({ limit: 1, windowMs: 1000 });
+  it("escapes every HTML special character", async () => {
+    await post({ ...valid, message: `<a href="x">&'` });
 
-    expect(allow("a", 0)).toBe(true);
-    expect(allow("a", 500)).toBe(false);
-    expect(allow("a", 1500)).toBe(true);
-    expect(allow("b", 500)).toBe(true);
+    const sent = JSON.parse(resend.mock.calls[0][1].body);
+    expect(sent.html).toContain("&lt;a href=&quot;x&quot;&gt;&amp;&#39;");
+  });
+
+  it("forgets old requests once the rate-limit window has passed", async () => {
+    vi.useFakeTimers();
+    try {
+      const headers = { "x-forwarded-for": "198.51.100.99" };
+
+      for (let i = 0; i < 5; i += 1) {
+        expect((await post(valid, headers)).status).toBe(200);
+      }
+      expect((await post(valid, headers)).status).toBe(429);
+
+      vi.setSystemTime(Date.now() + 11 * 60 * 1000);
+
+      expect((await post(valid, headers)).status).toBe(200);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

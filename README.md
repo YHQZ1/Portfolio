@@ -113,7 +113,7 @@ It is a client-rendered React application with a handful of pages, a small depen
 │   ├── main.tsx             Application entry point
 │   ├── test/                Vitest setup (browser API stubs)
 │   └── index.css            Tailwind import, color tokens, the eyebrow and body-text utilities and global styles
-├── api/                     contact.ts (Vercel function) and _lib/ (validation, email, rate limit)
+├── api/                     contact.ts, the Vercel function (one self-contained file)
 ├── .github/                 CI workflow, Dependabot config and PR template
 ├── Dockerfile               Vite build, then nginx
 ├── nginx.conf               SPA fallback and long-lived asset caching
