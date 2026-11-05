@@ -21,5 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 
-/public/old_pfp.jpg
-/public/old_pfp2.jpeg
+
+# local environment files (secrets such as RESEND_API_KEY)
+.env
+.env.*
+!.env.example
