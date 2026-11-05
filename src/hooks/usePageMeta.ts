@@ -2,12 +2,24 @@ import { useEffect } from "react";
 
 const SITE_URL = "https://uttkarsh.dev";
 
-function setAttribute(selector, attribute, value) {
+export interface PageMeta {
+  title: string;
+  description: string;
+  path: string;
+  noindex?: boolean;
+}
+
+function setAttribute(selector: string, attribute: string, value: string) {
   const element = document.head.querySelector(selector);
   if (element) element.setAttribute(attribute, value);
 }
 
-export function usePageMeta({ title, description, path, noindex = false }) {
+export function usePageMeta({
+  title,
+  description,
+  path,
+  noindex = false,
+}: PageMeta) {
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
 

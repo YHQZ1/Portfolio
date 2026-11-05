@@ -61,17 +61,18 @@ It is a client-rendered React application with three pages, a small dependency f
 
 ## Tech stack
 
-| Area      | Technology                                              |
-| --------- | ------------------------------------------------------- |
-| UI        | React 19                                                |
-| Routing   | React Router 7                                          |
-| Build     | Vite 6 with the React plugin                            |
-| Styling   | Tailwind CSS 4, PostCSS, Autoprefixer, Raleway typeface |
-| Icons     | React Icons, plus local and CDN logos for skills        |
-| Data viz  | react-github-calendar                                   |
-| Email     | EmailJS (browser SDK)                                   |
-| Quality   | ESLint 9 with React Hooks rules, Prettier               |
-| Packaging | Docker multi-stage build served by nginx, or Vercel     |
+| Area      | Technology                                                     |
+| --------- | -------------------------------------------------------------- |
+| UI        | React 19                                                       |
+| Language  | TypeScript 6 in strict mode                                    |
+| Routing   | React Router 7                                                 |
+| Build     | Vite 6 with the React plugin                                   |
+| Styling   | Tailwind CSS 4, PostCSS, Autoprefixer, Raleway typeface        |
+| Icons     | React Icons, plus local and CDN logos for skills               |
+| Data viz  | react-github-calendar                                          |
+| Email     | EmailJS (browser SDK)                                          |
+| Quality   | tsc, ESLint 9 with typescript-eslint and React Hooks, Prettier |
+| Packaging | Docker multi-stage build served by nginx, or Vercel            |
 
 ## Project structure
 
@@ -88,18 +89,20 @@ It is a client-rendered React application with three pages, a small dependency f
 │   │                        GitHubActivity and scroll helpers
 │   ├── context/             ThemeProvider and the useTheme hook
 │   ├── data/
-│   │   ├── skills.jsx       Skills, tiers, levels and filters
-│   │   ├── tools.jsx        Tools and workflow
-│   │   ├── projects.jsx     Selected and focused projects
-│   │   └── links.jsx        Social and contact links
+│   │   ├── skills.ts        Skills, tiers, levels and filters
+│   │   ├── tools.ts         Tools and workflow
+│   │   ├── projects.ts      Selected and focused projects
+│   │   └── links.ts         Social and contact links
 │   ├── pages/               Profile, About, Contact, NotFound
-│   ├── App.jsx              Routes and shared page layout
-│   ├── main.jsx             Application entry point
+│   ├── App.tsx              Routes and shared page layout
+│   ├── main.tsx             Application entry point
 │   └── index.css            Tailwind import and global styles
 ├── Dockerfile               Vite build, then nginx
 ├── nginx.conf               SPA fallback and long-lived asset caching
 ├── vercel.json              SPA rewrite for Vercel
 ├── eslint.config.js
+├── tsconfig.json            Strict TypeScript settings
+├── vite.config.ts
 └── tailwind.config.js
 ```
 
@@ -128,7 +131,8 @@ npm run preview
 | Command                | What it does                                |
 | ---------------------- | ------------------------------------------- |
 | `npm run dev`          | Start the Vite dev server                   |
-| `npm run build`        | Create the production build in `dist`       |
+| `npm run typecheck`    | Type-check the project with `tsc`           |
+| `npm run build`        | Type-check, then create the build in `dist` |
 | `npm run preview`      | Serve the production build locally          |
 | `npm run lint`         | Run ESLint and fail on any warning          |
 | `npm run format`       | Format the repository with Prettier         |
@@ -141,9 +145,9 @@ All content lives in `src/data`. Add, change or remove an entry and the page upd
 
 ### Skills
 
-`src/data/skills.jsx`
+`src/data/skills.ts`
 
-```js
+```ts
 {
   name: "Go",
   tier: "core",
@@ -166,9 +170,9 @@ All content lives in `src/data`. Add, change or remove an entry and the page upd
 
 ### Projects
 
-`src/data/projects.jsx`
+`src/data/projects.ts`
 
-```js
+```ts
 {
   title: "Hatch",
   category: "focused",
@@ -184,11 +188,11 @@ All content lives in `src/data`. Add, change or remove an entry and the page upd
 
 ### Tools and links
 
-`src/data/tools.jsx` lists tools with a `name`, a `logo` and three `category` tags. `src/data/links.jsx` holds the social icons in the footer and the Discord and email shortcuts.
+`src/data/tools.ts` lists tools with a `name`, a `logo` and three `category` tags. `src/data/links.ts` holds the social icons in the footer and the Discord and email shortcuts.
 
 ### Contact form
 
-The EmailJS service ID, template ID and public key are set in `src/pages/Contact.jsx`. A public key is designed to be visible in client code, so restrict the allowed origins to your domain from the EmailJS dashboard.
+The EmailJS service ID, template ID and public key are set in `src/pages/Contact.tsx`. A public key is designed to be visible in client code, so restrict the allowed origins to your domain from the EmailJS dashboard.
 
 ## Deployment
 
@@ -209,6 +213,7 @@ The site is then available at [http://localhost:8080](http://localhost:8080).
 
 ## Code quality
 
-- **ESLint** runs the recommended rules with React Hooks and React Refresh checks. `npm run lint` fails on any warning.
+- **TypeScript** runs in strict mode. `npm run build` type-checks before bundling, so a type error fails the build. Skills, tools, projects and links are typed in `src/data`, so a mistyped tier, level or filter key is a compile error.
+- **ESLint** runs the recommended rules with typescript-eslint, React Hooks and React Refresh checks. `npm run lint` fails on any warning.
 - **Prettier** formats the whole repository. Its settings are in `.prettierrc`, and `.prettierignore` skips build output, dependencies and static assets.
 - The source contains no inline comments, so names and structure carry the meaning.

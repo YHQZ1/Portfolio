@@ -1,4 +1,11 @@
-export const toolsAndWorkflow = [
+export interface Tool {
+  name: string;
+  logo: string;
+  darkLogo?: string;
+  category: string[];
+}
+
+export const toolsAndWorkflow: Tool[] = [
   {
     name: "VS Code",
     logo: "/skills/vscode.png",

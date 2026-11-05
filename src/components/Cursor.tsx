@@ -1,13 +1,14 @@
 import { useEffect, useRef } from "react";
 
 export default function Cursor() {
-  const cursorRef = useRef(null);
+  const cursorRef = useRef<HTMLImageElement>(null);
 
   const isTouchDevice =
     typeof window !== "undefined" &&
     ("ontouchstart" in window ||
       navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0);
+      ((navigator as Navigator & { msMaxTouchPoints?: number })
+        .msMaxTouchPoints ?? 0) > 0);
 
   useEffect(() => {
     if (isTouchDevice || !cursorRef.current) return;
@@ -15,9 +16,9 @@ export default function Cursor() {
     const cursor = cursorRef.current;
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
-    let rafId = null;
+    let rafId: number | null = null;
 
-    const moveCursor = (e) => {
+    const moveCursor = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       cursor.style.opacity = "1";

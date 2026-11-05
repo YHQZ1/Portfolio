@@ -7,7 +7,7 @@ export default function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
   const location = useLocation();
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav

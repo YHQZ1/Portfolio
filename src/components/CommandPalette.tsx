@@ -1,6 +1,19 @@
 import { useState, useEffect } from "react";
 
-export default function CommandPalette({ darkMode, commands }) {
+export interface Command {
+  label: string;
+  id: string;
+}
+
+interface CommandPaletteProps {
+  darkMode: boolean;
+  commands: Command[];
+}
+
+export default function CommandPalette({
+  darkMode,
+  commands,
+}: CommandPaletteProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,7 +42,7 @@ export default function CommandPalette({ darkMode, commands }) {
   );
 
   useEffect(() => {
-    const handler = (e) => {
+    const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setOpen((prev) => !prev);
@@ -62,7 +75,7 @@ export default function CommandPalette({ darkMode, commands }) {
     return () => window.removeEventListener("keydown", handler);
   }, [open, filtered, activeIndex]);
 
-  const goToSection = (id) => {
+  const goToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setOpen(false);
     setQuery("");

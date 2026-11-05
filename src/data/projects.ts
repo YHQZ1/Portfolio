@@ -1,4 +1,16 @@
-export const projects = [
+export type ProjectCategory = "selected" | "focused";
+
+export interface Project {
+  title: string;
+  category: ProjectCategory;
+  description: string;
+  tags: string[];
+  github: string;
+  live: string | null;
+  image: string | null;
+}
+
+export const projects: Project[] = [
   {
     title: "kprobe",
     category: "selected",

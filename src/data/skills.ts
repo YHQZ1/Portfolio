@@ -1,4 +1,38 @@
-export function calculateExperience(dateString) {
+export type SkillTier = "core" | "applied" | "exploration";
+
+export type SkillLevel = "Beginner" | "Intermediate" | "Advanced";
+
+export type FilterKey =
+  | "languages"
+  | "frontend"
+  | "backend"
+  | "real-time"
+  | "low-level"
+  | "database"
+  | "cloud"
+  | "devops"
+  | "observability"
+  | "big-data"
+  | "data-science"
+  | "ai-ml"
+  | "testing";
+
+export interface TechnicalSkill {
+  name: string;
+  tier: SkillTier;
+  logo: string;
+  darkLogo?: string;
+  level: SkillLevel;
+  experienceStart: string;
+  category: string[];
+  filterCategories: FilterKey[];
+}
+
+export interface Skill extends TechnicalSkill {
+  experience: string;
+}
+
+export function calculateExperience(dateString: string): string {
   const start = new Date(dateString);
   const now = new Date();
 
@@ -14,7 +48,7 @@ export function calculateExperience(dateString) {
   return `${years} years`;
 }
 
-export const technicalSkills = [
+export const technicalSkills: TechnicalSkill[] = [
   {
     name: "JavaScript",
     tier: "core",
@@ -1236,7 +1270,7 @@ export const technicalSkills = [
   },
 ];
 
-export const skills = technicalSkills.map((skill) => ({
+export const skills: Skill[] = technicalSkills.map((skill) => ({
   ...skill,
   experience: calculateExperience(skill.experienceStart),
 }));

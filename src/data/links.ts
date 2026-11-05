@@ -1,8 +1,19 @@
+import type { IconType } from "react-icons";
 import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode, SiGmail } from "react-icons/si";
 
-export const socialLinks = [
+export interface SocialLink {
+  name: string;
+  icon: IconType;
+  url: string;
+}
+
+export type SpecialLink =
+  | { name: string; icon: IconType; type: "copy"; value: string }
+  | { name: string; icon: IconType; type: "internal"; to: string };
+
+export const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
     icon: FaLinkedin,
@@ -25,7 +36,7 @@ export const socialLinks = [
   },
 ];
 
-export const specialLinks = [
+export const specialLinks: SpecialLink[] = [
   {
     name: "Discord",
     icon: FaDiscord,

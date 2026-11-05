@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { FaGithub } from "react-icons/fa";
 
-export default function GitHubActivity({ darkMode }) {
-  const scrollRef = useRef(null);
+export default function GitHubActivity({ darkMode }: { darkMode: boolean }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!scrollRef.current) return;

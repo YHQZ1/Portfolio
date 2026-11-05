@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type Dispatch, type SetStateAction } from "react";
 import { useTheme } from "../context/useTheme";
-import { usePageMeta } from "../hooks/usePageMeta";
+import { usePageMeta, type PageMeta } from "../hooks/usePageMeta";
 import { projects } from "../data/projects";
-import { skills } from "../data/skills";
+import { skills, type FilterKey, type Skill } from "../data/skills";
 import { toolsAndWorkflow } from "../data/tools";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import CommandPalette from "../components/CommandPalette";
 import GitHubActivity from "../components/GitHubActivity";
 
-function useTypewriter(text, speed = 80) {
+function useTypewriter(text: string, speed = 80) {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,7 +31,7 @@ function useTypewriter(text, speed = 80) {
   return displayText;
 }
 
-const FILTERS = [
+const FILTERS: { label: string; key: FilterKey }[] = [
   { label: "Languages", key: "languages" },
   { label: "Frontend", key: "frontend" },
   { label: "Backend", key: "backend" },
@@ -47,8 +47,18 @@ const FILTERS = [
   { label: "Testing", key: "testing" },
 ];
 
-function SkillFilters({ darkMode, activeFilters, setActiveFilters }) {
-  const toggleFilter = (key) => {
+interface SkillFiltersProps {
+  darkMode: boolean;
+  activeFilters: FilterKey[];
+  setActiveFilters: Dispatch<SetStateAction<FilterKey[]>>;
+}
+
+function SkillFilters({
+  darkMode,
+  activeFilters,
+  setActiveFilters,
+}: SkillFiltersProps) {
+  const toggleFilter = (key: FilterKey) => {
     setActiveFilters((prev) =>
       prev.includes(key) ? prev.filter((f) => f !== key) : [...prev, key]
     );
@@ -101,13 +111,21 @@ function SkillFilters({ darkMode, activeFilters, setActiveFilters }) {
   );
 }
 
+interface SkillsGridSectionProps {
+  title: string;
+  description: string;
+  skills: Skill[];
+  darkMode: boolean;
+  activeFilters: FilterKey[];
+}
+
 function SkillsGridSection({
   title,
   description,
   skills,
   darkMode,
   activeFilters,
-}) {
+}: SkillsGridSectionProps) {
   const filteredSkills =
     activeFilters.length === 0
       ? skills
@@ -222,7 +240,7 @@ function SkillsGridSection({
   );
 }
 
-const PAGE_META = {
+const PAGE_META: PageMeta = {
   title: "Uttkarsh Ruparel | Software Engineer",
   description:
     "Portfolio of Uttkarsh Ruparel, a final-year CS student and software engineering intern building distributed systems and backend services.",
@@ -241,7 +259,7 @@ export default function Profile() {
   ];
 
   const typedText = useTypewriter("Hey, I'm Uttkarsh!", 80);
-  const [activeFilters, setActiveFilters] = useState([]);
+  const [activeFilters, setActiveFilters] = useState<FilterKey[]>([]);
   const [showShortcutHint, setShowShortcutHint] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -259,7 +277,7 @@ export default function Profile() {
   }, []);
 
   useEffect(() => {
-    let timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     const handleScroll = () => {
       setShowShortcutHint(true);

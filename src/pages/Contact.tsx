@@ -1,12 +1,12 @@
-import { useState, useRef } from "react";
+import { useState, useRef, type ChangeEvent, type FormEvent } from "react";
 import { useTheme } from "../context/useTheme";
-import { usePageMeta } from "../hooks/usePageMeta";
+import { usePageMeta, type PageMeta } from "../hooks/usePageMeta";
 import emailjs from "@emailjs/browser";
 
 const CONTACT_EMAIL = "rupareluttkarsh2309@gmail.com";
 const CONTACT_MAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`;
 
-const PAGE_META = {
+const PAGE_META: PageMeta = {
   title: "Contact | Uttkarsh Ruparel",
   description:
     "Get in touch with Uttkarsh Ruparel about backend engineering roles, collaborations or questions.",
@@ -16,7 +16,7 @@ const PAGE_META = {
 export default function Contact() {
   usePageMeta(PAGE_META);
   const { darkMode } = useTheme();
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -24,7 +24,9 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
 
   const isFormValid =
     formData.user_name.trim() &&
@@ -32,14 +34,16 @@ export default function Contact() {
     formData.message.trim() &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.user_email);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -211,7 +215,7 @@ export default function Contact() {
                     ? "border-[#2a2a2a] bg-[#0f0f0f] text-[#f5f5f5] placeholder-[#888] hover:border-[#3a3a3a] focus:border-[#8ab4f8] focus:ring-[#8ab4f8] focus:ring-opacity-20"
                     : "border-[#e0e0e0] bg-white text-[#1a1a1a] placeholder-[#666] hover:border-[#d0d0d0] focus:border-[#4285f4] focus:ring-[#4285f4] focus:ring-opacity-20"
                 }`}
-                rows="5"
+                rows={5}
                 required
                 placeholder="Type your message here..."
               />

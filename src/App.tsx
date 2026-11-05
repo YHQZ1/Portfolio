@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Profile from "./pages/Profile";
@@ -18,7 +19,7 @@ function ScrollToTopButtonWrapper() {
   return <ScrollToTopButton darkMode={darkMode} />;
 }
 
-function PageWithLayout({ children }) {
+function PageWithLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />

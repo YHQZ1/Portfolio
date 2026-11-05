@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/useTheme";
-import { usePageMeta } from "../hooks/usePageMeta";
+import { usePageMeta, type PageMeta } from "../hooks/usePageMeta";
 import CommandPalette from "../components/CommandPalette";
 
-function useTypewriter(text, speed = 80) {
+function useTypewriter(text: string, speed = 80) {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -21,7 +21,21 @@ function useTypewriter(text, speed = 80) {
   return displayText;
 }
 
-function RoleHeader({ darkMode, logo, logoAlt, title, subtitle }) {
+interface RoleHeaderProps {
+  darkMode: boolean;
+  logo: string;
+  logoAlt: string;
+  title: string;
+  subtitle: string;
+}
+
+function RoleHeader({
+  darkMode,
+  logo,
+  logoAlt,
+  title,
+  subtitle,
+}: RoleHeaderProps) {
   return (
     <div className="flex items-center gap-4 mb-3 sm:mb-4">
       <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
@@ -49,7 +63,7 @@ function RoleHeader({ darkMode, logo, logoAlt, title, subtitle }) {
   );
 }
 
-const PAGE_META = {
+const PAGE_META: PageMeta = {
   title: "About | Uttkarsh Ruparel",
   description:
     "About Uttkarsh Ruparel: a backend engineer and final-year CS student at SIT Pune, interning as a software engineer and organizing GDG on Campus.",
@@ -83,7 +97,7 @@ export default function About() {
   }, []);
 
   useEffect(() => {
-    let timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     const handleScroll = () => {
       setShowShortcutHint(true);
