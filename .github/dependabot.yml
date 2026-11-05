@@ -6,6 +6,13 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # typescript-eslint does not support TypeScript 7 yet
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      # v7 adds React Compiler rules that flag several effects; adopt on purpose
+      - dependency-name: eslint-plugin-react-hooks
+        update-types: ["version-update:semver-major"]
     groups:
       production:
         dependency-type: production
@@ -23,3 +30,7 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    ignore:
+      # odd-numbered Node releases never become long-term support
+      - dependency-name: node
+        versions: ["25.x", "27.x"]
