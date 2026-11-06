@@ -17,50 +17,65 @@ function devApi(): Plugin {
         loadEnv(server.config.mode, process.cwd(), "")
       );
 
-      server.middlewares.use("/api/contact", async (req, res) => {
-        const fail = (status: number) => {
-          if (!res.headersSent) res.statusCode = status;
-          res.end();
-        };
+      const routes = [
+        { path: "/api/contact", file: "/api/contact.ts", methods: ["POST"] },
+        {
+          path: "/api/visits",
+          file: "/api/visits.ts",
+          methods: ["GET", "POST"],
+        },
+      ];
 
-        try {
-          if (req.method !== "POST") return fail(405);
+      for (const { path, file, methods } of routes) {
+        server.middlewares.use(path, async (req, res) => {
+          const fail = (status: number) => {
+            if (!res.headersSent) res.statusCode = status;
+            res.end();
+          };
 
-          const chunks: Buffer[] = [];
-          let size = 0;
-          for await (const chunk of req) {
-            size += (chunk as Buffer).length;
-            if (size > MAX_BODY) return fail(413);
-            chunks.push(chunk as Buffer);
-          }
+          try {
+            const method = req.method ?? "GET";
+            if (!methods.includes(method)) return fail(405);
 
-          const headers = new Headers();
-          for (const [name, value] of Object.entries(req.headers)) {
-            if (Array.isArray(value)) {
-              value.forEach((v) => headers.append(name, v));
-            } else if (value !== undefined) {
-              headers.set(name, value);
+            const chunks: Buffer[] = [];
+            let size = 0;
+            for await (const chunk of req) {
+              size += (chunk as Buffer).length;
+              if (size > MAX_BODY) return fail(413);
+              chunks.push(chunk as Buffer);
             }
+
+            const headers = new Headers();
+            for (const [name, value] of Object.entries(req.headers)) {
+              if (Array.isArray(value)) {
+                value.forEach((v) => headers.append(name, v));
+              } else if (value !== undefined) {
+                headers.set(name, value);
+              }
+            }
+
+            const module = await server.ssrLoadModule(file);
+            const hasBody = method !== "GET" && method !== "HEAD";
+            const response: Response = await module[method](
+              new Request(`http://localhost${req.url ?? ""}`, {
+                method,
+                headers,
+                body: hasBody ? Buffer.concat(chunks) : undefined,
+              })
+            );
+
+            res.statusCode = response.status;
+            response.headers.forEach((value, name) =>
+              res.setHeader(name, value)
+            );
+            res.end(Buffer.from(await response.arrayBuffer()));
+          } catch {
+            // A dropped connection or a bug in the handler must never take the
+            // dev server down with it.
+            fail(500);
           }
-
-          const module = await server.ssrLoadModule("/api/contact.ts");
-          const response: Response = await module.POST(
-            new Request(`http://localhost${req.url ?? ""}`, {
-              method: "POST",
-              headers,
-              body: Buffer.concat(chunks),
-            })
-          );
-
-          res.statusCode = response.status;
-          response.headers.forEach((value, name) => res.setHeader(name, value));
-          res.end(Buffer.from(await response.arrayBuffer()));
-        } catch {
-          // A dropped connection or a bug in the handler must never take the
-          // dev server down with it.
-          fail(500);
-        }
-      });
+        });
+      }
     },
   };
 }

@@ -113,7 +113,7 @@ It is a client-rendered React application with a handful of pages, a small depen
 │   ├── main.tsx             Application entry point
 │   ├── test/                Vitest setup (browser API stubs)
 │   └── index.css            Tailwind import, color tokens, the eyebrow and body-text utilities and global styles
-├── api/                     contact.ts, the Vercel function (one self-contained file)
+├── api/                     contact.ts and visits.ts, the Vercel functions (one self-contained file each)
 ├── .github/                 CI workflow, Dependabot config and PR template
 ├── Dockerfile               Vite build, then nginx
 ├── nginx.conf               SPA fallback and long-lived asset caching
@@ -234,6 +234,12 @@ Messages are always delivered to the address in `src/data/site.ts` (`rupareluttk
 On Vercel, add them under Project Settings, Environment Variables (Production and Preview). Locally, put `RESEND_API_KEY` in `.env.local` (git-ignored); `npm run dev` serves `/api/contact` from the same function, so no extra tooling is needed.
 
 ## Deployment
+
+### Visit counter
+
+The line under the home page ("1,284 visitors · 23 countries · since Nov 2026") comes from `api/visits.ts`, a small function backed by Upstash Redis. It is optional: without the database the endpoint answers 503 and the line is simply not shown.
+
+It is cookieless. A visitor is counted once per day, identified only by a SHA-256 hash of IP, user agent and date that expires after a day, so no IP is ever stored. Crawlers are ignored, and the country comes from Vercel's `x-vercel-ip-country` header. To turn it on, add the Upstash Redis integration to the Vercel project from the Marketplace, which sets `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` (the `KV_REST_API_*` names also work), then redeploy.
 
 ### Vercel
 
