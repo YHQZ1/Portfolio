@@ -394,6 +394,15 @@ export const technicalSkills: TechnicalSkill[] = [
     filterCategories: ["backend", "real-time"],
   },
   {
+    name: "RxJava",
+    tier: "applied",
+    logo: "/skills/rxjava.webp",
+    level: "Intermediate",
+    experienceStart: "2025-01",
+    category: ["Reactive Streams", "Async Composition", "Backpressure"],
+    filterCategories: ["backend", "real-time"],
+  },
+  {
     name: "BullMQ",
     tier: "applied",
     logo: "/skills/bullmq-light.webp",
@@ -1030,6 +1039,15 @@ export const technicalSkills: TechnicalSkill[] = [
     experienceStart: "2025-01",
     category: ["Fast Unit Tests", "Mocking & Coverage", "Vite-native Runner"],
     filterCategories: ["testing", "frontend"],
+  },
+  {
+    name: "JUnit",
+    tier: "applied",
+    logo: "/skills/junit.webp",
+    level: "Intermediate",
+    experienceStart: "2025-01",
+    category: ["Unit Testing", "Parameterized Tests", "Java Test Suites"],
+    filterCategories: ["testing", "backend"],
   },
   {
     name: "pytest",

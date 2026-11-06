@@ -29,6 +29,26 @@ const SKILL_GROUP_ORDER = [
   "Testing",
 ];
 
+const BLURBS: Record<string, string> = {
+  Languages: "What I write systems, services and tooling in.",
+  "Backend & Real-time":
+    "Frameworks, protocols and messaging for services that stay fast under load.",
+  Frontend: "Enough UI to ship the interfaces my backends need.",
+  "Data Stores":
+    "Relational, document, cache and analytical stores, and the layers on top.",
+  "Cloud & DevOps":
+    "Delivery, infrastructure and the observability that keeps it honest.",
+  "Big Data": "Batch and distributed processing for larger datasets.",
+  "AI & Data Science":
+    "Applied ML, LLM tooling and the data libraries around them.",
+  Testing: "Unit, integration, end-to-end and load testing.",
+  "AI Coding": "Assistants I build with day to day.",
+  "API & Databases": "Exploring and debugging services and data.",
+  Collaboration: "Planning, docs and communication.",
+  "Editors & IDEs": "Where the code gets written.",
+  "Packaging & Build": "Dependency management and monorepo builds.",
+};
+
 const TIER_ORDER: Record<SkillTier, number> = {
   core: 0,
   applied: 1,
@@ -55,6 +75,7 @@ const toToolItem = (tool: Tool): StackItem => ({
 
 export const skillGroups: StackGroupData[] = SKILL_GROUP_ORDER.map((label) => ({
   label,
+  blurb: BLURBS[label],
   items: skills
     .filter((skill) => SKILL_GROUP[skill.filterCategories[0]] === label)
     .sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier])
@@ -65,6 +86,7 @@ export const toolGroups: StackGroupData[] = [
   ...new Set(toolsAndWorkflow.map((tool) => tool.group)),
 ].map((label) => ({
   label,
+  blurb: BLURBS[label],
   items: toolsAndWorkflow
     .filter((tool) => tool.group === label)
     .map(toToolItem),

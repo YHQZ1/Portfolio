@@ -26,6 +26,13 @@ export const toolsAndWorkflow: Tool[] = [
     category: ["Agentic Coding", "Cloud Sandbox", "Parallel Tasks"],
   },
   {
+    name: "Hermes Agent",
+    group: "AI Coding",
+    logo: "/skills/hermes-light.webp",
+    darkLogo: "/skills/hermes-dark.webp",
+    category: ["Agentic Coding", "Self-hosted Agent", "Tool Use"],
+  },
+  {
     name: "WebStorm",
     group: "Editors & IDEs",
     logo: "/skills/webstorm.webp",
@@ -110,6 +117,12 @@ export const toolsAndWorkflow: Tool[] = [
     group: "Packaging & Build",
     logo: "https://cdn.simpleicons.org/yarn/2C8EBB",
     category: ["Package Management", "Lockfile Determinism", "Workspaces"],
+  },
+  {
+    name: "Maven",
+    group: "Packaging & Build",
+    logo: "https://cdn.simpleicons.org/apachemaven/C71A36",
+    category: ["Dependency Management", "Build Lifecycle", "Java Projects"],
   },
   {
     name: "pnpm",

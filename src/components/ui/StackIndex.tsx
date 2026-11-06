@@ -19,7 +19,7 @@ const ALIGN_CLASS: Record<Align, string> = {
 
 const POPOVER_HALF_WIDTH = 120;
 
-function StackRow({ label, items }: StackGroupData) {
+function StackRow({ label, blurb, items }: StackGroupData) {
   const [active, setActive] = useState<string | null>(null);
   const [align, setAlign] = useState<Align>("center");
 
@@ -50,12 +50,24 @@ function StackRow({ label, items }: StackGroupData) {
 
   return (
     <div className="grid gap-3 border-b border-line py-6 md:grid-cols-12 md:gap-10">
-      <h4 className="flex items-baseline gap-3 eyebrow md:col-span-3 md:pt-3">
-        {label}
-        <span className="tabular-nums opacity-70">{items.length}</span>
-      </h4>
+      <div className="md:col-span-3">
+        <h4 className="flex items-baseline gap-3 eyebrow md:pt-3">
+          {label}
+          <span className="tabular-nums opacity-70 md:hidden">
+            {items.length}
+          </span>
+        </h4>
+        <p className="mt-3 hidden text-5xl leading-none font-extralight tracking-tight text-faint tabular-nums md:block">
+          {String(items.length).padStart(2, "0")}
+        </p>
+        {blurb && (
+          <p className="mt-4 hidden max-w-60 text-xs leading-[1.7] text-faint md:block">
+            {blurb}
+          </p>
+        )}
+      </div>
 
-      <ul className="flex flex-wrap gap-x-6 sm:grid sm:grid-cols-3 sm:gap-x-0 md:col-span-9 xl:grid-cols-5">
+      <ul className="flex flex-wrap gap-x-6 sm:grid sm:content-start sm:grid-cols-3 sm:gap-x-0 md:col-span-9 xl:grid-cols-5">
         {items.map((item) => {
           const isActive = active === item.name;
 

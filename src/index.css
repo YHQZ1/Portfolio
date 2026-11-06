@@ -148,9 +148,14 @@ html.theme-switching *::after {
   scrollbar-width: none;
 }
 
-html,
-body {
+html {
   overflow-x: hidden;
+}
+
+/* clip, not hidden: hidden would turn the body into a scroll container and
+   break position: sticky for everything inside it. */
+body {
+  overflow-x: clip;
 }
 
 .sig-stroke {

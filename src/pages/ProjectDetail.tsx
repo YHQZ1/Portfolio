@@ -1,8 +1,9 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { usePageMeta, type PageMeta } from "../hooks/usePageMeta";
 import { getProject, projects, type Project } from "../data/projects";
 import { getLogo } from "../data/logos";
+import ProjectPager from "../components/project/ProjectPager";
 import ArchitectureDiagram from "../components/project/ArchitectureDiagram";
 import CodeLink from "../components/ui/CodeLink";
 import Container from "../components/ui/Container";
@@ -99,6 +100,8 @@ function HeroPanel({ project, index }: { project: Project; index: number }) {
 
 export default function ProjectDetail() {
   const { slug = "" } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   const project = getProject(slug);
   const isSelected = project?.category === "selected";
 
@@ -115,6 +118,11 @@ export default function ProjectDetail() {
   if (!project || !isSelected) return <NotFound />;
 
   const index = selectedProjects.findIndex((p) => p.slug === project.slug);
+  const previous =
+    selectedProjects[
+      (index - 1 + selectedProjects.length) % selectedProjects.length
+    ];
+  const next = selectedProjects[(index + 1) % selectedProjects.length];
   const stack = builtWith(project);
   const architecture = project.architecture;
 
@@ -124,7 +132,16 @@ export default function ProjectDetail() {
 
       <Container>
         <Link
-          to="/#selected-work"
+          to="/"
+          state={{ scrollTo: "selected-work" }}
+          onClick={(event) => {
+            // Arrived from the home page: behave like the browser's back button,
+            // so the address stays clean and the scroll position is restored.
+            if ((location.state as { fromHome?: boolean } | null)?.fromHome) {
+              event.preventDefault();
+              navigate(-1);
+            }
+          }}
           className="group tap-area mb-12 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-fg sm:mb-16"
         >
           <FiArrowLeft className="text-xs transition-transform duration-300 group-hover:-translate-x-1" />
@@ -218,6 +235,8 @@ export default function ProjectDetail() {
             <StackIndex groups={[{ label: "Built with", items: stack }]} />
           </section>
         )}
+
+        <ProjectPager previous={previous} next={next} />
       </Container>
     </main>
   );

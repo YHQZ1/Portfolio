@@ -12,5 +12,6 @@ export interface StackItem {
 
 export interface StackGroupData {
   label: string;
+  blurb?: string;
   items: StackItem[];
 }

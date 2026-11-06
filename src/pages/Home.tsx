@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 import { usePageMeta, type PageMeta } from "../hooks/usePageMeta";
 import { projects } from "../data/projects";
 import { skillGroups, toolGroups } from "../data/stackGroups";
@@ -8,10 +8,13 @@ import Container from "../components/ui/Container";
 import GitHubActivity from "../components/home/GitHubActivity";
 import Hero from "../components/home/hero/Hero";
 import ProjectArchive from "../components/home/ProjectArchive";
+import SectionIndex from "../components/layout/SectionIndex";
 import ScrollProgress from "../components/layout/ScrollProgress";
 import SectionHeading from "../components/ui/SectionHeading";
+import SiteStats from "../components/home/SiteStats";
 import ShortcutHint from "../components/layout/ShortcutHint";
 import StackIndex from "../components/ui/StackIndex";
+import ToolIndex from "../components/ui/ToolIndex";
 
 const PAGE_META: PageMeta = {
   title: "Uttkarsh Ruparel | Software Engineer",
@@ -19,6 +22,26 @@ const PAGE_META: PageMeta = {
     "Portfolio of Uttkarsh Ruparel, a final-year CS student and software engineering intern building distributed systems and backend services.",
   path: "/",
 };
+
+const tierCount = (tier: string) =>
+  skillGroups.flatMap((group) => group.items).filter((i) => i.tier === tier)
+    .length;
+
+const TIER_LEGEND = [
+  { label: "Core", note: "daily use", className: "text-fg", tier: "core" },
+  {
+    label: "Applied",
+    note: "used on real work",
+    className: "text-muted",
+    tier: "applied",
+  },
+  {
+    label: "Exploring",
+    note: "still learning",
+    className: "text-faint",
+    tier: "exploration",
+  },
+];
 
 const COMMANDS = [
   { label: "Selected Work", id: "selected-work" },
@@ -38,23 +61,30 @@ function Divider() {
 
 export default function Home() {
   usePageMeta(PAGE_META);
-  const { hash } = useLocation();
+  const { hash, state } = useLocation();
+  const navigationType = useNavigationType();
+  // A requested scroll target only applies to fresh navigations. Going back
+  // restores the saved position instead (see ScrollToTop).
+  const requested =
+    navigationType === "POP"
+      ? ""
+      : ((state as { scrollTo?: string } | null)?.scrollTo ?? "");
+  const target = hash.slice(1) || requested;
 
   useEffect(() => {
-    if (!hash) return;
+    if (!target) return;
     const timer = setTimeout(() => {
-      document
-        .getElementById(hash.slice(1))
-        ?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
     }, 100);
     return () => clearTimeout(timer);
-  }, [hash]);
+  }, [target]);
 
   return (
     <main className="min-h-screen bg-bg">
       <ScrollProgress />
       <CommandPalette commands={COMMANDS} />
       <ShortcutHint />
+      <SectionIndex sections={COMMANDS} />
 
       <Container>
         <Hero />
@@ -82,6 +112,16 @@ export default function Home() {
             A structured overview of the technologies I work with, grouped by
             what they are used for. Hover or tap one for details.
           </SectionHeading>
+          <ul className="mb-8 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+            {TIER_LEGEND.map(({ label, note, className, tier }) => (
+              <li key={tier} className={className}>
+                {label}
+                <span className="ml-2 text-xs text-faint">
+                  {tierCount(tier)} · {note}
+                </span>
+              </li>
+            ))}
+          </ul>
           <StackIndex groups={skillGroups} />
 
           <div id="tools-and-workflow" className="mt-20 scroll-mt-28">
@@ -92,7 +132,7 @@ export default function Home() {
               Supporting tools used for development, testing, deployment, and
               collaboration.
             </p>
-            <StackIndex groups={toolGroups} />
+            <ToolIndex groups={toolGroups} />
           </div>
         </section>
 
@@ -111,6 +151,8 @@ export default function Home() {
         <p className="py-10 text-center text-sm text-faint italic">
           My microservices talk to each other more politely than most humans
         </p>
+
+        <SiteStats />
       </Container>
     </main>
   );

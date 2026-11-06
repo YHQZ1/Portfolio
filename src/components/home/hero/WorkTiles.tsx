@@ -15,6 +15,7 @@ export default function WorkTiles() {
         <Link
           key={project.slug}
           to={`/projects/${project.slug}`}
+          state={{ fromHome: true }}
           className="group/tile relative flex min-h-[230px] flex-col justify-between border-r border-b border-line p-5 outline-none transition-opacity duration-300 group-hover/tiles:not-hover:opacity-40 sm:p-6"
         >
           <span
