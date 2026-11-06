@@ -15,6 +15,7 @@ import ShortcutHint from "../components/layout/ShortcutHint";
 import Organization from "../components/about/Organization";
 import RoleTimeline from "../components/about/RoleTimeline";
 import LinkRow from "../components/ui/LinkRow";
+import Signature from "../components/ui/Signature";
 import ThemedImage from "../components/ui/ThemedImage";
 import resumePDF from "/Resume.pdf";
 
@@ -158,12 +159,18 @@ export default function About() {
           <p className="eyebrow mb-10">Looking for</p>
 
           <div className="grid gap-14 lg:grid-cols-12 lg:items-end lg:gap-16">
-            <p className="text-3xl leading-[1.15] font-extralight tracking-tighter text-balance text-fg sm:text-5xl lg:col-span-8 lg:text-6xl">
-              A team that treats reliability as part of the product
-              <span className="block text-faint">
-                and likes building things properly.
-              </span>
-            </p>
+            <div className="lg:col-span-8">
+              <p className="text-3xl leading-[1.15] font-extralight tracking-tighter text-balance text-fg sm:text-5xl lg:text-6xl">
+                A team that treats reliability as part of the product
+                <span className="block text-faint">
+                  and likes building things properly.
+                </span>
+              </p>
+
+              <div className="mt-12 sm:mt-16">
+                <Signature />
+              </div>
+            </div>
 
             <div className="lg:col-span-4">
               <p className="mb-6 text-sm text-muted">

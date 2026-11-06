@@ -1,31 +1,58 @@
-import { useEffect, useState } from "react";
-import { SIGNATURE_STROKES, SIGNATURE_VIEWBOX } from "./signatureData";
+import { useEffect, useRef, useState } from "react";
+import { SIGNATURE_STROKES, SIGNATURE_VIEWBOX } from "../../data/signature";
 
 const DURATION = 2.6;
 const START_DELAY = 0.5;
 const TOTAL = SIGNATURE_STROKES.reduce((sum, stroke) => sum + stroke.len, 0);
 
 export default function Signature() {
+  const ref = useRef<SVGSVGElement>(null);
+  const [seen, setSeen] = useState(false);
   const [run, setRun] = useState(0);
-  const [drawing, setDrawing] = useState(true);
+  const [drawing, setDrawing] = useState(false);
+
+  // Wait until the signature is on screen, so it is drawn in front of the
+  // reader instead of while it is still below the fold.
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setSeen(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSeen(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!seen) return;
     setDrawing(true);
     const timer = setTimeout(
       () => setDrawing(false),
       (DURATION + START_DELAY + 0.3) * 1000
     );
     return () => clearTimeout(timer);
-  }, [run]);
+  }, [run, seen]);
 
   const replay = () => {
-    if (!drawing) setRun((value) => value + 1);
+    if (seen && !drawing) setRun((value) => value + 1);
   };
 
   let elapsed = 0;
 
   return (
     <svg
+      ref={ref}
       key={run}
       role="img"
       aria-label="Uttkarsh's signature"
@@ -53,6 +80,7 @@ export default function Signature() {
             style={{
               animationDuration: `${duration}s`,
               animationDelay: `${delay}s`,
+              animationPlayState: seen ? "running" : "paused",
             }}
           />
         );

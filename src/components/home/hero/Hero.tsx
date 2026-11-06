@@ -2,7 +2,6 @@ import { useTypewriter } from "../../../hooks/useTypewriter";
 import SiteStats from "../SiteStats";
 import FailoverDiagram from "./FailoverDiagram";
 import LocalTime from "./LocalTime";
-import Signature from "./Signature";
 import WorkTiles from "./WorkTiles";
 import { GREETING, TAGLINE_LEAD, TAGLINE_TAIL } from "./content";
 
@@ -26,7 +25,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          <div className="flex max-w-3xl flex-wrap items-end gap-x-14 gap-y-8 border-t border-line pt-6">
+          <div className="max-w-3xl border-t border-line pt-6">
             <dl className="flex flex-wrap gap-x-14 gap-y-8">
               <div className="max-w-[17rem]">
                 <dt className="mb-2 eyebrow">Currently</dt>
@@ -50,8 +49,6 @@ export default function Hero() {
 
               <SiteStats />
             </dl>
-
-            <Signature />
           </div>
         </div>
 
