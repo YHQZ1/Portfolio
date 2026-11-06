@@ -167,7 +167,7 @@ export default function About() {
             </p>
 
             <div className="lg:col-span-8 lg:self-end">
-              <Signature />
+              <Signature className="w-44 sm:w-52 lg:w-64" />
             </div>
 
             <div className="lg:col-span-4">

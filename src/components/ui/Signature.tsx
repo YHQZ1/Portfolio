@@ -9,7 +9,11 @@ const DURATION = 2.6;
 const START_DELAY = 0.5;
 const TOTAL = SIGNATURE_STROKES.reduce((sum, stroke) => sum + stroke.len, 0);
 
-export default function Signature() {
+export default function Signature({
+  className = "w-36 sm:w-44",
+}: {
+  className?: string;
+}) {
   const maskId = `signature-${useId().replace(/:/g, "")}`;
   const ref = useRef<SVGSVGElement>(null);
   const [seen, setSeen] = useState(false);
@@ -64,7 +68,7 @@ export default function Signature() {
       viewBox={SIGNATURE_VIEWBOX}
       onMouseEnter={replay}
       onClick={replay}
-      className="h-auto w-36 cursor-pointer text-fg sm:w-44"
+      className={`h-auto cursor-pointer text-fg ${className}`}
     >
       <defs>
         <mask id={maskId}>
