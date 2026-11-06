@@ -34,6 +34,8 @@ export interface Project {
   title: string;
   category: ProjectCategory;
   summary: string;
+  /** One short line for the home page tiles. Falls back to the first tag. */
+  tagline?: string;
   description: string;
   tags: string[];
   github: string;
@@ -53,6 +55,7 @@ export const projects: Project[] = [
     category: "selected",
     summary:
       "A kernel-level flight recorder for production systems. eBPF probes capture what your application never logs, and a causal graph explains why it failed.",
+    tagline: "A kernel flight recorder that explains why production failed.",
     description:
       "A kernel-level flight recorder for production systems. eBPF probes written in Rust with Aya capture network, CPU scheduling, memory and database-write events with nanosecond timestamps, without touching application code. A Go causal engine streams them through Kafka into ClickHouse and builds a Neo4j graph of what caused what, and a ptrace-based replay engine reproduces incidents with injected timing changes.",
     tags: ["eBPF", "Distributed Systems", "FinTech"],
@@ -184,6 +187,7 @@ export const projects: Project[] = [
     category: "selected",
     summary:
       "A securities exchange built from scratch: FIX order intake, price-time matching, central clearing and atomic settlement across eight Go microservices.",
+    tagline: "A stock exchange built from scratch in eight Go services.",
     description:
       "A securities exchange built from scratch, covering order intake over FIX 4.2, pre-trade risk checks, price-time order matching, central-counterparty clearing, and atomic delivery-versus-payment settlement into a double-entry ledger. Eight Go microservices, each owning its own Postgres database, communicate over Kafka and gRPC, with live market data streamed to clients over WebSockets.",
     tags: ["Distributed Systems", "FinTech", "Event-Driven Architecture"],
@@ -312,6 +316,7 @@ export const projects: Project[] = [
     category: "selected",
     summary:
       "An AI-assisted plastic EPR compliance platform. Invoices are read with OCR, classified with RAG over a local LLM, and reviewed line by line by a person.",
+    tagline: "Invoice OCR and a local LLM, with a person reviewing every line.",
     description:
       "An AI-assisted plastic EPR compliance platform for Indian producers and brand owners. Invoices and recycling certificates are read with PaddleOCR, each line is classified through RAG over a local LLM, and a person reviews every line before it counts. Reviewed figures roll up into per-year filings with obligation calculations and a full audit trail, running as five services on Docker Compose or Kubernetes.",
     tags: ["RegTech", "Document Intelligence", "RAG", "Distributed Systems"],
@@ -417,6 +422,7 @@ export const projects: Project[] = [
     category: "selected",
     summary:
       "Render-style deploys into your own AWS account, with cost guardrails built in. Currently being rebuilt around a bring-your-own-account design.",
+    tagline: "Render-style deploys into your own AWS account.",
     description:
       "Render-style deploys into your own AWS account, with cost guardrails built in. Connect a GitHub repo and Hatch builds the Dockerfile, pushes the image to ECR, runs it on ECS Fargate behind a load balancer, and streams build logs live, all from one Go binary backed by Postgres. Currently being rebuilt around a bring-your-own-account design with spending limits and one-click teardown.",
     tags: ["Distributed Systems", "Cloud Infrastructure", "DevOps"],

@@ -93,11 +93,7 @@ export default function Home() {
         <Divider />
 
         <section className="py-16 sm:py-20">
-          <SectionHeading
-            id="my-work"
-            title="Smaller Builds"
-            count={focusedProjects.length}
-          >
+          <SectionHeading id="my-work" title="Smaller Builds">
             Tightly scoped builds, tools and experiments.
           </SectionHeading>
 
