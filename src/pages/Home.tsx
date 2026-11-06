@@ -11,7 +11,6 @@ import ProjectArchive from "../components/home/ProjectArchive";
 import SectionIndex from "../components/layout/SectionIndex";
 import ScrollProgress from "../components/layout/ScrollProgress";
 import SectionHeading from "../components/ui/SectionHeading";
-import SiteStats from "../components/home/SiteStats";
 import ShortcutHint from "../components/layout/ShortcutHint";
 import StackIndex from "../components/ui/StackIndex";
 import ToolIndex from "../components/ui/ToolIndex";
@@ -151,8 +150,6 @@ export default function Home() {
         <p className="py-10 text-center text-sm text-faint italic">
           My microservices talk to each other more politely than most humans
         </p>
-
-        <SiteStats />
       </Container>
     </main>
   );

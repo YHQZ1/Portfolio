@@ -1,4 +1,5 @@
 import { useTypewriter } from "../../../hooks/useTypewriter";
+import SiteStats from "../SiteStats";
 import FailoverDiagram from "./FailoverDiagram";
 import LocalTime from "./LocalTime";
 import Signature from "./Signature";
@@ -46,6 +47,8 @@ export default function Hero() {
                   </span>
                 </dd>
               </div>
+
+              <SiteStats />
             </dl>
 
             <Signature />

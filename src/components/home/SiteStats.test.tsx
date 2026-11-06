@@ -19,21 +19,21 @@ describe("SiteStats", () => {
 
     render(<SiteStats />);
 
-    expect(
-      await screen.findByText("1,284 visitors · 23 countries · since Nov 2026")
-    ).toBeTruthy();
+    expect(await screen.findByText("Visitors")).toBeTruthy();
+    expect(await screen.findByText(/1,284/)).toBeTruthy();
+    expect(screen.getByText("23 countries · since Nov 2026")).toBeTruthy();
     expect(fetchMock.mock.calls[0][1].method).toBe("POST");
   });
 
   it("only reads the totals on later visits the same day", async () => {
     respond({ visitors: 5, countries: 1, since: null });
     const first = render(<SiteStats />);
-    await screen.findByText("5 visitors");
+    await screen.findByText("5");
     first.unmount();
 
     fetchMock.mockClear();
     render(<SiteStats />);
-    await screen.findByText("5 visitors");
+    await screen.findByText("5");
 
     expect(fetchMock.mock.calls[0][1].method).toBe("GET");
   });
