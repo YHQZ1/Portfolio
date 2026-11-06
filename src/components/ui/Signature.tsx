@@ -1,11 +1,16 @@
-import { useEffect, useRef, useState } from "react";
-import { SIGNATURE_STROKES, SIGNATURE_VIEWBOX } from "../../data/signature";
+import { useEffect, useId, useRef, useState } from "react";
+import {
+  SIGNATURE_OUTLINE,
+  SIGNATURE_STROKES,
+  SIGNATURE_VIEWBOX,
+} from "../../data/signature";
 
 const DURATION = 2.6;
 const START_DELAY = 0.5;
 const TOTAL = SIGNATURE_STROKES.reduce((sum, stroke) => sum + stroke.len, 0);
 
 export default function Signature() {
+  const maskId = `signature-${useId().replace(/:/g, "")}`;
   const ref = useRef<SVGSVGElement>(null);
   const [seen, setSeen] = useState(false);
   const [run, setRun] = useState(0);
@@ -59,32 +64,46 @@ export default function Signature() {
       viewBox={SIGNATURE_VIEWBOX}
       onMouseEnter={replay}
       onClick={replay}
-      className="h-auto w-44 cursor-pointer text-fg sm:w-52"
+      className="h-auto w-36 cursor-pointer text-fg sm:w-44"
     >
-      {SIGNATURE_STROKES.map((stroke, index) => {
-        const delay = START_DELAY + (elapsed / TOTAL) * DURATION;
-        const duration = Math.max(0.1, (stroke.len / TOTAL) * DURATION);
-        elapsed += stroke.len;
-
-        return (
-          <path
-            key={index}
-            d={stroke.d}
-            pathLength={1}
+      <defs>
+        <mask id={maskId}>
+          <g
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2.2"
+            stroke="white"
+            strokeWidth="8"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="sig-stroke"
-            style={{
-              animationDuration: `${duration}s`,
-              animationDelay: `${delay}s`,
-              animationPlayState: seen ? "running" : "paused",
-            }}
-          />
-        );
-      })}
+          >
+            {SIGNATURE_STROKES.map((stroke, index) => {
+              const delay = START_DELAY + (elapsed / TOTAL) * DURATION;
+              const duration = Math.max(0.1, (stroke.len / TOTAL) * DURATION);
+              elapsed += stroke.len;
+
+              return (
+                <path
+                  key={index}
+                  d={stroke.d}
+                  pathLength={1}
+                  className="sig-stroke"
+                  style={{
+                    animationDuration: `${duration}s`,
+                    animationDelay: `${delay}s`,
+                    animationPlayState: seen ? "running" : "paused",
+                  }}
+                />
+              );
+            })}
+          </g>
+        </mask>
+      </defs>
+
+      <path
+        d={SIGNATURE_OUTLINE}
+        fill="currentColor"
+        fillRule="evenodd"
+        mask={`url(#${maskId})`}
+      />
     </svg>
   );
 }
