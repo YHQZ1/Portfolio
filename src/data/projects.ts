@@ -39,6 +39,8 @@ export interface Project {
   github: string;
   live: string | null;
   logo?: ProjectLogo;
+  stat?: { value: string; label: string };
+  stack?: string[];
   status?: string;
   highlights?: string[];
   architecture?: Architecture;
@@ -521,73 +523,92 @@ export const projects: Project[] = [
     title: "Trixie",
     category: "focused",
     summary:
-      "A voice pet for your Mac, in native Swift. Say 'hey Trixie' and it listens, reads your files and answers out loud.",
+      "A voice assistant for macOS in native Swift. Wake word and speech recognition run on-device; answers stream back sentence by sentence.",
     description:
-      "A voice pet for your Mac, built in native Swift with no web stack. Say 'hey Trixie' and a pixel creature listens, reads your files and answers out loud, running on your own Claude subscription through the official CLI. The wake word and speech recognition run on-device, replies stream sentence by sentence, and the voice falls back from ElevenLabs to a local Kokoro model if the network drops or a monthly character cap is reached. A slimmed Claude setup cut each question from about 23,000 tokens to about 5,000.",
-    tags: ["Voice Interfaces", "Native macOS", "Real-time Systems"],
+      "A desktop pet for macOS in native Swift, with no web stack, driven by the Claude CLI on your own subscription. The wake word and speech recognition run on-device, and replies stream sentence by sentence through ElevenLabs, falling back to a local Kokoro voice if the network drops or the monthly character cap is reached. File access is read-only with credentials and secrets blocked by default, and a slimmed setup cut each question from about 23,000 tokens to about 5,000.",
+    tags: ["Voice AI", "Native Swift", "On-device Speech"],
     github: "https://github.com/YHQZ1/trixie",
     live: null,
+    stat: { value: "5k", label: "tokens per question, down from 23k" },
+    stack: ["Swift", "Claude Code", "Python"],
   },
   {
     slug: "bitlink",
     title: "BitLink",
     category: "focused",
     summary:
-      "A URL shortener and analytics platform built around one rule: redirects never wait.",
+      "A URL shortener with click analytics, built so the redirect path never waits on anything but a cache lookup.",
     description:
-      "A URL shortener and analytics platform built around one rule: redirects never wait. Hot links are served from a Redis cache with a MongoDB fallback, while click events like device, browser, location and referrer are queued through BullMQ and processed by separate workers. Includes custom aliases, QR codes, link expiry and OAuth, and was deployed behind Nginx on AWS EC2 with Prometheus metrics. Used by about 40 real users while it was live.",
-    tags: ["Distributed Systems", "Caching Strategies", "Analytics Pipeline"],
+      "A URL shortener and analytics platform built around one rule: the redirect path stays fast. Hot links are served from Redis with a MongoDB fallback, while click events (device, browser, location, referrer) go through a BullMQ queue to separate workers. Includes custom aliases, QR codes, link expiry and OAuth. Originally deployed behind Nginx on AWS EC2 with Prometheus and Grafana monitoring, and used by about 40 people while live.",
+    tags: ["Distributed Systems", "Caching", "Event Pipeline"],
     github: "https://github.com/YHQZ1/BitLink",
     live: null,
+    stat: { value: "~40", label: "real users while it was live" },
+    stack: ["Node.js", "ReactJS", "Redis", "MongoDB", "BullMQ", "NGINX"],
   },
   {
     slug: "sandboxed",
     title: "Sandboxed",
     category: "focused",
     summary:
-      "A self-hosted coding contest platform that runs submissions in disposable, network-isolated Docker sandboxes.",
+      "A self-hosted contest platform for hiring programmers. A Go judge runs every submission in a disposable, network-isolated container.",
     description:
-      "A self-hosted coding contest platform for recruiting programmers. Hosts create a room with a shareable code, post problems with hidden test cases and run a timed contest while candidates join with just a name. A Go judge service runs submissions in disposable, network-isolated Docker sandboxes in five languages, with verdicts and the leaderboard pushed live over WebSockets and fullscreen proctoring.",
-    tags: ["Distributed Systems", "Real-time Systems", "Developer Tooling"],
+      "A self-hosted coding contest platform for recruiting. Hosts open a room with a shareable code, post problems with hidden test cases and run a timed contest while candidates join with just a name. A Go judge service executes submissions in disposable, network-isolated Docker containers in five languages, and verdicts and the leaderboard are pushed live over WebSockets. Fullscreen proctoring tracks violations and removes a candidate after four.",
+    tags: ["Code Execution", "Real-time", "Isolation"],
     github: "https://github.com/YHQZ1/Sandboxed",
     live: null,
+    stat: { value: "5", label: "languages, each in an isolated container" },
+    stack: ["Go", "Node.js", "ReactJS", "PostgreSQL", "Redis", "Docker"],
   },
   {
     slug: "overclock",
     title: "Overclock",
     category: "focused",
     summary:
-      "A live head-to-head strategy game built for SymbiTech 2026, played in about 120 matches by 150+ players.",
+      "A live two-team strategy game where load balancers, rate limiters and failover are the mechanics, run on a deterministic, seeded engine.",
     description:
-      "A live head-to-head strategy game built for SymbiTech 2026, our college tech fest. Two teams run pretend websites and spend their earnings defending their own or attacking the other, across three rounds with a live leaderboard on the big screen. Built on a deterministic, seeded game engine and a Socket.io server with rooms and refresh-safe rejoin. Played in about 120 matches by 150+ players over two days.",
-    tags: ["Real-time Systems", "Game Engine", "Live Events"],
+      "A live head-to-head strategy game that teaches system design through play. Each team runs a pretend website: earn coins by serving traffic, then spend them defending with servers, load balancers, caches and replicas, or attacking the other side with traffic spikes, bot floods and outages. The simulation is a pure, seeded engine, so the same seed and inputs always replay the same match, served over Socket.IO with refresh-safe rejoin and PostgreSQL for results. Balance-tested with bot players, and played in about 120 matches by 150+ players over two days.",
+    tags: ["System Design", "Game Engine", "Real-time Multiplayer"],
     github: "https://github.com/YHQZ1/OverClock",
     live: null,
+    stat: { value: "150+", label: "players across about 120 matches" },
+    stack: [
+      "ReactJS",
+      "Node.js",
+      "Socket.io",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Vitest",
+    ],
   },
   {
     slug: "vouch",
     title: "Vouch",
     category: "focused",
     summary:
-      "An evidence-grade finance controller, built for Razorpay's buildathon, that reconciles settlements across reports, bank statements and ledgers.",
+      "Reconciles Razorpay settlements against bank statements and ledgers, and only closes the books on evidence it can prove.",
     description:
-      "An evidence-grade finance controller, built for Razorpay's buildathon, that reconciles settlements across Razorpay reports, bank statements and ledgers. Deterministic rules verify each settlement's net amount, bank credit and journal entries before marking the close ready or blocked. A bounded local AI agent can investigate leftover mismatches, but every hypothesis must pass a verifier before it counts. Evaluated on synthetic data.",
-    tags: ["FinTech", "Reconciliation Engine", "Applied AI"],
+      "An evidence-grade finance controller, built for Razorpay's buildathon, that reconciles settlements across Razorpay reports, bank statements and ledgers. Deterministic controls verify each settlement's net amount, bank credit and journal entries before the close is marked ready or blocked. Money is handled as integer subunits, never floats, and a bounded local AI agent may investigate leftover mismatches but cannot clear anything: every hypothesis must pass a deterministic verifier. Evaluated on synthetic data.",
+    tags: ["FinTech", "Reconciliation", "Verifiable AI"],
     github:
       "https://github.com/YHQZ1/Vouch-Evidence-Grade-Settlement-Reconciliation",
     live: null,
+    stat: { value: "3-way", label: "settlement, bank and ledger match" },
+    stack: ["Python", "FastAPI", "ReactJS", "Playwright", "Docker"],
   },
   {
     slug: "bumper",
     title: "Bumper",
     category: "focused",
     summary:
-      "A bump allocator built from scratch in Rust, measured 7-8x faster than heap allocation for 1,000 small objects.",
+      "A bump allocator in Rust that serves allocations by advancing a pointer, measured 7-8x faster than heap allocation.",
     description:
-      "A bump allocator (arena) built from scratch in Rust. It reserves one fixed block up front and serves allocations by advancing a pointer, with zero per-object overhead, no garbage collector, automatic cleanup on drop and an instant reset for reuse. Criterion benchmarks measure it 7-8x faster than heap allocation for 1,000 small objects. Packaged as the bumper-alloc crate.",
-    tags: ["Rust", "Memory Management", "Systems Programming"],
+      "An arena (bump) allocator written from scratch in Rust. It reserves one fixed block up front and serves each allocation by advancing a pointer, with no per-object overhead, no garbage collector, cleanup on drop and an instant reset for reuse. Criterion benchmarks measure it about 8.3x faster than Box for 1,000 integers and 7.2x for 1,000 structs. Packaged as the bumper-alloc crate.",
+    tags: ["Rust", "Memory Allocation", "Systems Programming"],
     github: "https://github.com/YHQZ1/Bumper",
     live: null,
+    stat: { value: "7-8x", label: "faster than heap allocation" },
+    stack: ["Rust"],
   },
 ];
 
