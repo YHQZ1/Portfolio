@@ -151,9 +151,12 @@ describe("message content", () => {
     await post({ ...valid, name: "  Ada Lovelace  ", subject: "" });
 
     const sent = JSON.parse(resend.mock.calls[0][1].body);
-    expect(sent.text).toBe(
-      "I would like to talk about a role.\n\nAda Lovelace <ada@example.com>"
+    expect(sent.text).toContain(
+      "New message from Ada Lovelace <ada@example.com>"
     );
+    expect(sent.text).toContain("Subject: Message from Ada Lovelace");
+    expect(sent.text).toContain("\nI would like to talk about a role.\n");
+    expect(sent.text).toContain("Reply to this email to answer Ada directly.");
   });
 
   it("escapes every HTML special character", async () => {
@@ -179,5 +182,24 @@ describe("message content", () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it("builds a designed HTML email with a reply button", async () => {
+    await post({
+      ...valid,
+      subject: "Role at Acme & Co",
+      message: "Line one\nLine two",
+    });
+
+    const sent = JSON.parse(resend.mock.calls[0][1].body);
+    expect(sent.html).toContain("<!doctype html>");
+    expect(sent.html).toContain("Role at Acme &amp; Co");
+    expect(sent.html).toContain("Line one<br>Line two");
+    expect(sent.html).toContain("Reply to Ada");
+    expect(sent.html).toContain(
+      'href="mailto:ada@example.com?subject=Re%3A%20Role%20at%20Acme%20%26%20Co"'
+    );
+    expect(sent.html).toContain("prefers-color-scheme: dark");
+    expect(sent.html).toMatch(/\d{1,2}:\d{2} (am|pm) IST/i);
   });
 });

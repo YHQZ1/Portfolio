@@ -220,6 +220,8 @@ Architecture diagrams are plain data and flow left to right: `stages` are the la
 
 The form posts to `api/contact.ts`, a Vercel function that validates the message and sends it with [Resend](https://resend.com). The API key never reaches the browser.
 
+The notification is a hand-written, email-safe HTML template (table layout, inline styles, dark-mode support, plain-text fallback) built by `buildEmail` in the same file, so it needs no extra dependency. Its "Reply" button and `reply_to` header both point at the visitor, so replying from your inbox answers them directly.
+
 What the function does: accepts `POST` only, caps the request at 16 KB, limits one sender to 5 messages per 10 minutes (per serverless instance, so add a Vercel firewall rule for a hard limit), validates every field, strips line breaks from header fields, escapes HTML, silently drops submissions that fill the hidden `website` honeypot field, and sets the visitor's address as `Reply-To` so you can answer directly.
 
 Messages are always delivered to the address in `src/data/site.ts` (`rupareluttkarsh2309@gmail.com`, the email of the Resend account). The recipient is deliberately not configurable, so it cannot be redirected through the environment. Set these environment variables (see `.env.example`):

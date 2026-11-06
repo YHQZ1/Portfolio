@@ -72,15 +72,98 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
-function buildEmail({ name, email, subject, message }: ContactMessage) {
+const FONT_STACK = "'Raleway','Helvetica Neue',Helvetica,Arial,sans-serif";
+
+const formatSent = (now: Date) =>
+  `${now.toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  })} IST`;
+
+// Email clients ignore most modern CSS, so the layout is a plain table with
+// inline styles. The <style> block only adds dark-mode colours where supported.
+function buildEmail(
+  { name, email, subject, message }: ContactMessage,
+  now = new Date()
+) {
   const title = subject || `Message from ${name}`;
+  const sent = formatSent(now);
+  const firstName = name.split(" ")[0] || name;
+  const replyHref = `mailto:${email}?subject=${encodeURIComponent(`Re: ${title}`)}`;
+  const preheader = escapeHtml(message.replace(/\s+/g, " ").slice(0, 110));
+  const body = escapeHtml(message).replace(/\r\n|\r|\n/g, "<br>");
+
+  const label = (value: string) =>
+    `<td class="muted" style="padding:0 16px 10px 0;width:64px;vertical-align:top;font:500 11px/1.6 ${FONT_STACK};letter-spacing:0.14em;text-transform:uppercase;color:#767676;">${value}</td>`;
 
   return {
     subject: `[Portfolio] ${title}`,
-    text: `${message}\n\n${name} <${email}>`,
-    html: `<p style="white-space:pre-wrap">${escapeHtml(message)}</p><hr /><p><strong>${escapeHtml(
-      name
-    )}</strong> &lt;${escapeHtml(email)}&gt;</p>`,
+    text: [
+      `New message from ${name} <${email}>`,
+      `Subject: ${title}`,
+      `Sent: ${sent}`,
+      "",
+      message,
+      "",
+      "--",
+      `Reply to this email to answer ${firstName} directly.`,
+    ].join("\n"),
+    html: `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<meta name="supported-color-schemes" content="light dark" />
+<title>${escapeHtml(title)}</title>
+<style>
+@media (prefers-color-scheme: dark) {
+  .page { background: #0a0a0a !important; }
+  .card { background: #111111 !important; border-color: #262626 !important; }
+  .fg { color: #f5f5f5 !important; }
+  .muted { color: #a0a0a0 !important; }
+  .rule { border-color: #262626 !important; }
+  .button { border-color: #f5f5f5 !important; color: #f5f5f5 !important; }
+}
+@media only screen and (max-width: 520px) {
+  .pad { padding-left: 22px !important; padding-right: 22px !important; }
+  .title { font-size: 22px !important; }
+}
+</style>
+</head>
+<body class="page" style="margin:0;padding:0;background:#f4f4f4;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;font-size:1px;line-height:1px;color:#f4f4f4;">${preheader}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="page" style="background:#f4f4f4;">
+<tr><td align="center" style="padding:32px 16px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="card" style="width:100%;max-width:600px;background:#ffffff;border:1px solid #e8e8e8;">
+<tr><td class="pad" style="padding:30px 36px 0 36px;">
+<p class="muted" style="margin:0;font:500 11px/1.6 ${FONT_STACK};letter-spacing:0.16em;text-transform:uppercase;color:#767676;">New message &middot; uttkarsh.dev</p>
+</td></tr>
+<tr><td class="pad" style="padding:14px 36px 0 36px;">
+<h1 class="title fg" style="margin:0;font:300 28px/1.25 ${FONT_STACK};letter-spacing:-0.01em;color:#1a1a1a;">${escapeHtml(title)}</h1>
+</td></tr>
+<tr><td class="pad" style="padding:26px 36px 0 36px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>${label("From")}<td class="fg" style="padding:0 0 10px 0;font:400 15px/1.6 ${FONT_STACK};color:#1a1a1a;">${escapeHtml(name)} &nbsp;<a href="mailto:${escapeHtml(email)}" class="muted" style="color:#5f5f5f;text-decoration:underline;">${escapeHtml(email)}</a></td></tr>
+<tr>${label("Sent")}<td class="muted" style="padding:0 0 10px 0;font:400 15px/1.6 ${FONT_STACK};color:#5f5f5f;">${escapeHtml(sent)}</td></tr>
+</table>
+</td></tr>
+<tr><td class="pad" style="padding:8px 36px 0 36px;"><div class="rule" style="border-top:1px solid #e8e8e8;line-height:1px;font-size:1px;">&nbsp;</div></td></tr>
+<tr><td class="pad fg" style="padding:26px 36px 6px 36px;font:400 16px/1.75 ${FONT_STACK};color:#1a1a1a;">${body}</td></tr>
+<tr><td class="pad" style="padding:26px 36px 36px 36px;">
+<a class="button fg" href="${escapeHtml(replyHref)}" style="display:inline-block;padding:13px 26px;border:1px solid #1a1a1a;color:#1a1a1a;font:500 14px/1 ${FONT_STACK};letter-spacing:0.02em;text-decoration:none;">Reply to ${escapeHtml(firstName)}</a>
+</td></tr>
+</table>
+<p class="muted" style="margin:18px 0 0 0;max-width:600px;font:400 12px/1.7 ${FONT_STACK};color:#767676;text-align:center;">Sent from the contact form on uttkarsh.dev. Replying to this email goes straight to ${escapeHtml(firstName)}.</p>
+</td></tr>
+</table>
+</body>
+</html>`,
   };
 }
 
