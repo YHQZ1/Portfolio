@@ -15,7 +15,7 @@ import { PAGES, discord, useNavState } from "./useNavState";
 export function Logo({ className = "h-8 w-8" }: { className?: string }) {
   return (
     <img
-      src="/logo.png"
+      src="/logo.webp"
       alt="Portfolio Logo"
       className={`${className} shrink-0 cursor-default select-none`}
       draggable={false}

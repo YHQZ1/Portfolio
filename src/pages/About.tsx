@@ -131,7 +131,7 @@ export default function About() {
           <SectionHeading id="work-experience" title="Work Experience" />
 
           <Organization
-            logo="/experience/tracelink.png"
+            logo="/experience/tracelink.webp"
             name="TraceLink"
             place="Pune, India"
           >
