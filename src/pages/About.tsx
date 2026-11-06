@@ -16,7 +16,9 @@ import Organization from "../components/about/Organization";
 import RoleTimeline from "../components/about/RoleTimeline";
 import LinkRow from "../components/ui/LinkRow";
 import Signature from "../components/ui/Signature";
+import LocalTime from "../components/home/hero/LocalTime";
 import ThemedImage from "../components/ui/ThemedImage";
+import { CONTACT_EMAIL, CONTACT_MAIL_HREF } from "../data/site";
 import resumePDF from "/Resume.pdf";
 
 const PAGE_META: PageMeta = {
@@ -158,7 +160,7 @@ export default function About() {
         <section className="py-20 sm:py-28">
           <p className="eyebrow mb-10">Looking for</p>
 
-          <div className="grid gap-14 lg:grid-cols-12 lg:items-end lg:gap-16">
+          <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-8">
               <p className="text-3xl leading-[1.15] font-extralight tracking-tighter text-balance text-fg sm:text-5xl lg:text-6xl">
                 A team that treats reliability as part of the product
@@ -172,18 +174,56 @@ export default function About() {
               </div>
             </div>
 
-            <div className="lg:col-span-4">
-              <p className="mb-6 text-sm text-muted">
-                If that sounds like yours, let's talk.
-              </p>
-              <ul className="border-t border-line">
-                <li>
-                  <LinkRow label="Get in touch" to="/contact" />
-                </li>
-                <li>
-                  <LinkRow label="Resume" href={resumePDF} />
-                </li>
-              </ul>
+            <div className="flex flex-col justify-between gap-14 lg:col-span-4">
+              <dl className="hidden space-y-8 border-t border-line pt-6 lg:block">
+                <div>
+                  <dt className="mb-2 eyebrow">Focus</dt>
+                  <dd className="text-sm leading-[1.6] text-fg">
+                    Backend and distributed systems
+                    <span className="mt-1 block text-muted">
+                      Go · Java · Python · TypeScript
+                    </span>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt className="mb-2 eyebrow">Based in</dt>
+                  <dd className="text-sm leading-[1.6] text-fg">
+                    Pune, India
+                    <span className="mt-1 block text-muted">
+                      <LocalTime />
+                    </span>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt className="mb-2 eyebrow">Email</dt>
+                  <dd className="text-sm leading-[1.6]">
+                    <a
+                      href={CONTACT_MAIL_HREF}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-fg underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-fg"
+                    >
+                      {CONTACT_EMAIL}
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <div>
+                <p className="mb-6 text-sm text-muted">
+                  If that sounds like yours, let's talk.
+                </p>
+                <ul className="border-t border-line">
+                  <li>
+                    <LinkRow label="Get in touch" to="/contact" />
+                  </li>
+                  <li>
+                    <LinkRow label="Resume" href={resumePDF} />
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
