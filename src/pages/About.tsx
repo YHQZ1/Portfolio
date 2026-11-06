@@ -145,8 +145,9 @@ export default function About() {
           <SectionHeading id="beyond-the-code" title="Beyond the Code" />
 
           <Organization
-            name="SIT Developer Community"
-            place="Student-run, SIT Pune"
+            logo="/experience/dsc.webp"
+            name="Developer Student Club (DSC)"
+            place="SIT Pune"
             span="July 2024 – Present"
           >
             <RoleTimeline roles={COMMUNITY_ROLES} />

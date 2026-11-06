@@ -17,12 +17,12 @@ export default function Organization({
     <article className="border-t border-line pt-8 md:pt-10">
       <div className="flex items-center gap-5">
         {logo && (
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center">
+          <span className="flex h-12 shrink-0 items-center justify-center">
             <img
               src={logo}
               alt={`${name} logo`}
               loading="lazy"
-              className="h-full w-full object-contain"
+              className="h-full w-auto max-w-24 object-contain"
             />
           </span>
         )}
